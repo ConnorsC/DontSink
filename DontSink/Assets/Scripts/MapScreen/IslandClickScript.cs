@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class IslandClickScript : MonoInterface {
+public class IslandClickScript : GameDriver {
 
     public int island;
 

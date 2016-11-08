@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MapScreenLoad : MonoInterface {
+public class MapScreenLoad : GameDriver {
 
     // Use this for initialization
     void Start () {

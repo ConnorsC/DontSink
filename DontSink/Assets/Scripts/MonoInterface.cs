@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MonoInterface : MonoBehaviour {
+public class GameDriver : MonoBehaviour {
 
     public GameManagerScript manager;
 

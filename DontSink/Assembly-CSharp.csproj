@@ -45,7 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraTransition.cs" />
+     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
+     <Compile Include="Assets\Scripts\MapScreen\IslandClickScript.cs" />
+     <Compile Include="Assets\Scripts\MapScreen\MapScreenLoad.cs" />
+     <Compile Include="Assets\Scripts\MonoInterface.cs" />
+     <Compile Include="Assets\Scripts\PlayerInformation.cs" />
+     <Compile Include="Assets\Scripts\SplashScreen\CameraTransition.cs" />
+     <Compile Include="Assets\Scripts\SplashScreen\ShipSelect.cs" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
