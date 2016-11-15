@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class PlayerInformation : MonoBehaviour {
+public class PlayerInformation {
 
-    public GameObject Ship;
+     PlayerShipObject ship;
 
-    public void setShip(GameObject x)
-    {
-        Ship = x;
-    }
+    public PlayerInformation() { }
+
+    public PlayerShipObject Ship { get { return ship; } set { ship = value; } }
+
 }
