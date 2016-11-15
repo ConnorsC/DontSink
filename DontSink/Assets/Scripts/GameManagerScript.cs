@@ -7,13 +7,10 @@ public class GameManagerScript : MonoBehaviour {
     // Use this for initialization
 
     public static GameManagerScript instance = null;
+    public PlayerInformation playerInfo;
 
     private int currentIsland =1;
     private int currentLevel = 1;
-
-
-    public GameObject player;
-    public PlayerInformation playerInfo;
 
     void Awake()
     {
@@ -36,8 +33,7 @@ public class GameManagerScript : MonoBehaviour {
 
 
     void Start () {
-	
-        playerInfo= player.GetComponent<PlayerInformation>();
+        playerInfo = new PlayerInformation();
     }
 	
 	// Update is called once per frame
@@ -45,9 +41,9 @@ public class GameManagerScript : MonoBehaviour {
 	
 	}
 
-    public GameObject GetPlayer()
+    public PlayerInformation GetPlayer()
     {
-        return player;
+        return playerInfo;
     }
 
     public void SetIsland(int x)
@@ -65,9 +61,14 @@ public class GameManagerScript : MonoBehaviour {
         return currentLevel;
     }
 
-    public void SetPlayerShip(GameObject ship)
+    public void SetPlayerShip(ShipObject ship)
     {
-        playerInfo.setShip(ship);
+       playerInfo.Ship = new PlayerShipObject(ship);
+    }
+
+    public PlayerShipObject GetPlayerShip()
+    {
+       return playerInfo.Ship;
     }
 
     public void LoadLevel(string levelToload)
