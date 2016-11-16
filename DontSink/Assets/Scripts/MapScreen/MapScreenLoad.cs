@@ -9,7 +9,8 @@ public class MapScreenLoad : GameDriver {
     // Use this for initialization
     void Start () {
         print("map loaded managerlvl:" + manager.GetLevel());
-
+            
+        //testing out branch 
         playerShip = new GameObject("something");
         //playerShip = manager.GetPlayerShip().ShipModel;
 
