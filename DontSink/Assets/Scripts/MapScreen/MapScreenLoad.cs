@@ -9,12 +9,12 @@ public class MapScreenLoad : GameDriver {
     // Use this for initialization
     void Start () {
         print("map loaded managerlvl:" + manager.GetLevel());
-            
-        //testing out branch 
-        playerShip = new GameObject("something");
-        //playerShip = manager.GetPlayerShip().ShipModel;
 
-        if(playerShip == null)
+        //playerShip = new GameObject("something");
+        //playerShip = manager.GetPlayerShip().ShipModel;
+        playerShip = Instantiate(Resources.Load("Objects/Ships/Dreadnought", typeof(GameObject))) as GameObject;
+
+        if (playerShip == null)
         {
             print("it's null");
         }
@@ -23,7 +23,7 @@ public class MapScreenLoad : GameDriver {
         if (manager.GetLevel() == 1)
         {
             print("loading 1");
-            Instantiate(playerShip, new Vector3(-8f, 0f, -6.5f), Quaternion.identity);
+            playerShip.transform.position = new Vector3(-7.9f, 0f, -17f);
             //Instantiate(manager.GetPlayerShip().ShipModel, new Vector3(-8f, 0f, -6.5f), rotation);
 
         }
