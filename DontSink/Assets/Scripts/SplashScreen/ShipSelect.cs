@@ -9,15 +9,15 @@ public class ShipSelect : GameDriver{
     {
         if(gameObject.tag=="ship1")
         {
-            manager.SetPlayerShip(new BrigObject());
+            manager.GetPlayer().Ship=(new BrigObject());
         }
         else if (gameObject.tag == "ship2")
         {
-            manager.SetPlayerShip(new CorvetteObject());
+            manager.GetPlayer().Ship = (new CorvetteObject());
         }
         else if (gameObject.tag == "Dreadnought")
         {
-            manager.SetPlayerShip(new DreadnoughtObject());
+            manager.GetPlayer().Ship = (new DreadnoughtObject());
         }
 
         manager.SetIsland(1);
