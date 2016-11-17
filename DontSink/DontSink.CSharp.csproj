@@ -72,6 +72,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CombatScreen\ScreenLoad.cs" />
     <Compile Include="Assets\Scripts\GameDriver.cs" />
     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
     <Compile Include="Assets\Scripts\MapScreen\IslandClickScript.cs" />
