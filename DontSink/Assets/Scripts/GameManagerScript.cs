@@ -10,6 +10,7 @@ public class GameManagerScript : GameDriver{
 
     private int currentIsland =1;
     private int currentLevel = 1;
+    private string lastScene;
 
     public GameManagerScript()
     {
@@ -67,7 +68,11 @@ public class GameManagerScript : GameDriver{
 
     public void LoadLevel(string levelToload)
     {
+        lastScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(levelToload);
+    }
+    public void LoadLastScene() {
+        SceneManager.LoadScene(lastScene);
     }
 
 
