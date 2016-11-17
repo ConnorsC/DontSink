@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\PlayerInformation.cs" />
     <Compile Include="Assets\Scripts\SplashScreen\CameraTransition.cs" />
     <Compile Include="Assets\Scripts\SplashScreen\ShipSelect.cs" />
+    <Compile Include="Assets\Scripts\UIscripts\ReturnButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
