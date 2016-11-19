@@ -1,0 +1,1094 @@
+fileFormatVersion: 2
+guid: 818495eeb36fcad4aa329a2fd429dd5c
+timeCreated: 1479407581
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000f2000000f3000000f4000000f5000000f6000000f7000000f8000000f9000000fa000000fb000000fc000000fd000000fe000000ff000000000100000101000002010000030100000401000005010000060100000701000008010000090100000a0100000b0100000c0100000d0100000e0100000f010000100100001101000012010000130100001401000015010000160100001701000018010000190100001a0100001b0100001c0100001d0100001e0100001f010000200100002101000022010000230100002401000025010000260100002701000028010000290100002a0100002b0100002c0100002d0100002e0100002f010000300100003101000032010000330100003401000035010000360100003701000038010000390100003a0100003b0100003c0100003d0100003e0100003f010000400100004101000042010000430100004401000045010000460100004701000048010000490100004a0100004b0100004c0100004d0100004e0100004f010000500100005101000052010000530100005401000055010000560100005701000058010000590100005a0100005b0100005c0100005d0100005e0100005f010000600100006101000062010000630100006401000065010000660100006701000068010000690100006a0100006b0100006c0100006d0100006e0100006f010000700100007101000072010000730100007401000075010000760100007701000078010000790100007a0100007b0100007c0100007d0100007e0100007f010000800100008101000082010000830100008401000085010000860100008701000088010000890100008a0100008b0100008c0100008d0100008e0100008f010000900100009101000092010000930100009401000095010000960100009701000098010000990100009a0100009b0100009c0100009d0100009e0100009f010000a0010000a1010000a2010000a3010000a4010000a5010000a6010000a7010000a8010000a9010000aa010000ab010000ac010000ad010000ae010000af010000b0010000b1010000b2010000b3010000b4010000b5010000b6010000b7010000b8010000b9010000ba010000bb010000bc010000bd010000be010000bf010000c0010000c1010000c2010000c3010000c4010000c5010000c6010000c7010000c8010000c9010000ca010000cb010000cc010000cd010000ce010000cf010000d0010000d1010000d2010000d3010000d4010000d5010000d6010000d7010000d8010000d9010000da010000db010000dc010000dd010000de010000df010000e0010000e1010000e2010000e3010000e4010000e5010000e6010000e7010000e8010000e9010000ea010000eb010000ec010000ed010000ee010000ef010000f0010000f1010000
+  assetHash:
+    serializedVersion: 2
+    Hash: 452b72e51d2f4e0e060b029ff660ea90
+  longitude: 4.9
+  latitude: 52.367
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -2.8437693, y: 4.2558637, z: 18.84004}
+      lookAt: {x: 9.287055, y: -1.2424483, z: 8.424319}
+      up: {x: 0.24672502, y: 0.9456478, z: -0.2118421}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bryce
+    100002: Bryce 1
+    100004: Bryce 10
+    100006: Bryce 100
+    100008: Bryce 101
+    100010: Bryce 102
+    100012: Bryce 103
+    100014: Bryce 11
+    100016: Bryce 12
+    100018: Bryce 13
+    100020: Bryce 14
+    100022: Bryce 15
+    100024: Bryce 16
+    100026: Bryce 17
+    100028: Bryce 18
+    100030: Bryce 19
+    100032: Bryce 2
+    100034: Bryce 20
+    100036: Bryce 21
+    100038: Bryce 22
+    100040: Bryce 23
+    100042: Bryce 24
+    100044: Bryce 25
+    100046: Bryce 26
+    100048: Bryce 27
+    100050: Bryce 28
+    100052: Bryce 29
+    100054: Bryce 3
+    100056: Bryce 30
+    100058: Bryce 31
+    100060: Bryce 32
+    100062: Bryce 33
+    100064: Bryce 34
+    100066: Bryce 35
+    100068: Bryce 36
+    100070: Bryce 37
+    100072: Bryce 38
+    100074: Bryce 39
+    100076: Bryce 4
+    100078: Bryce 40
+    100080: Bryce 41
+    100082: Bryce 42
+    100084: Bryce 43
+    100086: Bryce 44
+    100088: Bryce 45
+    100090: Bryce 46
+    100092: Bryce 47
+    100094: Bryce 48
+    100096: Bryce 49
+    100098: Bryce 5
+    100100: Bryce 50
+    100102: Bryce 51
+    100104: Bryce 52
+    100106: Bryce 53
+    100108: Bryce 54
+    100110: Bryce 55
+    100112: Bryce 56
+    100114: Bryce 57
+    100116: Bryce 58
+    100118: Bryce 59
+    100120: Bryce 6
+    100122: Bryce 60
+    100124: Bryce 61
+    100126: Bryce 62
+    100128: Bryce 63
+    100130: Bryce 64
+    100132: Bryce 65
+    100134: Bryce 66
+    100136: Bryce 67
+    100138: Bryce 68
+    100140: Bryce 69
+    100142: Bryce 7
+    100144: Bryce 70
+    100146: Bryce 71
+    100148: Bryce 72
+    100150: Bryce 73
+    100152: Bryce 74
+    100154: Bryce 75
+    100156: Bryce 76
+    100158: Bryce 77
+    100160: Bryce 78
+    100162: Bryce 79
+    100164: Bryce 8
+    100166: Bryce 80
+    100168: Bryce 81
+    100170: Bryce 82
+    100172: Bryce 83
+    100174: Bryce 84
+    100176: Bryce 85
+    100178: Bryce 86
+    100180: Bryce 87
+    100182: Bryce 88
+    100184: Bryce 89
+    100186: Bryce 9
+    100188: Bryce 90
+    100190: Bryce 91
+    100192: Bryce 92
+    100194: Bryce 93
+    100196: Bryce 94
+    100198: Bryce 95
+    100200: Bryce 96
+    100202: Bryce 97
+    100204: Bryce 98
+    100206: Bryce 99
+    100208: East India Tradi
+    100210: East India Tradi 1
+    100212: Group 10
+    100214: Group 100
+    100216: Group 102
+    100218: Group 104
+    100220: Group 106
+    100222: Group 108
+    100224: Group 110
+    100226: Group 112
+    100228: Group 114
+    100230: Group 116
+    100232: Group 118
+    100234: Group 12
+    100236: Group 120
+    100238: Group 122
+    100240: Group 124
+    100242: Group 126
+    100244: Group 128
+    100246: Group 130
+    100248: Group 132
+    100250: Group 134
+    100252: Group 136
+    100254: Group 138
+    100256: Group 14
+    100258: Group 140
+    100260: Group 142
+    100262: Group 144
+    100264: Group 146
+    100266: Group 148
+    100268: Group 150
+    100270: Group 152
+    100272: Group 154
+    100274: Group 156
+    100276: Group 158
+    100278: Group 16
+    100280: Group 160
+    100282: Group 162
+    100284: Group 164
+    100286: Group 166
+    100288: Group 168
+    100290: Group 170
+    100292: Group 172
+    100294: Group 174
+    100296: Group 176
+    100298: Group 178
+    100300: Group 18
+    100302: Group 180
+    100304: Group 182
+    100306: Group 184
+    100308: Group 186
+    100310: Group 188
+    100312: Group 190
+    100314: Group 192
+    100316: Group 194
+    100318: Group 196
+    100320: Group 198
+    100322: Group 2
+    100324: Group 20
+    100326: Group 200
+    100328: Group 202
+    100330: Group 204
+    100332: Group 206
+    100334: Group 208
+    100336: Group 210
+    100338: Group 212
+    100340: Group 214
+    100342: Group 216
+    100344: Group 218
+    100346: Group 22
+    100348: Group 220
+    100350: Group 222
+    100352: Group 224
+    100354: Group 226
+    100356: Group 228
+    100358: Group 230
+    100360: Group 232
+    100362: Group 234
+    100364: Group 236
+    100366: Group 238
+    100368: Group 24
+    100370: Group 240
+    100372: Group 242
+    100374: Group 244
+    100376: Group 246
+    100378: Group 248
+    100380: Group 250
+    100382: Group 252
+    100384: Group 254
+    100386: Group 256
+    100388: Group 258
+    100390: Group 26
+    100392: Group 260
+    100394: Group 262
+    100396: Group 264
+    100398: Group 266
+    100400: Group 268
+    100402: Group 270
+    100404: Group 272
+    100406: Group 274
+    100408: Group 276
+    100410: Group 278
+    100412: Group 28
+    100414: Group 30
+    100416: Group 32
+    100418: Group 34
+    100420: Group 36
+    100422: Group 38
+    100424: Group 4
+    100426: Group 40
+    100428: Group 42
+    100430: Group 44
+    100432: Group 46
+    100434: Group 48
+    100436: Group 50
+    100438: Group 52
+    100440: Group 54
+    100442: Group 56
+    100444: Group 58
+    100446: Group 6
+    100448: Group 60
+    100450: Group 62
+    100452: Group 64
+    100454: Group 66
+    100456: Group 68
+    100458: Group 70
+    100460: Group 72
+    100462: Group 74
+    100464: Group 76
+    100466: Group 78
+    100468: Group 8
+    100470: Group 80
+    100472: Group 82
+    100474: Group 84
+    100476: Group 86
+    100478: Group 88
+    100480: Group 90
+    100482: Group 92
+    100484: Group 94
+    100486: Group 96
+    100488: Group 98
+    100490: Pirates
+    100492: //RootNode
+    100494: Warned
+    100496: Ye Be
+    400000: Bryce
+    400002: Bryce 1
+    400004: Bryce 10
+    400006: Bryce 100
+    400008: Bryce 101
+    400010: Bryce 102
+    400012: Bryce 103
+    400014: Bryce 11
+    400016: Bryce 12
+    400018: Bryce 13
+    400020: Bryce 14
+    400022: Bryce 15
+    400024: Bryce 16
+    400026: Bryce 17
+    400028: Bryce 18
+    400030: Bryce 19
+    400032: Bryce 2
+    400034: Bryce 20
+    400036: Bryce 21
+    400038: Bryce 22
+    400040: Bryce 23
+    400042: Bryce 24
+    400044: Bryce 25
+    400046: Bryce 26
+    400048: Bryce 27
+    400050: Bryce 28
+    400052: Bryce 29
+    400054: Bryce 3
+    400056: Bryce 30
+    400058: Bryce 31
+    400060: Bryce 32
+    400062: Bryce 33
+    400064: Bryce 34
+    400066: Bryce 35
+    400068: Bryce 36
+    400070: Bryce 37
+    400072: Bryce 38
+    400074: Bryce 39
+    400076: Bryce 4
+    400078: Bryce 40
+    400080: Bryce 41
+    400082: Bryce 42
+    400084: Bryce 43
+    400086: Bryce 44
+    400088: Bryce 45
+    400090: Bryce 46
+    400092: Bryce 47
+    400094: Bryce 48
+    400096: Bryce 49
+    400098: Bryce 5
+    400100: Bryce 50
+    400102: Bryce 51
+    400104: Bryce 52
+    400106: Bryce 53
+    400108: Bryce 54
+    400110: Bryce 55
+    400112: Bryce 56
+    400114: Bryce 57
+    400116: Bryce 58
+    400118: Bryce 59
+    400120: Bryce 6
+    400122: Bryce 60
+    400124: Bryce 61
+    400126: Bryce 62
+    400128: Bryce 63
+    400130: Bryce 64
+    400132: Bryce 65
+    400134: Bryce 66
+    400136: Bryce 67
+    400138: Bryce 68
+    400140: Bryce 69
+    400142: Bryce 7
+    400144: Bryce 70
+    400146: Bryce 71
+    400148: Bryce 72
+    400150: Bryce 73
+    400152: Bryce 74
+    400154: Bryce 75
+    400156: Bryce 76
+    400158: Bryce 77
+    400160: Bryce 78
+    400162: Bryce 79
+    400164: Bryce 8
+    400166: Bryce 80
+    400168: Bryce 81
+    400170: Bryce 82
+    400172: Bryce 83
+    400174: Bryce 84
+    400176: Bryce 85
+    400178: Bryce 86
+    400180: Bryce 87
+    400182: Bryce 88
+    400184: Bryce 89
+    400186: Bryce 9
+    400188: Bryce 90
+    400190: Bryce 91
+    400192: Bryce 92
+    400194: Bryce 93
+    400196: Bryce 94
+    400198: Bryce 95
+    400200: Bryce 96
+    400202: Bryce 97
+    400204: Bryce 98
+    400206: Bryce 99
+    400208: East India Tradi
+    400210: East India Tradi 1
+    400212: Group 10
+    400214: Group 100
+    400216: Group 102
+    400218: Group 104
+    400220: Group 106
+    400222: Group 108
+    400224: Group 110
+    400226: Group 112
+    400228: Group 114
+    400230: Group 116
+    400232: Group 118
+    400234: Group 12
+    400236: Group 120
+    400238: Group 122
+    400240: Group 124
+    400242: Group 126
+    400244: Group 128
+    400246: Group 130
+    400248: Group 132
+    400250: Group 134
+    400252: Group 136
+    400254: Group 138
+    400256: Group 14
+    400258: Group 140
+    400260: Group 142
+    400262: Group 144
+    400264: Group 146
+    400266: Group 148
+    400268: Group 150
+    400270: Group 152
+    400272: Group 154
+    400274: Group 156
+    400276: Group 158
+    400278: Group 16
+    400280: Group 160
+    400282: Group 162
+    400284: Group 164
+    400286: Group 166
+    400288: Group 168
+    400290: Group 170
+    400292: Group 172
+    400294: Group 174
+    400296: Group 176
+    400298: Group 178
+    400300: Group 18
+    400302: Group 180
+    400304: Group 182
+    400306: Group 184
+    400308: Group 186
+    400310: Group 188
+    400312: Group 190
+    400314: Group 192
+    400316: Group 194
+    400318: Group 196
+    400320: Group 198
+    400322: Group 2
+    400324: Group 20
+    400326: Group 200
+    400328: Group 202
+    400330: Group 204
+    400332: Group 206
+    400334: Group 208
+    400336: Group 210
+    400338: Group 212
+    400340: Group 214
+    400342: Group 216
+    400344: Group 218
+    400346: Group 22
+    400348: Group 220
+    400350: Group 222
+    400352: Group 224
+    400354: Group 226
+    400356: Group 228
+    400358: Group 230
+    400360: Group 232
+    400362: Group 234
+    400364: Group 236
+    400366: Group 238
+    400368: Group 24
+    400370: Group 240
+    400372: Group 242
+    400374: Group 244
+    400376: Group 246
+    400378: Group 248
+    400380: Group 250
+    400382: Group 252
+    400384: Group 254
+    400386: Group 256
+    400388: Group 258
+    400390: Group 26
+    400392: Group 260
+    400394: Group 262
+    400396: Group 264
+    400398: Group 266
+    400400: Group 268
+    400402: Group 270
+    400404: Group 272
+    400406: Group 274
+    400408: Group 276
+    400410: Group 278
+    400412: Group 28
+    400414: Group 30
+    400416: Group 32
+    400418: Group 34
+    400420: Group 36
+    400422: Group 38
+    400424: Group 4
+    400426: Group 40
+    400428: Group 42
+    400430: Group 44
+    400432: Group 46
+    400434: Group 48
+    400436: Group 50
+    400438: Group 52
+    400440: Group 54
+    400442: Group 56
+    400444: Group 58
+    400446: Group 6
+    400448: Group 60
+    400450: Group 62
+    400452: Group 64
+    400454: Group 66
+    400456: Group 68
+    400458: Group 70
+    400460: Group 72
+    400462: Group 74
+    400464: Group 76
+    400466: Group 78
+    400468: Group 8
+    400470: Group 80
+    400472: Group 82
+    400474: Group 84
+    400476: Group 86
+    400478: Group 88
+    400480: Group 90
+    400482: Group 92
+    400484: Group 94
+    400486: Group 96
+    400488: Group 98
+    400490: Pirates
+    400492: //RootNode
+    400494: Warned
+    400496: Ye Be
+    2300000: Bryce
+    2300002: Bryce 1
+    2300004: Bryce 10
+    2300006: Bryce 100
+    2300008: Bryce 101
+    2300010: Bryce 102
+    2300012: Bryce 103
+    2300014: Bryce 11
+    2300016: Bryce 12
+    2300018: Bryce 13
+    2300020: Bryce 14
+    2300022: Bryce 15
+    2300024: Bryce 16
+    2300026: Bryce 17
+    2300028: Bryce 18
+    2300030: Bryce 19
+    2300032: Bryce 2
+    2300034: Bryce 20
+    2300036: Bryce 21
+    2300038: Bryce 22
+    2300040: Bryce 23
+    2300042: Bryce 24
+    2300044: Bryce 25
+    2300046: Bryce 26
+    2300048: Bryce 27
+    2300050: Bryce 28
+    2300052: Bryce 29
+    2300054: Bryce 3
+    2300056: Bryce 30
+    2300058: Bryce 31
+    2300060: Bryce 32
+    2300062: Bryce 33
+    2300064: Bryce 34
+    2300066: Bryce 35
+    2300068: Bryce 36
+    2300070: Bryce 37
+    2300072: Bryce 38
+    2300074: Bryce 39
+    2300076: Bryce 4
+    2300078: Bryce 40
+    2300080: Bryce 41
+    2300082: Bryce 42
+    2300084: Bryce 43
+    2300086: Bryce 44
+    2300088: Bryce 45
+    2300090: Bryce 46
+    2300092: Bryce 47
+    2300094: Bryce 48
+    2300096: Bryce 49
+    2300098: Bryce 5
+    2300100: Bryce 50
+    2300102: Bryce 51
+    2300104: Bryce 52
+    2300106: Bryce 53
+    2300108: Bryce 54
+    2300110: Bryce 55
+    2300112: Bryce 56
+    2300114: Bryce 57
+    2300116: Bryce 58
+    2300118: Bryce 59
+    2300120: Bryce 6
+    2300122: Bryce 60
+    2300124: Bryce 61
+    2300126: Bryce 62
+    2300128: Bryce 63
+    2300130: Bryce 64
+    2300132: Bryce 65
+    2300134: Bryce 66
+    2300136: Bryce 67
+    2300138: Bryce 68
+    2300140: Bryce 69
+    2300142: Bryce 7
+    2300144: Bryce 70
+    2300146: Bryce 71
+    2300148: Bryce 72
+    2300150: Bryce 73
+    2300152: Bryce 74
+    2300154: Bryce 75
+    2300156: Bryce 76
+    2300158: Bryce 77
+    2300160: Bryce 78
+    2300162: Bryce 79
+    2300164: Bryce 8
+    2300166: Bryce 80
+    2300168: Bryce 81
+    2300170: Bryce 82
+    2300172: Bryce 83
+    2300174: Bryce 84
+    2300176: Bryce 85
+    2300178: Bryce 86
+    2300180: Bryce 87
+    2300182: Bryce 88
+    2300184: Bryce 89
+    2300186: Bryce 9
+    2300188: Bryce 90
+    2300190: Bryce 91
+    2300192: Bryce 92
+    2300194: Bryce 93
+    2300196: Bryce 94
+    2300198: Bryce 95
+    2300200: Bryce 96
+    2300202: Bryce 97
+    2300204: Bryce 98
+    2300206: Bryce 99
+    2300208: East India Tradi
+    2300210: East India Tradi 1
+    2300212: Group 10
+    2300214: Group 100
+    2300216: Group 102
+    2300218: Group 104
+    2300220: Group 106
+    2300222: Group 108
+    2300224: Group 110
+    2300226: Group 112
+    2300228: Group 114
+    2300230: Group 116
+    2300232: Group 118
+    2300234: Group 12
+    2300236: Group 120
+    2300238: Group 122
+    2300240: Group 124
+    2300242: Group 126
+    2300244: Group 128
+    2300246: Group 130
+    2300248: Group 132
+    2300250: Group 134
+    2300252: Group 136
+    2300254: Group 138
+    2300256: Group 14
+    2300258: Group 140
+    2300260: Group 142
+    2300262: Group 144
+    2300264: Group 146
+    2300266: Group 148
+    2300268: Group 150
+    2300270: Group 152
+    2300272: Group 154
+    2300274: Group 156
+    2300276: Group 158
+    2300278: Group 16
+    2300280: Group 160
+    2300282: Group 162
+    2300284: Group 164
+    2300286: Group 166
+    2300288: Group 168
+    2300290: Group 170
+    2300292: Group 172
+    2300294: Group 174
+    2300296: Group 176
+    2300298: Group 178
+    2300300: Group 18
+    2300302: Group 180
+    2300304: Group 182
+    2300306: Group 184
+    2300308: Group 186
+    2300310: Group 188
+    2300312: Group 190
+    2300314: Group 192
+    2300316: Group 194
+    2300318: Group 196
+    2300320: Group 198
+    2300322: Group 2
+    2300324: Group 20
+    2300326: Group 200
+    2300328: Group 202
+    2300330: Group 204
+    2300332: Group 206
+    2300334: Group 208
+    2300336: Group 210
+    2300338: Group 212
+    2300340: Group 214
+    2300342: Group 216
+    2300344: Group 218
+    2300346: Group 22
+    2300348: Group 220
+    2300350: Group 222
+    2300352: Group 224
+    2300354: Group 226
+    2300356: Group 228
+    2300358: Group 230
+    2300360: Group 232
+    2300362: Group 234
+    2300364: Group 236
+    2300366: Group 238
+    2300368: Group 24
+    2300370: Group 240
+    2300372: Group 242
+    2300374: Group 244
+    2300376: Group 246
+    2300378: Group 248
+    2300380: Group 250
+    2300382: Group 252
+    2300384: Group 254
+    2300386: Group 256
+    2300388: Group 258
+    2300390: Group 26
+    2300392: Group 260
+    2300394: Group 262
+    2300396: Group 264
+    2300398: Group 266
+    2300400: Group 268
+    2300402: Group 270
+    2300404: Group 272
+    2300406: Group 274
+    2300408: Group 276
+    2300410: Group 278
+    2300412: Group 28
+    2300414: Group 30
+    2300416: Group 32
+    2300418: Group 34
+    2300420: Group 36
+    2300422: Group 38
+    2300424: Group 4
+    2300426: Group 40
+    2300428: Group 42
+    2300430: Group 44
+    2300432: Group 46
+    2300434: Group 48
+    2300436: Group 50
+    2300438: Group 52
+    2300440: Group 54
+    2300442: Group 56
+    2300444: Group 58
+    2300446: Group 6
+    2300448: Group 60
+    2300450: Group 62
+    2300452: Group 64
+    2300454: Group 66
+    2300456: Group 68
+    2300458: Group 70
+    2300460: Group 72
+    2300462: Group 74
+    2300464: Group 76
+    2300466: Group 78
+    2300468: Group 8
+    2300470: Group 80
+    2300472: Group 82
+    2300474: Group 84
+    2300476: Group 86
+    2300478: Group 88
+    2300480: Group 90
+    2300482: Group 92
+    2300484: Group 94
+    2300486: Group 96
+    2300488: Group 98
+    2300490: Pirates
+    2300492: //RootNode
+    2300494: Warned
+    2300496: Ye Be
+    3300000: Bryce
+    3300002: Bryce 1
+    3300004: Bryce 10
+    3300006: Bryce 100
+    3300008: Bryce 101
+    3300010: Bryce 102
+    3300012: Bryce 103
+    3300014: Bryce 11
+    3300016: Bryce 12
+    3300018: Bryce 13
+    3300020: Bryce 14
+    3300022: Bryce 15
+    3300024: Bryce 16
+    3300026: Bryce 17
+    3300028: Bryce 18
+    3300030: Bryce 19
+    3300032: Bryce 2
+    3300034: Bryce 20
+    3300036: Bryce 21
+    3300038: Bryce 22
+    3300040: Bryce 23
+    3300042: Bryce 24
+    3300044: Bryce 25
+    3300046: Bryce 26
+    3300048: Bryce 27
+    3300050: Bryce 28
+    3300052: Bryce 29
+    3300054: Bryce 3
+    3300056: Bryce 30
+    3300058: Bryce 31
+    3300060: Bryce 32
+    3300062: Bryce 33
+    3300064: Bryce 34
+    3300066: Bryce 35
+    3300068: Bryce 36
+    3300070: Bryce 37
+    3300072: Bryce 38
+    3300074: Bryce 39
+    3300076: Bryce 4
+    3300078: Bryce 40
+    3300080: Bryce 41
+    3300082: Bryce 42
+    3300084: Bryce 43
+    3300086: Bryce 44
+    3300088: Bryce 45
+    3300090: Bryce 46
+    3300092: Bryce 47
+    3300094: Bryce 48
+    3300096: Bryce 49
+    3300098: Bryce 5
+    3300100: Bryce 50
+    3300102: Bryce 51
+    3300104: Bryce 52
+    3300106: Bryce 53
+    3300108: Bryce 54
+    3300110: Bryce 55
+    3300112: Bryce 56
+    3300114: Bryce 57
+    3300116: Bryce 58
+    3300118: Bryce 59
+    3300120: Bryce 6
+    3300122: Bryce 60
+    3300124: Bryce 61
+    3300126: Bryce 62
+    3300128: Bryce 63
+    3300130: Bryce 64
+    3300132: Bryce 65
+    3300134: Bryce 66
+    3300136: Bryce 67
+    3300138: Bryce 68
+    3300140: Bryce 69
+    3300142: Bryce 7
+    3300144: Bryce 70
+    3300146: Bryce 71
+    3300148: Bryce 72
+    3300150: Bryce 73
+    3300152: Bryce 74
+    3300154: Bryce 75
+    3300156: Bryce 76
+    3300158: Bryce 77
+    3300160: Bryce 78
+    3300162: Bryce 79
+    3300164: Bryce 8
+    3300166: Bryce 80
+    3300168: Bryce 81
+    3300170: Bryce 82
+    3300172: Bryce 83
+    3300174: Bryce 84
+    3300176: Bryce 85
+    3300178: Bryce 86
+    3300180: Bryce 87
+    3300182: Bryce 88
+    3300184: Bryce 89
+    3300186: Bryce 9
+    3300188: Bryce 90
+    3300190: Bryce 91
+    3300192: Bryce 92
+    3300194: Bryce 93
+    3300196: Bryce 94
+    3300198: Bryce 95
+    3300200: Bryce 96
+    3300202: Bryce 97
+    3300204: Bryce 98
+    3300206: Bryce 99
+    3300208: East India Tradi
+    3300210: East India Tradi 1
+    3300212: Group 10
+    3300214: Group 100
+    3300216: Group 102
+    3300218: Group 104
+    3300220: Group 106
+    3300222: Group 108
+    3300224: Group 110
+    3300226: Group 112
+    3300228: Group 114
+    3300230: Group 116
+    3300232: Group 118
+    3300234: Group 12
+    3300236: Group 120
+    3300238: Group 122
+    3300240: Group 124
+    3300242: Group 126
+    3300244: Group 128
+    3300246: Group 130
+    3300248: Group 132
+    3300250: Group 134
+    3300252: Group 136
+    3300254: Group 138
+    3300256: Group 14
+    3300258: Group 140
+    3300260: Group 142
+    3300262: Group 144
+    3300264: Group 146
+    3300266: Group 148
+    3300268: Group 150
+    3300270: Group 152
+    3300272: Group 154
+    3300274: Group 156
+    3300276: Group 158
+    3300278: Group 16
+    3300280: Group 160
+    3300282: Group 162
+    3300284: Group 164
+    3300286: Group 166
+    3300288: Group 168
+    3300290: Group 170
+    3300292: Group 172
+    3300294: Group 174
+    3300296: Group 176
+    3300298: Group 178
+    3300300: Group 18
+    3300302: Group 180
+    3300304: Group 182
+    3300306: Group 184
+    3300308: Group 186
+    3300310: Group 188
+    3300312: Group 190
+    3300314: Group 192
+    3300316: Group 194
+    3300318: Group 196
+    3300320: Group 198
+    3300322: Group 2
+    3300324: Group 20
+    3300326: Group 200
+    3300328: Group 202
+    3300330: Group 204
+    3300332: Group 206
+    3300334: Group 208
+    3300336: Group 210
+    3300338: Group 212
+    3300340: Group 214
+    3300342: Group 216
+    3300344: Group 218
+    3300346: Group 22
+    3300348: Group 220
+    3300350: Group 222
+    3300352: Group 224
+    3300354: Group 226
+    3300356: Group 228
+    3300358: Group 230
+    3300360: Group 232
+    3300362: Group 234
+    3300364: Group 236
+    3300366: Group 238
+    3300368: Group 24
+    3300370: Group 240
+    3300372: Group 242
+    3300374: Group 244
+    3300376: Group 246
+    3300378: Group 248
+    3300380: Group 250
+    3300382: Group 252
+    3300384: Group 254
+    3300386: Group 256
+    3300388: Group 258
+    3300390: Group 26
+    3300392: Group 260
+    3300394: Group 262
+    3300396: Group 264
+    3300398: Group 266
+    3300400: Group 268
+    3300402: Group 270
+    3300404: Group 272
+    3300406: Group 274
+    3300408: Group 276
+    3300410: Group 278
+    3300412: Group 28
+    3300414: Group 30
+    3300416: Group 32
+    3300418: Group 34
+    3300420: Group 36
+    3300422: Group 38
+    3300424: Group 4
+    3300426: Group 40
+    3300428: Group 42
+    3300430: Group 44
+    3300432: Group 46
+    3300434: Group 48
+    3300436: Group 50
+    3300438: Group 52
+    3300440: Group 54
+    3300442: Group 56
+    3300444: Group 58
+    3300446: Group 6
+    3300448: Group 60
+    3300450: Group 62
+    3300452: Group 64
+    3300454: Group 66
+    3300456: Group 68
+    3300458: Group 70
+    3300460: Group 72
+    3300462: Group 74
+    3300464: Group 76
+    3300466: Group 78
+    3300468: Group 8
+    3300470: Group 80
+    3300472: Group 82
+    3300474: Group 84
+    3300476: Group 86
+    3300478: Group 88
+    3300480: Group 90
+    3300482: Group 92
+    3300484: Group 94
+    3300486: Group 96
+    3300488: Group 98
+    3300490: Pirates
+    3300492: //RootNode
+    3300494: Warned
+    3300496: Ye Be
+    4300000: Mesh portlevel
+    4300002: Mesh Group 2
+    4300004: Mesh Pirates
+    4300006: Mesh Ye Be
+    4300008: Mesh Warned
+    4300010: Mesh East India Tradi
+    4300012: Mesh Bryce
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
