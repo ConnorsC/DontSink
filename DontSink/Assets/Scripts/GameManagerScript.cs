@@ -2,15 +2,20 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class GameManagerScript : MonoBehaviour {
+public class GameManagerScript : GameDriver{
 
     // Use this for initialization
 
-    public static GameManagerScript instance = null;
-    public PlayerInformation playerInfo;
+    public static PlayerInformation playerInfo;
 
     private int currentIsland =1;
     private int currentLevel = 1;
+    private string lastScene;
+
+    public GameManagerScript()
+    {
+        playerInfo = new PlayerInformation();
+    }
 
     void Awake()
     {
@@ -27,13 +32,13 @@ public class GameManagerScript : MonoBehaviour {
             Destroy(gameObject);
 
         //Sets this to not be destroyed when reloading scene
+
         DontDestroyOnLoad(gameObject);
 
     }
 
-
     void Start () {
-        playerInfo = new PlayerInformation();
+        
     }
 	
 	// Update is called once per frame
@@ -61,19 +66,13 @@ public class GameManagerScript : MonoBehaviour {
         return currentLevel;
     }
 
-    public void SetPlayerShip(ShipObject ship)
-    {
-       playerInfo.Ship = new PlayerShipObject(ship);
-    }
-
-    public PlayerShipObject GetPlayerShip()
-    {
-       return playerInfo.Ship;
-    }
-
     public void LoadLevel(string levelToload)
     {
+        lastScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(levelToload);
+    }
+    public void LoadLastScene() {
+        SceneManager.LoadScene(lastScene);
     }
 
 

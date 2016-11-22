@@ -8,37 +8,15 @@ public class MapScreenLoad : GameDriver {
 
     // Use this for initialization
     void Start () {
-        print("map loaded managerlvl:" + manager.GetLevel());
 
-        playerShip = new GameObject("something");
-        //playerShip = manager.GetPlayerShip().ShipModel;
-
-        if(playerShip == null)
-        {
-            print("it's null");
-        }
-        
+        playerShip = Instantiate(Resources.Load(manager.GetPlayer().Ship.getPrefabPath, typeof(GameObject))) as GameObject;
 
         if (manager.GetLevel() == 1)
         {
             print("loading 1");
-            Instantiate(playerShip, new Vector3(-8f, 0f, -6.5f), Quaternion.identity);
-            //Instantiate(manager.GetPlayerShip().ShipModel, new Vector3(-8f, 0f, -6.5f), rotation);
+            playerShip.transform.position = new Vector3(-7.9f, 0f, -17f);
 
         }
 
     }
-    
-    void OnLoad()
-    {
-        print("map loaded managerlvl:" + manager.GetLevel());
-        
-        if (manager.GetLevel() == 1) {
-            print("loading 1");
-            Instantiate(manager.GetPlayerShip().ShipModel, new Vector3(-8f, 0f, -6.5f), rotation);
-
-        }
-
-    }	
-
 }
