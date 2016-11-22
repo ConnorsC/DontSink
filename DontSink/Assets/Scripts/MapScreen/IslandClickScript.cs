@@ -14,9 +14,8 @@ public class IslandClickScript : GameDriver {
 
     public void OnMouseDown()
     {
-
         manager.SetIsland(island);
         manager.LoadLevel("GameScreen");
-
     }
+    
 }

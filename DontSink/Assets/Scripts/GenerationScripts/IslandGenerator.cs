@@ -59,7 +59,7 @@ public class IslandGenerator : MonoBehaviour
     {
         return new StartIslandObject();
     }
-    private EndIslandObject GenerateEndIsland(int lvl) // not sue what we are doing for the final island yet, mini boss fight? Or just chill to move on to the next level?
+    private EndIslandObject GenerateEndIsland(int lvl) // not sure what we are doing for the final island yet, mini boss fight? Or just chill to move on to the next level?
     {
         return new EndIslandObject();
     }
