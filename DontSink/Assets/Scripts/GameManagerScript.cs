@@ -14,7 +14,6 @@ public class GameManagerScript : GameDriver{
 
     public GameManagerScript()
     {
-        playerInfo = new PlayerInformation();
     }
 
     void Awake()
@@ -29,11 +28,12 @@ public class GameManagerScript : GameDriver{
         else if (instance != this)
 
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-            Destroy(gameObject);
+            Destroy(this);
 
         //Sets this to not be destroyed when reloading scene
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
+        playerInfo = new PlayerInformation();
 
     }
 
@@ -74,6 +74,5 @@ public class GameManagerScript : GameDriver{
     public void LoadLastScene() {
         SceneManager.LoadScene(lastScene);
     }
-
 
 }

@@ -16,7 +16,7 @@ public class IslandClickScript : GameDriver {
     {
         manager.SetIsland(island);
         //print("Island: " + island);
-        manager.LoadLevel("GameScreen");
+        manager.LoadLevel("CombatScreen");
     }
     
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ShipObject : MonoBehaviour
+public class ShipObject
 {
     //Fields
     private int health;

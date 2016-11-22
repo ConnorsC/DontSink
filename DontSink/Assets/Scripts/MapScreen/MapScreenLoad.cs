@@ -13,6 +13,9 @@ public class MapScreenLoad : GameDriver {
     // Use this for initialization
     void Start () {
         mapGenerator = new MapGeneration();
+        //Instantiate(manager.GetPlayer().Ship.ShipModel);
+
+        //playerShip = manager.GetPlayer().Ship.ShipModel;
         playerShip = Instantiate(Resources.Load(manager.GetPlayer().Ship.getPrefabPath, typeof(GameObject))) as GameObject;
 
         if (manager.GetLevel() == 1)
