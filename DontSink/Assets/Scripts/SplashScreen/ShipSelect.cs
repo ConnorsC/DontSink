@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class ShipSelect : GameDriver{
-
+    private GameObject playerShip;
 
     public void OnMouseDown()
     {

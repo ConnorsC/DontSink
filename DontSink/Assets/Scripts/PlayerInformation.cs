@@ -2,7 +2,7 @@
 
 public class PlayerInformation {
 
-    private  PlayerShipObject ship;
+    private static PlayerShipObject ship;
 
     public PlayerInformation() { }
 

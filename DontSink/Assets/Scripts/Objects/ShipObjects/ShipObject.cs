@@ -12,10 +12,7 @@ public class ShipObject
     private GameObject shipModel;
     private string prefabPath;
 
-    public ShipObject()
-    {
-
-    }
+    public ShipObject() { }
 
     public ShipObject(int health, int speed, int damage, List<ItemObject> items, GameObject shipModel, string prefabPath)
     {
@@ -34,4 +31,31 @@ public class ShipObject
     public List<ItemObject> Items { get { return items; } set { items = value; } }
     public GameObject ShipModel { get { return shipModel; } set { shipModel = value; } }
     public string getPrefabPath { get { return prefabPath; } set { prefabPath = value; } }
+
+    public void TakeDamage(int damage)
+    {
+        HullObject hull = null;
+        foreach (ItemObject item in items)
+        {
+            if (item is HullObject)
+                hull = (HullObject)item;
+        }
+        if (hull != null)
+        {
+            damage -= hull.Damage_Reduction;
+            hull.TakeDamage();
+        }
+        if (damage >= health)
+        {
+            health = 0;
+            DestroyShip();
+        }
+        else
+            health -= damage;
+    }
+    private void DestroyShip()
+    {
+        // Show Distruction Animation
+        // If it is the player ship show the game over screen
+    }
 }
