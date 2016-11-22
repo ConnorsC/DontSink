@@ -8,4 +8,10 @@ public class NeutralShipObject : ShipObject
 
     //Accessors
     public ItemObject Boon { get { return boon; } set { boon = value; } }
+
+    public NeutralShipObject() { }
+    public NeutralShipObject(ItemObject boon)
+    {
+        this.boon = boon;
+    }
 }
