@@ -7,7 +7,6 @@ public class MapScreenLoad : MonoBehaviour {
     Quaternion rotation = new Quaternion();
     GameObject playerShip;
     private MapGeneration mapGenerator;
-    private List<IslandObject> islands;
     static string islandPrefabPath = "Objects/Islands/Island";
     private GameManagerScript manager;
 
@@ -27,8 +26,8 @@ public class MapScreenLoad : MonoBehaviour {
         }
 
         // Call to set up the generation of the island objects
-        islands = mapGenerator.GenerateMap(manager.GetLevel());
-        SetIslands(islands);
+        manager.Islands = mapGenerator.GenerateMap(manager.GetLevel());
+        SetIslands(manager.Islands);
     }
 
     private void SetIslands(List<IslandObject> islands)
@@ -76,34 +75,42 @@ public class MapScreenLoad : MonoBehaviour {
                 case 1:
                     island.IslandModel.transform.position = new Vector3(-7.75f,0.0f,-14.5f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 1;
+                    island.IslandModel.GetComponent<IslandMouseOverScript>().island = 1;
                     break;
                 case 2:
                     island.IslandModel.transform.position = new Vector3(-4f, 0.0f, -7.0f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 2;
+                    island.IslandModel.GetComponent<IslandMouseOverScript>().island = 2;
                     break;
                 case 3:
                     island.IslandModel.transform.position = new Vector3(0.0f, 0.0f, -17.0f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 3;
+                    island.IslandModel.GetComponent<IslandMouseOverScript>().island = 3;
                     break;
                 case 4:
-                    island.IslandModel.transform.position = new Vector3(1.0f, 0.0f, -11.5f);
+                    island.IslandModel.transform.position = new Vector3(1.0f, 0.0f, -10f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 4;
+                    island.IslandModel.GetComponent<IslandMouseOverScript>().island = 4;
                     break;
                 case 5:
-                    island.IslandModel.transform.position = new Vector3(11.5f, 0.0f, -13f);
+                    island.IslandModel.transform.position = new Vector3(11f, 0.0f, -13f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 5;
+                    island.IslandModel.GetComponent<IslandMouseOverScript>().island = 5;
                     break;
                 case 6:
                     island.IslandModel.transform.position = new Vector3(7f, 0.0f, -8f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 6;
+                    island.IslandModel.GetComponent<IslandMouseOverScript>().island = 6;
                     break;
                 case 7:
-                    island.IslandModel.transform.position = new Vector3(2.5f, 0.0f, -13.5f);
+                    island.IslandModel.transform.position = new Vector3(4.5f, 0.0f, -13.5f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 7;
+                    island.IslandModel.GetComponent<IslandMouseOverScript>().island = 7;
                     break;
                 case 8:
                     island.IslandModel.transform.position = new Vector3(18f, 0.0f, -11f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 8;
+                    island.IslandModel.GetComponent<IslandMouseOverScript>().island = 8;
                     break;
                 default:
                     break;
