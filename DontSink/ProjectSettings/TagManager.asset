@@ -9,6 +9,11 @@ TagManager:
   - Ship2
   - Dreadnought
   - Ship3
+  - Btn1
+  - Btn2
+  - Btn3
+  - BuyMenu
+  - DialogueBackground
   layers:
   - Default
   - TransparentFX
