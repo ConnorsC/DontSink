@@ -28,21 +28,21 @@ public class MapScreenLoad : MonoBehaviour {
 
         // Call to set up the generation of the island objects
         islands = mapGenerator.GenerateMap(manager.GetLevel());
-        SetIslands();
+        SetIslands(islands);
     }
 
-    private void SetIslands()
+    private void SetIslands(List<IslandObject> islands)
     {
         switch (manager.GetLevel())
         {
             case 1:
-                SetLevel1Map();
+                SetLevel1Map(islands);
                 break;
             default:
                 break;
         }
     }
-    private void SetLevel1Map()
+    private void SetLevel1Map(List<IslandObject> islands)
     {
         int i = 1;
         foreach (IslandObject island in islands)
