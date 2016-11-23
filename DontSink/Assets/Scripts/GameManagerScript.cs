@@ -52,6 +52,10 @@ public class GameManagerScript : GameDriver{
     {
         currentIsland = x;
     }
+    public int GetIsland()
+    {
+        return currentIsland;
+    }
 
     public void SetLevel(int x)
     {

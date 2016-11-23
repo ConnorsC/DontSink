@@ -181,7 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515aefd16aa17e4d9ffffbb78135046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   island: 6
 --- !u!1 &507076947
 GameObject:
@@ -361,7 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515aefd16aa17e4d9ffffbb78135046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   island: 3
 --- !u!1001 &620696074
 Prefab:
@@ -516,7 +514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515aefd16aa17e4d9ffffbb78135046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   island: 7
 --- !u!1 &1023256987
 GameObject:
@@ -609,7 +606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515aefd16aa17e4d9ffffbb78135046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   island: 8
 --- !u!1 &1042934305
 GameObject:
@@ -817,7 +813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515aefd16aa17e4d9ffffbb78135046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   island: 4
 --- !u!1 &1722980243
 GameObject:
@@ -972,7 +967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515aefd16aa17e4d9ffffbb78135046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   island: 5
 --- !u!1 &2073743037
 GameObject:
@@ -1065,7 +1059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515aefd16aa17e4d9ffffbb78135046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   island: 2
 --- !u!1 &2088521118
 GameObject:
@@ -1158,7 +1151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515aefd16aa17e4d9ffffbb78135046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   island: 1
 --- !u!1 &2127934698
 GameObject:
