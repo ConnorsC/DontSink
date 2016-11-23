@@ -24,7 +24,7 @@ public class MapScreenLoad : MonoBehaviour {
             playerShip.transform.position = new Vector3(-7.9f, 0f, -17f);
 
         }
-
+        manager.SetIsland(1);
         // Call to set up the generation of the island objects
         manager.Islands = mapGenerator.GenerateMap(manager.GetLevel());
         SetIslands(manager.Islands);
