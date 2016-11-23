@@ -14,6 +14,11 @@ TagManager:
   - EnemyHullSlider
   - PlayerInstance
   - BuyMenu
+  - DialogueBackground
+  - Btn3
+  - Btn1
+  - Btn2
+  - IslandOverlayLine
   layers:
   - Default
   - TransparentFX
