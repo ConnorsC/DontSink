@@ -8,4 +8,10 @@ public class EnemyIslandObject : IslandObject
 
     //Accessors
     public EnemyShipObject Ship { get { return ship; } set { ship = value; } }
+
+    public EnemyIslandObject() { }
+    public EnemyIslandObject(EnemyShipObject ship)
+    {
+        this.ship = ship;
+    }
 }

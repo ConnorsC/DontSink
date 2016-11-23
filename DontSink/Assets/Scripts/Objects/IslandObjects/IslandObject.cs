@@ -5,10 +5,10 @@ public class IslandObject
 {
     public enum Relationship { Friendly, Neutral, Hostile };
     //Fields
-    private Material island_texture;
+    private GameObject islandModel;
     private Relationship relation;
 
     //Accessors
-    private Material Island_Texture { get { return island_texture; } set { island_texture = value; } }
-    private Relationship Relation { get { return relation; } set { relation = value; } }
+    public GameObject IslandModel { get { return islandModel; } set { islandModel = value; } }
+    public Relationship Relation { get { return relation; } set { relation = value; } }
 }

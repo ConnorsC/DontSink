@@ -2,38 +2,38 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class GameManagerScript : MonoBehaviour {
+public class GameManagerScript : GameDriver{
 
     // Use this for initialization
 
-    public static GameManagerScript instance = null;
-    public PlayerInformation playerInfo;
+    public static PlayerInformation playerInfo;
 
     private int currentIsland =1;
     private int currentLevel = 1;
+    private string lastScene;
+    private static bool spawned = false;
+
+    public GameManagerScript()
+    {
+    }
 
     void Awake()
     {
-        //Check if instance already exists
-        if (instance == null)
+        if (spawned == false)
+        {
+            spawned = true;
+            DontDestroyOnLoad(gameObject);
+            playerInfo = new PlayerInformation();
 
-            //if not, set instance to this
-            instance = this;
-
-        //If instance already exists and it's not this:
-        else if (instance != this)
-
-            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-            Destroy(gameObject);
-
-        //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
-
+        }
+        else
+        {
+            DestroyImmediate(gameObject);
+        }
     }
 
-
     void Start () {
-        playerInfo = new PlayerInformation();
+        
     }
 	
 	// Update is called once per frame
@@ -61,20 +61,17 @@ public class GameManagerScript : MonoBehaviour {
         return currentLevel;
     }
 
-    public void SetPlayerShip(ShipObject ship)
-    {
-       playerInfo.Ship = new PlayerShipObject(ship);
-    }
-
-    public PlayerShipObject GetPlayerShip()
-    {
-       return playerInfo.Ship;
-    }
-
     public void LoadLevel(string levelToload)
     {
+        lastScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(levelToload);
     }
-
+    public void LoadLastScene() {
+        SceneManager.LoadScene(lastScene);
+    }
+    public void DontDestroy(GameObject gameObject)
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
 }
