@@ -78,7 +78,12 @@ public class IslandClickScript : MonoBehaviour {
     private void LoadLevel()
     {
         // Will have more options soon
-        manager.LoadLevel("CombatScreen");
+        if (manager.Islands[island] is MerchantIslandObject)
+            manager.LoadLevel("PortScreen");
+        else if (manager.Islands[island] is EnemyIslandObject)
+            manager.LoadLevel("CombatScreen");
+        else
+            print("Fuck yourself");
     }
     
 }
