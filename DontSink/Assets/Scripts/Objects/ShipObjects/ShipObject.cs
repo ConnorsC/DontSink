@@ -14,13 +14,13 @@ public class ShipObject : MonoBehaviour
     private int currentDamage;
     private HullObject hull;
     private List<ItemObject> items;
-    private List<ItemObject> crew;
+    private List<CrewObject> crew;
     private GameObject shipModel;
     private string prefabPath;
 
     public ShipObject() { }
 
-    public ShipObject(int health, int speed, int damage, HullObject hull, List<ItemObject> items, List<ItemObject> crew,GameObject shipModel, string prefabPath)
+    public ShipObject(int health, int speed, int damage, HullObject hull, List<ItemObject> items, List<CrewObject> crew,GameObject shipModel, string prefabPath)
     {
         this.baseHealth = health;
         this.health.Max = health;
@@ -44,6 +44,7 @@ public class ShipObject : MonoBehaviour
     public int CurrentDamage { get { return currentDamage; } set { currentDamage = value; } }
     public HullObject Hull { get { return hull; } set { hull = value; } }
     public List<ItemObject> Items { get { return items; } set { items = value; } }
+    public List<CrewObject> Crew { get { return crew; } set { crew = value; } }
     public GameObject ShipModel { get { return shipModel; } set { shipModel = value; } }
     public string getPrefabPath { get { return prefabPath; } set { prefabPath = value; } }
 
@@ -101,7 +102,7 @@ public class ShipObject : MonoBehaviour
     }
     public void RemoveItem(ItemObject item)
     {
-        if (crew.Contains(item))
+        if (items.Contains(item))
         {
             if (item is SailObject)
                 currentSpeed -= ((SailObject)item).Speed;
