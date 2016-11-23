@@ -37,7 +37,7 @@ public class UiUpdate : MonoBehaviour {
         //enemyHealthBar = (GameObject.FindGameObjectWithTag("EnemyHealthBar")).GetComponent<Slider>();
         //enemyHull = (GameObject.FindGameObjectWithTag("EnemyHullBar")).GetComponent<Slider>();
 
-        playerMaxHealth = player.Health;
+        playerMaxHealth = player.MaxHealth;
 
         //set max values
         playerHealthBar.maxValue = playerMaxHealth;
@@ -47,7 +47,7 @@ public class UiUpdate : MonoBehaviour {
 
     void FixedUpdate () {
 
-        playerHealthBar.value = player.Health;
+        playerHealthBar.value = player.CurrentHealth;
         //playerHealthBar.value = player.hull;
 
 

@@ -86,8 +86,8 @@ public class ShipObject
                 currentDamage /= (int)((CannoneerObject)crewMember).Damage_Buff;
             crew.Remove(crewMember);
         }
-        else
-            print("The ship does not contain this crew member.");
+        //else
+        //    print("The ship does not contain this crew member.");
     }
     public void AddItem(ItemObject item)
     {
@@ -112,8 +112,8 @@ public class ShipObject
         {
             hull = null;
         }
-        else
-            print("The ship does not contain this item.");
+        //else
+        //    print("The ship does not contain this item.");
     }
 }
 
