@@ -45,21 +45,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CombatScreen\ScreenLoad.cs" />
+     <Compile Include="Assets\Scripts\CombatScreen\UiUpdate.cs" />
      <Compile Include="Assets\Scripts\GameDriver.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
+     <Compile Include="Assets\Scripts\GenerationScripts\IslandGenerator.cs" />
+     <Compile Include="Assets\Scripts\GenerationScripts\MapGeneration.cs" />
      <Compile Include="Assets\Scripts\MapScreen\IslandClickScript.cs" />
      <Compile Include="Assets\Scripts\MapScreen\MapScreenLoad.cs" />
      <Compile Include="Assets\Scripts\Objects\IslandObjects\DistressIslandObject.cs" />
+     <Compile Include="Assets\Scripts\Objects\IslandObjects\EndIslandObject.cs" />
      <Compile Include="Assets\Scripts\Objects\IslandObjects\EnemyIslandObject.cs" />
      <Compile Include="Assets\Scripts\Objects\IslandObjects\IslandObject.cs" />
      <Compile Include="Assets\Scripts\Objects\IslandObjects\MerchantIslandObject.cs" />
+     <Compile Include="Assets\Scripts\Objects\IslandObjects\StartIslandObject.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\CannonObject.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\CannoneerObject.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\CrewObject.cs" />
+     <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\HullObject.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\RacerObject.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\RepairmanObject.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\ScoutObject.cs" />
-     <Compile Include="Assets\Scripts\Objects\ItemObjects\HullObjects.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\ItemObject.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\MiscObject.cs" />
      <Compile Include="Assets\Scripts\Objects\ItemObjects\SailObject.cs" />
@@ -76,6 +82,7 @@
      <Compile Include="Assets\Scripts\PlayerInformation.cs" />
      <Compile Include="Assets\Scripts\SplashScreen\CameraTransition.cs" />
      <Compile Include="Assets\Scripts\SplashScreen\ShipSelect.cs" />
+     <Compile Include="Assets\Scripts\UIscripts\ReturnButton.cs" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
