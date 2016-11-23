@@ -5,28 +5,30 @@ public class HullObject : ItemObject
 {
     //Fields
     private int damage_reduction;
-    private int health;
+    private MaxCurrentPair<int> health;
 
     //Accessors
     public int Damage_Reduction { get { return damage_reduction; } set { damage_reduction = value; } }
-    public int Health { get { return health; } set { health = value; } }
+    public int MaxHealth { get { return health.Max; } set { health.Max = value; } }
+    public int CurrentHealth { get { return health.Current; } set { health.Current = value; } }
 
     public HullObject() { }
     public HullObject(int dr, int hp)
     {
         this.damage_reduction = dr;
-        this.health = hp;
+        this.health.Max = hp;
+        this.health.Current = hp;
     }
 
     public void TakeDamage()
     {
-        if (health <= damage_reduction)
+        if (health.Current <= damage_reduction)
         {
-            health = 0;
+            health.Current = 0;
             DestroyHull();
         }
         else
-            health -= damage_reduction;
+            health.Current -= damage_reduction;
     }
     private void DestroyHull()
     { }

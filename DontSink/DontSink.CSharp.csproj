@@ -89,10 +89,10 @@
     <Compile Include="Assets\Scripts\Objects\ItemObjects\CannonObject.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\CannoneerObject.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\CrewObject.cs" />
-    <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\HullObject.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\RacerObject.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\RepairmanObject.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemObjects\CrewObjects\ScoutObject.cs" />
+    <Compile Include="Assets\Scripts\Objects\ItemObjects\HullObject.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemObjects\ItemObject.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemObjects\MiscObject.cs" />
     <Compile Include="Assets\Scripts\Objects\ItemObjects\SailObject.cs" />
