@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LevelLoaderScript : MonoBehaviour {
-
+    Animator anim;
     public void onClick()
     {
         print("load level!");
@@ -12,6 +12,22 @@ public class LevelLoaderScript : MonoBehaviour {
 
     public void LoadDialogueScene()
     {
+
+        anim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+        int campan = Animator.StringToHash("TavernSceneLoad");
+        anim.SetTrigger(campan);
+        StartCoroutine(wait());
+        //SceneManager.LoadScene("DialogueScreen");
+    }
+
+    public void LoadPortScene()
+    {
+        SceneManager.LoadScene("PortScreen");
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1.8f);
         SceneManager.LoadScene("DialogueScreen");
     }
 }
