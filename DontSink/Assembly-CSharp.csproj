@@ -45,8 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\CombatScreen\ScreenLoad.cs" />
      <Compile Include="Assets\Scripts\CombatScreen\UiUpdate.cs" />
+=======
+     <Compile Include="Assets\BuyMenuUI.cs" />
+     <Compile Include="Assets\DialogueObject.cs" />
+>>>>>>> refs/remotes/origin/Carson
      <Compile Include="Assets\Scripts\GameDriver.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\GenerationScripts\IslandGenerator.cs" />
@@ -82,7 +87,11 @@
      <Compile Include="Assets\Scripts\PlayerInformation.cs" />
      <Compile Include="Assets\Scripts\SplashScreen\CameraTransition.cs" />
      <Compile Include="Assets\Scripts\SplashScreen\ShipSelect.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\UIscripts\ReturnButton.cs" />
+=======
+     <Compile Include="Assets\StoreMenu.cs" />
+>>>>>>> refs/remotes/origin/Carson
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">

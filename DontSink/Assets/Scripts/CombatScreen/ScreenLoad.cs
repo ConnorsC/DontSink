@@ -11,7 +11,7 @@ public class ScreenLoad : MonoBehaviour {
 
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         playerShip = manager.GetPlayer().Ship.ShipModel;
-        playerShip.transform.position = new Vector3(-10f,0f,-9f);
-        playerShip.transform.Rotate(Vector3.up);
+        playerShip.transform.position = new Vector3(-10f,0f,-10f);
+        playerShip.transform.Rotate(new Vector3(0f,-90f,0f));
     }
 }
