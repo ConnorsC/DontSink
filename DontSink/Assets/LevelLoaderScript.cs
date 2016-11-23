@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoaderScript : MonoBehaviour {
     Animator anim;
-    public void onClick()
+    /*public void onClick()
     {
         print("load level!");
         LoadDialogueScene();
-    }
+    }*/
 
     public void LoadDialogueScene()
     {
@@ -23,6 +23,11 @@ public class LevelLoaderScript : MonoBehaviour {
     public void LoadPortScene()
     {
         SceneManager.LoadScene("PortScreen");
+    }
+
+    public void LoadMapScene()
+    {
+        SceneManager.LoadScene("MapScreen");
     }
 
     IEnumerator wait()
