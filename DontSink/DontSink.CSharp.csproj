@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Assets\BuyMenuUI.cs" />
     <Compile Include="Assets\DialogueObject.cs" />
+    <Compile Include="Assets\LevelLoaderScript.cs" />
     <Compile Include="Assets\Scripts\CombatScreen\ScreenLoad.cs" />
     <Compile Include="Assets\Scripts\CombatScreen\UiUpdate.cs" />
     <Compile Include="Assets\Scripts\GameDriver.cs" />
