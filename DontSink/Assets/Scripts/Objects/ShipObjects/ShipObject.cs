@@ -127,6 +127,7 @@ internal class MaxCurrentPair<T>
         max = val;
         current = val;
     }
+
     // Accessors
     public T Max { get { return max; } set { max = value; } }
     public T Current { get { return current; } set { current = value; } }
