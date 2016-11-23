@@ -23,7 +23,8 @@ public class ShipObject
     public ShipObject(int health, int speed, int damage, HullObject hull, List<ItemObject> items, List<CrewObject> crew,GameObject shipModel, string prefabPath)
     {
         this.baseHealth = health;
-        this.health = new MaxCurrentPair<int>(health);
+        this.health.Max = health;
+        this.health.Current = health;
         this.baseSpeed = speed;
         this.baseDamage = damage;
         this.hull = hull;
@@ -122,11 +123,6 @@ internal class MaxCurrentPair<T>
     private T max;
     private T current;
 
-    public MaxCurrentPair(T val)
-    {
-        max = val;
-        current = val;
-    }
     // Accessors
     public T Max { get { return max; } set { max = value; } }
     public T Current { get { return current; } set { current = value; } }
