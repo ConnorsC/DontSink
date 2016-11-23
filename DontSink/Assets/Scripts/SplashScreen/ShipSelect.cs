@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 
-public class ShipSelect : GameDriver{
+public class ShipSelect : MonoBehaviour{
     private GameObject playerShip;
+    private GameManagerScript manager;
+    private GameObject selectedShip;
 
     public void OnMouseDown()
     {
-        if(gameObject.tag=="ship1")
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+
+        if (gameObject.tag=="ship1")
         {
             manager.GetPlayer().Ship=(new BrigObject());
         }
@@ -16,6 +20,10 @@ public class ShipSelect : GameDriver{
         else if (gameObject.tag == "Dreadnought")
         {
             manager.GetPlayer().Ship = (new DreadnoughtObject());
+            selectedShip = GameObject.FindGameObjectWithTag("Dreadnought");
+            print("not destrtoying");
+            manager.GetPlayer().Ship.ShipModel = selectedShip;
+            manager.DontDestroy(selectedShip);
         }
 
         manager.SetIsland(1);

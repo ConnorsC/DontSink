@@ -2,21 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MapScreenLoad : GameDriver {
+public class MapScreenLoad : MonoBehaviour {
 
     Quaternion rotation = new Quaternion();
     GameObject playerShip;
     private MapGeneration mapGenerator;
     private List<IslandObject> islands;
     static string islandPrefabPath = "Objects/Islands/Island";
+    private GameManagerScript manager;
 
     // Use this for initialization
     void Start () {
-        mapGenerator = new MapGeneration();
-        //Instantiate(manager.GetPlayer().Ship.ShipModel);
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
 
-        //playerShip = manager.GetPlayer().Ship.ShipModel;
-        playerShip = Instantiate(Resources.Load(manager.GetPlayer().Ship.getPrefabPath, typeof(GameObject))) as GameObject;
+        mapGenerator = new MapGeneration();
+
+        playerShip = manager.GetPlayer().Ship.ShipModel;
 
         if (manager.GetLevel() == 1)
         {

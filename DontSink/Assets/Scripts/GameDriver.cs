@@ -8,12 +8,12 @@ public class GameDriver : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
     }
 
     void Awake()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        
     }
 
 	// Update is called once per frame
