@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class GameManagerScript : GameDriver{
@@ -12,6 +13,7 @@ public class GameManagerScript : GameDriver{
     private int currentLevel = 1;
     private string lastScene;
     private static bool spawned = false;
+    private List<IslandObject> islands;
 
     public GameManagerScript()
     {
@@ -73,5 +75,5 @@ public class GameManagerScript : GameDriver{
     {
         DontDestroyOnLoad(gameObject);
     }
-
+    public List<IslandObject> Islands { get { return islands;} set { islands = value; } }
 }
