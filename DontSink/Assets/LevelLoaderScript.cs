@@ -14,4 +14,9 @@ public class LevelLoaderScript : MonoBehaviour {
     {
         SceneManager.LoadScene("DialogueScreen");
     }
+
+    public void LoadPortScene()
+    {
+        SceneManager.LoadScene("PortScreen");
+    }
 }
