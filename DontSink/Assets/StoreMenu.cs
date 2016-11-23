@@ -4,9 +4,10 @@ using System.Collections;
 public class StoreMenu : MonoBehaviour {
     private bool showMenu;
     private int menuType = 0;
-    
+    private GameObject storeMenu;
     // Use this for initialization
     void Start () {
+        storeMenu = GameObject.FindGameObjectWithTag("BuyMenu");
         showMenu = false;
         setMenuVisible(showMenu);
     }
@@ -31,7 +32,8 @@ public class StoreMenu : MonoBehaviour {
     void setMenuVisible(bool isVisible)
     {
         showMenu = isVisible;
+        storeMenu.SetActive(isVisible);
         //GameObject.FindGameObjectWithTag("DialogueBackground").SetActive(!showMenu);
-        GameObject.FindGameObjectWithTag("BuyMenu").SetActive(showMenu);
+        //GameObject.FindGameObjectWithTag("BuyMenu").SetActive(showMenu);
     }
 }
