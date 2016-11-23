@@ -4,8 +4,8 @@ using System.Collections;
 public class SailObject : ItemObject
 {
     //Fields
-    private double speed;
+    private int speed;
 
     //Accessors
-    public double Speed { get { return speed; } set { speed = value; } }
+    public int Speed { get { return speed; } set { speed = value; } }
 }
