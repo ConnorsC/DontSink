@@ -35,7 +35,7 @@ public class LevelLoaderScript : MonoBehaviour {
 
     IEnumerator wait()
     {
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(4f);
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().StopAudio();
         SceneManager.LoadScene("DialogueScreen");
     }
