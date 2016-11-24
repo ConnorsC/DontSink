@@ -228,5 +228,5 @@ DontSink/Temp/*
 *.userprefs
 *.DS_store
 *.dll
-*.mat
 DontSink/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll.mdb
+*.mat
