@@ -217,4 +217,10 @@ pip-log.txt
 
 DontSink/Library/metadata/*
 
-
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.DS_store
+*.sln
