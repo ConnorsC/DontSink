@@ -9,13 +9,19 @@ public class ShipSelect : MonoBehaviour{
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
 
-        if (gameObject.tag=="ship1")
+        if (gameObject.tag== "Brig")
         {
             manager.GetPlayer().Ship=(new BrigObject());
+            selectedShip = GameObject.FindGameObjectWithTag("Brig");
+            manager.GetPlayer().Ship.ShipModel = selectedShip;
+            manager.DontDestroy(selectedShip);
         }
-        else if (gameObject.tag == "ship2")
+        else if (gameObject.tag == "Corvette")
         {
             manager.GetPlayer().Ship = (new CorvetteObject());
+            selectedShip = GameObject.FindGameObjectWithTag("Corvette");
+            manager.GetPlayer().Ship.ShipModel = selectedShip;
+            manager.DontDestroy(selectedShip);
         }
         else if (gameObject.tag == "Dreadnought")
         {
