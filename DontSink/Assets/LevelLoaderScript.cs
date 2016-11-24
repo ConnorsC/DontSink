@@ -22,7 +22,10 @@ public class LevelLoaderScript : MonoBehaviour {
 
     public void LoadPortScene()
     {
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().StartAudio();
+
         SceneManager.LoadScene("PortScreen");
+
     }
 
     public void LoadMapScene()
@@ -33,6 +36,7 @@ public class LevelLoaderScript : MonoBehaviour {
     IEnumerator wait()
     {
         yield return new WaitForSeconds(1.8f);
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().StopAudio();
         SceneManager.LoadScene("DialogueScreen");
     }
 }
