@@ -230,3 +230,4 @@ DontSink/Temp/*
 *.dll
 DontSink/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll.mdb
 *.mat
+DontSink/Library/CurrentLayout.dwlt
