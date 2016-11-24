@@ -213,18 +213,10 @@ pip-log.txt
 *.mo
 
 #Mr Developer
-.mr.developer.cfg
-DontSink/Library/metadata/00/00000000000000002000000000000000
-DontSink/Assets/Scripts/Objects/ShipObjects/PlayerShipObjects/DreadnoughtObject.cs
-DontSink/Library/assetDatabase3
-DontSink/Library/metadata/00/00000000000000004000000000000000
-DontSink/Library/metadata/2e/2e54ee0ae2bd62d468c4f3ff81ba50f0
-DontSink/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
 DontSink/Library/metadata/*
 DontSink/Temp/*
 *.csproj
 *.unityproj
-*.sln
 *.user
 *.userprefs
 *.DS_store
