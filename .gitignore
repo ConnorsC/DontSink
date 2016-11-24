@@ -211,13 +211,3 @@ pip-log.txt
 
 #Translations
 *.mo
-
-#Mr Developer
-DontSink/Library/metadata/*
-DontSink/Temp/*
-*.csproj
-*.unityproj
-*.user
-*.userprefs
-*.DS_store
-*.sln
