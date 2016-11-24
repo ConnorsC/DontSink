@@ -228,3 +228,4 @@ DontSink/Temp/*
 *.user
 *.userprefs
 *.DS_store
+*.sln
