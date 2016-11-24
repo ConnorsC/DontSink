@@ -216,7 +216,7 @@ pip-log.txt
 .mr.developer.cfg
 
 DontSink/Library/metadata/*
-
+DontSink/Temp/*
 *.csproj
 *.unityproj
 *.sln
