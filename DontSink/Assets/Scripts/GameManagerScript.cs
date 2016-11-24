@@ -79,5 +79,14 @@ public class GameManagerScript : GameDriver{
     {
         DontDestroyOnLoad(gameObject);
     }
+    public void StopAudio()
+    {
+        gameObject.GetComponent<AudioSource>().Pause();
+    }
+    public void StartAudio()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
     public List<IslandObject> Islands { get { return islands;} set { islands = value; } }
 }
