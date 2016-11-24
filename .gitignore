@@ -214,9 +214,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-DontSink/Assets/Scenes/GameScreen.unity
-DontSink/Assets/Scenes/MapScreen.unity
-DontSink/Assets/Scenes/GameScreen.unity
 DontSink/Library/metadata/00/00000000000000002000000000000000
 DontSink/Assets/Scripts/Objects/ShipObjects/PlayerShipObjects/DreadnoughtObject.cs
 DontSink/Library/assetDatabase3
