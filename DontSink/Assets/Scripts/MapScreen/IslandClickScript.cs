@@ -24,7 +24,8 @@ public class IslandClickScript : MonoBehaviour {
                 {
                     manager.SetIsland(island);
                     LoadLevel();
-                }
+                }else
+                    print("Island cannot be selected from this island!");
                 break;
             case 2:
                 if (manager.GetIsland() == 1 || manager.GetIsland() == 2 || manager.GetIsland() == 4)
@@ -32,6 +33,8 @@ public class IslandClickScript : MonoBehaviour {
                     manager.SetIsland(island);
                     LoadLevel();
                 }
+                else
+                    print("Island cannot be selected from this island!");
                 break;
             case 3:
                 if (manager.GetIsland() == 1 || manager.GetIsland() == 3 || manager.GetIsland() == 4 || manager.GetIsland() == 7)
@@ -39,6 +42,8 @@ public class IslandClickScript : MonoBehaviour {
                     manager.SetIsland(island);
                     LoadLevel();
                 }
+                else
+                    print("Island cannot be selected from this island!");
                 break;
             case 4:
                 if (manager.GetIsland() == 2 || manager.GetIsland() == 3 || manager.GetIsland() == 4 || manager.GetIsland() == 6 || manager.GetIsland() == 7)
@@ -46,6 +51,8 @@ public class IslandClickScript : MonoBehaviour {
                     manager.SetIsland(island);
                     LoadLevel();
                 }
+                else
+                    print("Island cannot be selected from this island!");
                 break;
             case 5:
                 if (manager.GetIsland() == 5 || manager.GetIsland() == 6 || manager.GetIsland() == 7 || manager.GetIsland() == 8)
@@ -53,6 +60,8 @@ public class IslandClickScript : MonoBehaviour {
                     manager.SetIsland(island);
                     LoadLevel();
                 }
+                else
+                    print("Island cannot be selected from this island!");
                 break;
             case 6:
                 if (manager.GetIsland() == 4 || manager.GetIsland() == 5 || manager.GetIsland() == 6 || manager.GetIsland() == 7 )
@@ -60,6 +69,8 @@ public class IslandClickScript : MonoBehaviour {
                     manager.SetIsland(island);
                     LoadLevel();
                 }
+                else
+                    print("Island cannot be selected from this island!");
                 break;
             case 7:
                 if (manager.GetIsland() == 3 || manager.GetIsland() == 4 || manager.GetIsland() == 5 || manager.GetIsland() == 6 || manager.GetIsland() == 7)
@@ -67,6 +78,8 @@ public class IslandClickScript : MonoBehaviour {
                     manager.SetIsland(island);
                     LoadLevel();
                 }
+                else
+                    print("Island cannot be selected from this island!");
                 break;
             case 8:
                 if (manager.GetIsland() == 5 || manager.GetIsland() == 8)
@@ -74,6 +87,8 @@ public class IslandClickScript : MonoBehaviour {
                     manager.SetIsland(island);
                     LoadLevel();
                 }
+                else
+                    print("Island cannot be selected from this island!");
                 break;
             default:
                 print("Island cannot be selected!");
@@ -83,15 +98,15 @@ public class IslandClickScript : MonoBehaviour {
     private void LoadLevel()
     {
         // Will have more options soon
-        if (manager.Islands[island] is MerchantIslandObject)
+        if (manager.Islands[island-1] is MerchantIslandObject)
             manager.LoadLevel("PortScreen");
-        else if (manager.Islands[island] is EnemyIslandObject)
+        else if (manager.Islands[island-1] is EnemyIslandObject)
             manager.LoadLevel("CombatScreen");
-        else if (manager.Islands[island] is StartIslandObject)
+        else if (manager.Islands[island-1] is StartIslandObject)
             print("Start Island Type");
-        else if (manager.Islands[island] is EndIslandObject)
+        else if (manager.Islands[island-1] is EndIslandObject)
             print("End Island Type");
-        else if (manager.Islands[island] is DistressIslandObject)
+        else if (manager.Islands[island-1] is DistressIslandObject)
             print("Distress Island Type");
         else
             print("Incorrect Island Type");
