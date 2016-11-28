@@ -14,6 +14,7 @@ public class GameManagerScript : GameDriver{
     private string lastScene;
     private static bool spawned = false;
     private bool canSelectShip = true;
+    private int lastGeneratedMap = -1;
     private List<IslandObject> islands;
 
     public GameManagerScript()
@@ -92,4 +93,5 @@ public class GameManagerScript : GameDriver{
 
     public List<IslandObject> Islands { get { return islands;} set { islands = value; } }
     public bool CanSelectShip { get { return canSelectShip; } set { canSelectShip = value; } }
+    public int LastGeneratedMap { get { return lastGeneratedMap; } set { lastGeneratedMap = value; } }
 }

@@ -27,7 +27,11 @@ public class MapScreenLoad : MonoBehaviour {
         }
         // manager.SetIsland(1);
         // Call to set up the generation of the island objects
-        manager.Islands = mapGenerator.GenerateMap(manager.GetLevel());
+        if(manager.LastGeneratedMap != manager.GetLevel())
+        {
+            manager.Islands = mapGenerator.GenerateMap(manager.GetLevel());
+            manager.LastGeneratedMap = manager.GetLevel();
+        }
         SetIslands(manager.Islands);
     }
 
