@@ -25,7 +25,7 @@ public class MapScreenLoad : MonoBehaviour {
             playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
 
         }
-        manager.SetIsland(1);
+        // manager.SetIsland(1);
         // Call to set up the generation of the island objects
         manager.Islands = mapGenerator.GenerateMap(manager.GetLevel());
         SetIslands(manager.Islands);

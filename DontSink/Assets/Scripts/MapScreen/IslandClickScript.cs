@@ -15,7 +15,8 @@ public class IslandClickScript : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        print("Island: " + island);
+        print("Clicked Island: " + island);
+        print("Current Island: " + manager.GetIsland());
         switch (island)
         {
             case 1:
@@ -68,7 +69,7 @@ public class IslandClickScript : MonoBehaviour {
                 }
                 break;
             case 8:
-                if (manager.GetIsland() == 7 || manager.GetIsland() == 8)
+                if (manager.GetIsland() == 5 || manager.GetIsland() == 8)
                 {
                     manager.SetIsland(island);
                     LoadLevel();
@@ -86,6 +87,12 @@ public class IslandClickScript : MonoBehaviour {
             manager.LoadLevel("PortScreen");
         else if (manager.Islands[island] is EnemyIslandObject)
             manager.LoadLevel("CombatScreen");
+        else if (manager.Islands[island] is StartIslandObject)
+            print("Start Island Type");
+        else if (manager.Islands[island] is EndIslandObject)
+            print("End Island Type");
+        else if (manager.Islands[island] is DistressIslandObject)
+            print("Distress Island Type");
         else
             print("Incorrect Island Type");
     }
