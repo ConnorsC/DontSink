@@ -22,6 +22,7 @@ public class MapScreenLoad : MonoBehaviour {
         {
             print("loading 1");
             playerShip.transform.position = new Vector3(-7.9f, 0f, -17f);
+            playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
 
         }
         manager.SetIsland(1);

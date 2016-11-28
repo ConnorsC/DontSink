@@ -15,6 +15,7 @@ public class IslandClickScript : MonoBehaviour {
 
     public void OnMouseDown()
     {
+        print("Island: " + island);
         switch (island)
         {
             case 1:
@@ -73,6 +74,9 @@ public class IslandClickScript : MonoBehaviour {
                     LoadLevel();
                 }
                 break;
+            default:
+                print("Island cannot be selected!");
+                break;
         }
     }
     private void LoadLevel()
@@ -83,7 +87,7 @@ public class IslandClickScript : MonoBehaviour {
         else if (manager.Islands[island] is EnemyIslandObject)
             manager.LoadLevel("CombatScreen");
         else
-            print("Fuck yourself");
+            print("Incorrect Island Type");
     }
     
 }
