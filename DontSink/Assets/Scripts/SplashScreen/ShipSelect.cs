@@ -37,31 +37,34 @@ public class ShipSelect : MonoBehaviour{
     public void OnMouseDown()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        if (manager.CanSelectShip)
+        {
+            if (gameObject.tag == "Brig")
+            {
+                manager.GetPlayer().Ship = (new BrigObject());
+                manager.GetPlayer().Ship.ShipModel = brig;
+                manager.DontDestroy(brig);
+                Destroy(this);
+            }
+            else if (gameObject.tag == "Corvette")
+            {
+                manager.GetPlayer().Ship = (new CorvetteObject());
+                manager.GetPlayer().Ship.ShipModel = corvette;
+                manager.DontDestroy(corvette);
+                Destroy(this);
+            }
+            else if (gameObject.tag == "Dreadnought")
+            {
+                manager.GetPlayer().Ship = (new DreadnoughtObject());
+                manager.GetPlayer().Ship.ShipModel = dreadnought;
+                manager.DontDestroy(dreadnought);
+                Destroy(this);
+            }
 
-        if (gameObject.tag== "Brig")
-        {
-            manager.GetPlayer().Ship=(new BrigObject());
-            manager.GetPlayer().Ship.ShipModel = brig;
-            manager.DontDestroy(brig);
-            Destroy(this);
+            manager.SetIsland(1);
+            manager.SetLevel(1);
+            manager.CanSelectShip = false;
         }
-        else if (gameObject.tag == "Corvette")
-        {
-            manager.GetPlayer().Ship = (new CorvetteObject());
-            manager.GetPlayer().Ship.ShipModel = corvette;
-            manager.DontDestroy(corvette);
-            Destroy(this);
-        }
-        else if (gameObject.tag == "Dreadnought")
-        {
-            manager.GetPlayer().Ship = (new DreadnoughtObject());
-            manager.GetPlayer().Ship.ShipModel = dreadnought;
-            manager.DontDestroy(dreadnought);
-            Destroy(this);
-        }
-
-        manager.SetIsland(1);
-        manager.SetLevel(1);
         manager.LoadLevel("MapScreen");
             
     }
