@@ -69,15 +69,15 @@ public class ShipSelect : MonoBehaviour{
 
         if (gameObject.tag == "Brig")
         {
-            currentToolTipText = "A Great starting ship with balanced stats \n \n Health: "+ health + "\n Hull: "+hull +"\nDamage" +damage +"/nInventory Space: "+inventory;
+            currentToolTipText = "Brig\nA Great starting ship with balanced stats \n \n Health: "+ 10 + "\n Speed: "+10 +"\nDamage: " +10 +"\nInventory Space: "+100;
         }
         else if (gameObject.tag == "Corvette")
         {
-            currentToolTipText = "This is a boat";
+            currentToolTipText = "Corvette\nA Fast Ship \n \n Health: " + 8 + "\n Speed: " + 14 + "\nDamage: " + 8 + "\nInventory Space: " + 80;
         }
         else if (gameObject.tag == "Dreadnought")
         {
-            currentToolTipText = "This is a boat";
+            currentToolTipText = "Dreadnought\nA Strong ship but slow ship\n \n Health: " + 12 + "\n Speed: " + 6 + "\nDamage: " + 12 + "\nInventory Space: " + 120;
         }
 
 
@@ -94,8 +94,9 @@ public class ShipSelect : MonoBehaviour{
     {
         if (currentToolTipText != "")
         {
-            var x = 0;// Event.current.mousePosition.x;
-            var y = 0;//Event.current.mousePosition.y;
+            //where to place the label
+            var x = 0;
+            var y = 50;
             GUI.Label(new Rect(x, y, 300, 60), currentToolTipText, guiStyleBack);
             GUI.Label(new Rect(x, y, 300, 60), currentToolTipText, guiStyleFore);
             
