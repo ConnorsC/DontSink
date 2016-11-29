@@ -43,18 +43,21 @@ public class ShipSelect : MonoBehaviour{
             manager.GetPlayer().Ship=(new BrigObject());
             manager.GetPlayer().Ship.ShipModel = brig;
             manager.DontDestroy(brig);
+            Destroy(this);
         }
         else if (gameObject.tag == "Corvette")
         {
             manager.GetPlayer().Ship = (new CorvetteObject());
             manager.GetPlayer().Ship.ShipModel = corvette;
             manager.DontDestroy(corvette);
+            Destroy(this);
         }
         else if (gameObject.tag == "Dreadnought")
         {
             manager.GetPlayer().Ship = (new DreadnoughtObject());
             manager.GetPlayer().Ship.ShipModel = dreadnought;
             manager.DontDestroy(dreadnought);
+            Destroy(this);
         }
 
         manager.SetIsland(1);
