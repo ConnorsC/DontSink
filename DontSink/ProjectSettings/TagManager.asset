@@ -19,6 +19,9 @@ TagManager:
   - Btn1
   - Btn2
   - IslandOverlayLine
+  - EnemyShip1
+  - EnemyShip2
+  - DavyJones
   layers:
   - Default
   - TransparentFX

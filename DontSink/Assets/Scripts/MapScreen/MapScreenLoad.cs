@@ -132,34 +132,42 @@ public class MapScreenLoad : MonoBehaviour {
             case 1:
                 playerShip.transform.position = new Vector3(-8f, 0f, -17f);
                 playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                playerShip.transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             case 2:
                 playerShip.transform.position = new Vector3(-4.25f, 0f, -9.5f);
                 playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                playerShip.transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             case 3:
                 playerShip.transform.position = new Vector3(-0.25f, 0f, -19.5f);
                 playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                playerShip.transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             case 4:
                 playerShip.transform.position = new Vector3(0.75f, 0f, -12.5f);
                 playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                playerShip.transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             case 5:
                 playerShip.transform.position = new Vector3(10.75f, 0f, -15.5f);
                 playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                playerShip.transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             case 6:
                 playerShip.transform.position = new Vector3(6.75f, 0f, -10.5f);
                 playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                playerShip.transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             case 7:
                 playerShip.transform.position = new Vector3(4.25f, 0f, -15.5f);
                 playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                playerShip.transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             case 8:
                 playerShip.transform.position = new Vector3(17.75f, 0f, -13.5f);
                 playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                playerShip.transform.localScale = new Vector3(1f, 1f, 1f);
                 break;
             default:
                 break;
