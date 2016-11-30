@@ -55,10 +55,9 @@ public class ShipSelect : MonoBehaviour{
     public void OnMouseDown()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
-
-        if (gameObject.tag== "Brig")
+        if (gameObject.tag == "Brig")
         {
-            manager.GetPlayer().Ship=(new BrigObject());
+            manager.GetPlayer().Ship = (new BrigObject());
             manager.GetPlayer().Ship.ShipModel = brig;
             manager.DontDestroy(brig);
             Destroy(this);
@@ -81,7 +80,6 @@ public class ShipSelect : MonoBehaviour{
         manager.SetIsland(1);
         manager.SetLevel(1);
         manager.LoadLevel("MapScreen");
-            
     }
 
     private void OnMouseEnter()

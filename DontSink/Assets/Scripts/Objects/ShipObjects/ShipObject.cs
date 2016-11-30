@@ -114,6 +114,18 @@ public class ShipObject
         //else
         //    print("The ship does not contain this item.");
     }
+    public List<CannonObject> GetCannons()
+    {
+        List<CannonObject> cannons = new List<CannonObject> ();
+
+        foreach(ItemObject item in items)
+        {
+            if (item is CannonObject)
+                cannons.Add(item as CannonObject);
+        }
+
+        return cannons;
+    }
 }
 
 internal class MaxCurrentPair<T>
