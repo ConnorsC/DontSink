@@ -1,0 +1,583 @@
+fileFormatVersion: 2
+guid: dd6d0382a8698f24489c6e139a813956
+timeCreated: 1480442847
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 791d7e1cefc35e54c4f06419ac3944b4
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 45.90404, y: 14.328322, z: -10.691706}
+      lookAt: {x: 14.556936, y: 10.624755, z: -2.8337967}
+      up: {x: -0.110439, y: 0.9934973, z: 0.027684204}
+      fov: 30
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: box
+    100002: box 1
+    100004: box 2
+    100006: Broadside Cannon#1
+    100008: Broadside Cannon#1 1
+    100010: Broadside Cannon#1 10
+    100012: Broadside Cannon#1 11
+    100014: Broadside Cannon#1 12
+    100016: Broadside Cannon#1 13
+    100018: Broadside Cannon#1 14
+    100020: Broadside Cannon#1 15
+    100022: Broadside Cannon#1 16
+    100024: Broadside Cannon#1 17
+    100026: Broadside Cannon#1 18
+    100028: Broadside Cannon#1 19
+    100030: Broadside Cannon#1 2
+    100032: Broadside Cannon#1 20
+    100034: Broadside Cannon#1 21
+    100036: Broadside Cannon#1 22
+    100038: Broadside Cannon#1 23
+    100040: Broadside Cannon#1 24
+    100042: Broadside Cannon#1 25
+    100044: Broadside Cannon#1 26
+    100046: Broadside Cannon#1 27
+    100048: Broadside Cannon#1 28
+    100050: Broadside Cannon#1 29
+    100052: Broadside Cannon#1 3
+    100054: Broadside Cannon#1 30
+    100056: Broadside Cannon#1 31
+    100058: Broadside Cannon#1 32
+    100060: Broadside Cannon#1 33
+    100062: Broadside Cannon#1 34
+    100064: Broadside Cannon#1 35
+    100066: Broadside Cannon#1 36
+    100068: Broadside Cannon#1 37
+    100070: Broadside Cannon#1 4
+    100072: Broadside Cannon#1 5
+    100074: Broadside Cannon#1 6
+    100076: Broadside Cannon#1 7
+    100078: Broadside Cannon#1 8
+    100080: Broadside Cannon#1 9
+    100082: Crow's Nest
+    100084: Crow's Nest 1
+    100086: //RootNode
+    100088: Fancy Steering Wheel
+    100090: Group 10
+    100092: Group 12
+    100094: Group 123
+    100096: Group 125
+    100098: Group 14
+    100100: Group 16
+    100102: Group 18
+    100104: Group 2
+    100106: Group 20
+    100108: Group 34
+    100110: Group 36
+    100112: Group 38
+    100114: Group 4
+    100116: Group 40
+    100118: Group 42
+    100120: Group 44
+    100122: Group 46
+    100124: Group 48
+    100126: Group 50
+    100128: Group 52
+    100130: Group 54
+    100132: Group 56
+    100134: Group 58
+    100136: Group 6
+    100138: Group 60
+    100140: Group 62
+    100142: Group 64
+    100144: Group 66
+    100146: Group 68
+    100148: Group 70
+    100150: Group 72
+    100152: Group 74
+    100154: Group 76
+    100156: Group 78
+    100158: Group 8
+    100160: Group 80
+    100162: Group 82
+    100164: Group 84
+    100166: Group 86
+    100168: Group 88
+    100170: Group 90
+    100172: Group 92
+    100174: Group 94
+    100176: Group 95
+    100178: Large Spar
+    100180: Large Spar 1
+    100182: Large Spar 2
+    100184: Medium Spar
+    100186: Medium Spar 1
+    100188: Medium Spar 2
+    100190: Medium Spar 3
+    100192: Medium Spar 4
+    100194: Middle Platform
+    100196: Middle Platform 1
+    100198: Middle Platform 2
+    100200: Small Hatch
+    100202: Small Hatch 1
+    100204: Small Mast
+    100206: Small Mast 1
+    100208: Small Mast 2
+    100210: Small Spar
+    100212: sphere
+    100214: sphere 1
+    100216: sphere 2
+    400000: box
+    400002: box 1
+    400004: box 2
+    400006: Broadside Cannon#1
+    400008: Broadside Cannon#1 1
+    400010: Broadside Cannon#1 10
+    400012: Broadside Cannon#1 11
+    400014: Broadside Cannon#1 12
+    400016: Broadside Cannon#1 13
+    400018: Broadside Cannon#1 14
+    400020: Broadside Cannon#1 15
+    400022: Broadside Cannon#1 16
+    400024: Broadside Cannon#1 17
+    400026: Broadside Cannon#1 18
+    400028: Broadside Cannon#1 19
+    400030: Broadside Cannon#1 2
+    400032: Broadside Cannon#1 20
+    400034: Broadside Cannon#1 21
+    400036: Broadside Cannon#1 22
+    400038: Broadside Cannon#1 23
+    400040: Broadside Cannon#1 24
+    400042: Broadside Cannon#1 25
+    400044: Broadside Cannon#1 26
+    400046: Broadside Cannon#1 27
+    400048: Broadside Cannon#1 28
+    400050: Broadside Cannon#1 29
+    400052: Broadside Cannon#1 3
+    400054: Broadside Cannon#1 30
+    400056: Broadside Cannon#1 31
+    400058: Broadside Cannon#1 32
+    400060: Broadside Cannon#1 33
+    400062: Broadside Cannon#1 34
+    400064: Broadside Cannon#1 35
+    400066: Broadside Cannon#1 36
+    400068: Broadside Cannon#1 37
+    400070: Broadside Cannon#1 4
+    400072: Broadside Cannon#1 5
+    400074: Broadside Cannon#1 6
+    400076: Broadside Cannon#1 7
+    400078: Broadside Cannon#1 8
+    400080: Broadside Cannon#1 9
+    400082: Crow's Nest
+    400084: Crow's Nest 1
+    400086: //RootNode
+    400088: Fancy Steering Wheel
+    400090: Group 10
+    400092: Group 12
+    400094: Group 123
+    400096: Group 125
+    400098: Group 14
+    400100: Group 16
+    400102: Group 18
+    400104: Group 2
+    400106: Group 20
+    400108: Group 34
+    400110: Group 36
+    400112: Group 38
+    400114: Group 4
+    400116: Group 40
+    400118: Group 42
+    400120: Group 44
+    400122: Group 46
+    400124: Group 48
+    400126: Group 50
+    400128: Group 52
+    400130: Group 54
+    400132: Group 56
+    400134: Group 58
+    400136: Group 6
+    400138: Group 60
+    400140: Group 62
+    400142: Group 64
+    400144: Group 66
+    400146: Group 68
+    400148: Group 70
+    400150: Group 72
+    400152: Group 74
+    400154: Group 76
+    400156: Group 78
+    400158: Group 8
+    400160: Group 80
+    400162: Group 82
+    400164: Group 84
+    400166: Group 86
+    400168: Group 88
+    400170: Group 90
+    400172: Group 92
+    400174: Group 94
+    400176: Group 95
+    400178: Large Spar
+    400180: Large Spar 1
+    400182: Large Spar 2
+    400184: Medium Spar
+    400186: Medium Spar 1
+    400188: Medium Spar 2
+    400190: Medium Spar 3
+    400192: Medium Spar 4
+    400194: Middle Platform
+    400196: Middle Platform 1
+    400198: Middle Platform 2
+    400200: Small Hatch
+    400202: Small Hatch 1
+    400204: Small Mast
+    400206: Small Mast 1
+    400208: Small Mast 2
+    400210: Small Spar
+    400212: sphere
+    400214: sphere 1
+    400216: sphere 2
+    2300000: box
+    2300002: box 1
+    2300004: box 2
+    2300006: Broadside Cannon#1
+    2300008: Broadside Cannon#1 1
+    2300010: Broadside Cannon#1 10
+    2300012: Broadside Cannon#1 11
+    2300014: Broadside Cannon#1 12
+    2300016: Broadside Cannon#1 13
+    2300018: Broadside Cannon#1 14
+    2300020: Broadside Cannon#1 15
+    2300022: Broadside Cannon#1 16
+    2300024: Broadside Cannon#1 17
+    2300026: Broadside Cannon#1 18
+    2300028: Broadside Cannon#1 19
+    2300030: Broadside Cannon#1 2
+    2300032: Broadside Cannon#1 20
+    2300034: Broadside Cannon#1 21
+    2300036: Broadside Cannon#1 22
+    2300038: Broadside Cannon#1 23
+    2300040: Broadside Cannon#1 24
+    2300042: Broadside Cannon#1 25
+    2300044: Broadside Cannon#1 26
+    2300046: Broadside Cannon#1 27
+    2300048: Broadside Cannon#1 28
+    2300050: Broadside Cannon#1 29
+    2300052: Broadside Cannon#1 3
+    2300054: Broadside Cannon#1 30
+    2300056: Broadside Cannon#1 31
+    2300058: Broadside Cannon#1 32
+    2300060: Broadside Cannon#1 33
+    2300062: Broadside Cannon#1 34
+    2300064: Broadside Cannon#1 35
+    2300066: Broadside Cannon#1 36
+    2300068: Broadside Cannon#1 37
+    2300070: Broadside Cannon#1 4
+    2300072: Broadside Cannon#1 5
+    2300074: Broadside Cannon#1 6
+    2300076: Broadside Cannon#1 7
+    2300078: Broadside Cannon#1 8
+    2300080: Broadside Cannon#1 9
+    2300082: Crow's Nest
+    2300084: Crow's Nest 1
+    2300086: //RootNode
+    2300088: Fancy Steering Wheel
+    2300090: Group 10
+    2300092: Group 12
+    2300094: Group 123
+    2300096: Group 125
+    2300098: Group 14
+    2300100: Group 16
+    2300102: Group 18
+    2300104: Group 2
+    2300106: Group 20
+    2300108: Group 34
+    2300110: Group 36
+    2300112: Group 38
+    2300114: Group 4
+    2300116: Group 40
+    2300118: Group 42
+    2300120: Group 44
+    2300122: Group 46
+    2300124: Group 48
+    2300126: Group 50
+    2300128: Group 52
+    2300130: Group 54
+    2300132: Group 56
+    2300134: Group 58
+    2300136: Group 6
+    2300138: Group 60
+    2300140: Group 62
+    2300142: Group 64
+    2300144: Group 66
+    2300146: Group 68
+    2300148: Group 70
+    2300150: Group 72
+    2300152: Group 74
+    2300154: Group 76
+    2300156: Group 78
+    2300158: Group 8
+    2300160: Group 80
+    2300162: Group 82
+    2300164: Group 84
+    2300166: Group 86
+    2300168: Group 88
+    2300170: Group 90
+    2300172: Group 92
+    2300174: Group 95
+    2300176: Large Spar
+    2300178: Large Spar 1
+    2300180: Large Spar 2
+    2300182: Medium Spar
+    2300184: Medium Spar 1
+    2300186: Medium Spar 2
+    2300188: Medium Spar 3
+    2300190: Medium Spar 4
+    2300192: Middle Platform
+    2300194: Middle Platform 1
+    2300196: Middle Platform 2
+    2300198: Small Hatch
+    2300200: Small Hatch 1
+    2300202: Small Mast
+    2300204: Small Mast 1
+    2300206: Small Mast 2
+    2300208: Small Spar
+    2300210: sphere
+    2300212: sphere 1
+    2300214: sphere 2
+    3300000: box
+    3300002: box 1
+    3300004: box 2
+    3300006: Broadside Cannon#1
+    3300008: Broadside Cannon#1 1
+    3300010: Broadside Cannon#1 10
+    3300012: Broadside Cannon#1 11
+    3300014: Broadside Cannon#1 12
+    3300016: Broadside Cannon#1 13
+    3300018: Broadside Cannon#1 14
+    3300020: Broadside Cannon#1 15
+    3300022: Broadside Cannon#1 16
+    3300024: Broadside Cannon#1 17
+    3300026: Broadside Cannon#1 18
+    3300028: Broadside Cannon#1 19
+    3300030: Broadside Cannon#1 2
+    3300032: Broadside Cannon#1 20
+    3300034: Broadside Cannon#1 21
+    3300036: Broadside Cannon#1 22
+    3300038: Broadside Cannon#1 23
+    3300040: Broadside Cannon#1 24
+    3300042: Broadside Cannon#1 25
+    3300044: Broadside Cannon#1 26
+    3300046: Broadside Cannon#1 27
+    3300048: Broadside Cannon#1 28
+    3300050: Broadside Cannon#1 29
+    3300052: Broadside Cannon#1 3
+    3300054: Broadside Cannon#1 30
+    3300056: Broadside Cannon#1 31
+    3300058: Broadside Cannon#1 32
+    3300060: Broadside Cannon#1 33
+    3300062: Broadside Cannon#1 34
+    3300064: Broadside Cannon#1 35
+    3300066: Broadside Cannon#1 36
+    3300068: Broadside Cannon#1 37
+    3300070: Broadside Cannon#1 4
+    3300072: Broadside Cannon#1 5
+    3300074: Broadside Cannon#1 6
+    3300076: Broadside Cannon#1 7
+    3300078: Broadside Cannon#1 8
+    3300080: Broadside Cannon#1 9
+    3300082: Crow's Nest
+    3300084: Crow's Nest 1
+    3300086: //RootNode
+    3300088: Fancy Steering Wheel
+    3300090: Group 10
+    3300092: Group 12
+    3300094: Group 123
+    3300096: Group 125
+    3300098: Group 14
+    3300100: Group 16
+    3300102: Group 18
+    3300104: Group 2
+    3300106: Group 20
+    3300108: Group 34
+    3300110: Group 36
+    3300112: Group 38
+    3300114: Group 4
+    3300116: Group 40
+    3300118: Group 42
+    3300120: Group 44
+    3300122: Group 46
+    3300124: Group 48
+    3300126: Group 50
+    3300128: Group 52
+    3300130: Group 54
+    3300132: Group 56
+    3300134: Group 58
+    3300136: Group 6
+    3300138: Group 60
+    3300140: Group 62
+    3300142: Group 64
+    3300144: Group 66
+    3300146: Group 68
+    3300148: Group 70
+    3300150: Group 72
+    3300152: Group 74
+    3300154: Group 76
+    3300156: Group 78
+    3300158: Group 8
+    3300160: Group 80
+    3300162: Group 82
+    3300164: Group 84
+    3300166: Group 86
+    3300168: Group 88
+    3300170: Group 90
+    3300172: Group 92
+    3300174: Group 95
+    3300176: Large Spar
+    3300178: Large Spar 1
+    3300180: Large Spar 2
+    3300182: Medium Spar
+    3300184: Medium Spar 1
+    3300186: Medium Spar 2
+    3300188: Medium Spar 3
+    3300190: Medium Spar 4
+    3300192: Middle Platform
+    3300194: Middle Platform 1
+    3300196: Middle Platform 2
+    3300198: Small Hatch
+    3300200: Small Hatch 1
+    3300202: Small Mast
+    3300204: Small Mast 1
+    3300206: Small Mast 2
+    3300208: Small Spar
+    3300210: sphere
+    3300212: sphere 1
+    3300214: sphere 2
+    4300000: Mesh EnemyShip1
+    4300002: Mesh Group 2
+    4300004: Mesh Group 4
+    4300006: Mesh Group 6
+    4300008: Mesh Group 8
+    4300010: Mesh Group 10
+    4300012: Mesh Group 12
+    4300014: Mesh Group 14
+    4300016: Mesh Group 16
+    4300018: Mesh Group 18
+    4300020: Mesh Group 20
+    4300022: Mesh sphere
+    4300024: Mesh sphere
+    4300026: Mesh sphere
+    4300028: Mesh box
+    4300030: Mesh Group 34
+    4300032: Mesh Group 36
+    4300034: Mesh Group 38
+    4300036: Mesh Group 40
+    4300038: Mesh Group 42
+    4300040: Mesh Group 44
+    4300042: Mesh Group 46
+    4300044: Mesh Group 48
+    4300046: Mesh Group 50
+    4300048: Mesh Group 52
+    4300050: Mesh Group 54
+    4300052: Mesh Group 56
+    4300054: Mesh Group 58
+    4300056: Mesh Group 60
+    4300058: Mesh Group 62
+    4300060: Mesh Group 64
+    4300062: Mesh Group 66
+    4300064: Mesh Group 68
+    4300066: Mesh Group 70
+    4300068: Mesh Group 72
+    4300070: Mesh Group 74
+    4300072: Mesh Group 76
+    4300074: Mesh Group 78
+    4300076: Mesh Group 80
+    4300078: Mesh Group 82
+    4300080: Mesh Group 84
+    4300082: Mesh Group 86
+    4300084: Mesh Group 88
+    4300086: Mesh Group 90
+    4300088: Mesh Group 92
+    4300090: Mesh Group 95
+    4300092: Mesh Small Spar
+    4300094: Mesh Small Mast
+    4300096: Mesh Large Spar
+    4300098: Mesh Medium Spar
+    4300100: Mesh Fancy Steering Wheel
+    4300102: Mesh Group 123
+    4300104: Mesh Group 125
+    4300106: Mesh Broadside Cannon#1
+    4300108: Mesh Crow's Nest
+    4300110: Mesh Middle Platform
+    4300112: Mesh Small Hatch
+    4300114: Mesh Small Hatch
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
