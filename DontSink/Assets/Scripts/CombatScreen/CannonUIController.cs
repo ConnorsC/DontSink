@@ -13,7 +13,8 @@ public class CannonUIController : MonoBehaviour
     private float cooldownTimer;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         button = this.gameObject.transform.parent.Find("CannonSelect").gameObject;
         cooldownBar = this.gameObject.transform.parent.Find("CannonCooldown").GetComponent<Slider>();
         text = button.transform.Find("CannonName").GetComponent<Text>();

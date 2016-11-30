@@ -16,12 +16,12 @@ public class ScreenLoad : MonoBehaviour {
         enemyShip = Instantiate(Resources.Load(enemyIsland.Ship.ShipModel, typeof(GameObject))) as GameObject;
         
         playerShip = manager.GetPlayer().Ship.ShipModel;
-        playerShip.transform.position = new Vector3(-7f,0f,-16f);
+        playerShip.transform.position = new Vector3(-7f,0f,-14f);
         playerShip.transform.Rotate(new Vector3(0f,-90f,0f));
-        playerShip.transform.localScale = new Vector3(2f, 2.5f, 2.5f);
+        playerShip.transform.localScale = new Vector3(2f, 2f, 2.5f);
 
-        enemyShip.transform.position = new Vector3(12f, 0f, -16f);
+        enemyShip.transform.position = new Vector3(12f, 0f, -14f);
         enemyShip.transform.Rotate(new Vector3(0f, -90f, 0f));
-        enemyShip.transform.localScale = new Vector3(2f, 2.5f, 2.5f);
+        enemyShip.transform.localScale = new Vector3(2f, 2f, 2.5f);
     }
 }
