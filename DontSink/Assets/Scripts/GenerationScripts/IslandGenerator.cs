@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class IslandGenerator : MonoBehaviour
 {
+    static string enemyShipPath1 = "Objects/Ships/EnemyShip1";
+    static string enemyShipPath2 = "Objects/Ships/EnemyShip2";
     private static System.Random rnd = new System.Random();
 
     public List<IslandObject> GenerateIslands(List<int> islands, int level)
@@ -47,6 +49,10 @@ public class IslandGenerator : MonoBehaviour
         ItemObject boon = new ItemObject(); // Adding no boon as we have no items atm
         int difficulty = rnd.Next(lvl/2, lvl+1); // Randomly select the difficulty based on the current level
         EnemyShipObject ship = new EnemyShipObject(boon, difficulty);
+        if (rnd.Next(0, 10) >= 5)
+            ship.ShipModel = enemyShipPath1;
+        else
+            ship.ShipModel = enemyShipPath2;
         return new EnemyIslandObject(ship);
     }
     private DistressIslandObject GenerateDistressShip(int lvl)

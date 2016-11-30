@@ -22,6 +22,8 @@ TagManager:
   - EnemyShip1
   - EnemyShip2
   - DavyJones
+  - DistressShip1
+  - CannonUI
   layers:
   - Default
   - TransparentFX
