@@ -9,13 +9,12 @@ public class ScreenLoad : MonoBehaviour {
     private GameObject enemyShip;
 
     // Use this for initialization
-    void Start () {
-
+    void Start ()
+    {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         enemyIsland = manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject;
         enemyShip = Instantiate(Resources.Load(enemyIsland.Ship.ShipModel, typeof(GameObject))) as GameObject;
-
-
+        
         playerShip = manager.GetPlayer().Ship.ShipModel;
         playerShip.transform.position = new Vector3(-7f,0f,-16f);
         playerShip.transform.Rotate(new Vector3(0f,-90f,0f));

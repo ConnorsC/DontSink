@@ -43,6 +43,7 @@ public class UiUpdate : MonoBehaviour {
         playerHealthBar.maxValue = playerMaxHealth;
         //PlayerMaxHull = player.maxHull;
 
+        
     }
 
     void FixedUpdate () {
