@@ -52,7 +52,7 @@ public class ShipObject : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        print("Take Damage");
+        //print("Take Damage");
         if (rnd.Next(1, 100) > currentSpeed)
         {
 
@@ -64,13 +64,13 @@ public class ShipObject : MonoBehaviour
             if (damage >= health.Current)
             {
                 health.Current = 0;
-                print("rip Ship");
+                //print("rip Ship");
                 DestroyShip();
             }
             else
             {
                 health.Current -= damage;
-                print("Damage taken: " + damage);
+                //print("Damage taken: " + damage);
             }
         }
     }
