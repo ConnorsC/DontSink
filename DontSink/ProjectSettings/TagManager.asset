@@ -24,6 +24,7 @@ TagManager:
   - DavyJones
   - DistressShip1
   - CannonUI
+  - CombatUI
   layers:
   - Default
   - TransparentFX
