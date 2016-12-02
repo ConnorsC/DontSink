@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class ShipObject
+public class ShipObject : MonoBehaviour
 {
     //Fields
     private int baseHealth;
@@ -18,6 +18,7 @@ public class ShipObject
     private GameObject shipModel;
     private string prefabPath;
 
+    private static System.Random rnd = new System.Random();
     public ShipObject() { }
 
     public ShipObject(int health, int speed, int damage, HullObject hull, List<ItemObject> items, List<CrewObject> crew,GameObject shipModel, string prefabPath)
@@ -25,7 +26,9 @@ public class ShipObject
         this.baseHealth = health;
         this.health = new MaxCurrentPair<int>(health);
         this.baseSpeed = speed;
+        this.currentDamage = speed;
         this.baseDamage = damage;
+        this.currentDamage = damage;
         this.hull = hull;
         this.items = items;
         this.crew = crew;
@@ -48,19 +51,28 @@ public class ShipObject
     public string getPrefabPath { get { return prefabPath; } set { prefabPath = value; } }
 
     public void TakeDamage(int damage)
-    {       
-        if (hull != null)
+    {
+        print("Take Damage");
+        if (rnd.Next(1, 100) > currentSpeed)
         {
-            damage -= hull.Damage_Reduction;
-            hull.TakeDamage();
+
+            if (hull != null)
+            {
+                damage -= hull.Damage_Reduction;
+                hull.TakeDamage();
+            }
+            if (damage >= health.Current)
+            {
+                health.Current = 0;
+                print("rip Ship");
+                DestroyShip();
+            }
+            else
+            {
+                health.Current -= damage;
+                print("Damage taken: " + damage);
+            }
         }
-        if (currentDamage >= health.Current)
-        {
-            health.Current = 0;
-            DestroyShip();
-        }
-        else
-            health.Current -= currentDamage;
     }
     private void DestroyShip()
     {

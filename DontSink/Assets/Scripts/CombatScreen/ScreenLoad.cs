@@ -48,7 +48,7 @@ public class ScreenLoad : MonoBehaviour {
             GameObject cannonUI = Instantiate(Resources.Load(cannonUIPath, typeof(GameObject))) as GameObject;
             CannonUIController cannonController = cannonUI.transform.Find("Click").GetComponent<CannonUIController>();
             cannonController.cannonName = "Cannon " + cannonNumber;
-            cannonController.cooldown = cannon.Fire_Rate;
+            cannonController.cooldown = /*3;// */cannon.Fire_Rate;
             cannonUI.transform.SetParent(canvas.transform);
             if (cannonNumber <= 4)
                 cannonUI.transform.localPosition = new Vector3(0f, -((cannonNumber - 1) * 20), 0f);
@@ -56,7 +56,6 @@ public class ScreenLoad : MonoBehaviour {
                 cannonUI.transform.localPosition = new Vector3(100f, -((cannonNumber - 5) * 20), 0f);
             cannonUI.transform.localScale = new Vector3(1f, 1f, 1f);
             cannonNumber++;
-        //}
         }
     }
 }
