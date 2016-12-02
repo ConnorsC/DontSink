@@ -8,8 +8,6 @@ public class ShipSelect : MonoBehaviour{
     private GUIStyle guiStyleFore;
     private GUIStyle guiStyleBack1;
     private GUIStyle guiStyleBack2;
-    private GUIStyle guiStyleBack3;
-    private GUIStyle guiStyleBack4;
     private GameObject brig;
     private GameObject corvette;
     private GameObject dreadnought;
@@ -30,12 +28,6 @@ public class ShipSelect : MonoBehaviour{
 
         guiStyleBack2 = new GUIStyle();
         SetupStyle(guiStyleBack2);
-
-        guiStyleBack3 = new GUIStyle();
-        SetupStyle(guiStyleBack3);
-
-        guiStyleBack4 = new GUIStyle();
-        SetupStyle(guiStyleBack4);
 
         brig = GameObject.FindGameObjectWithTag("Brig");
         corvette = GameObject.FindGameObjectWithTag("Corvette");
@@ -116,12 +108,16 @@ public class ShipSelect : MonoBehaviour{
             //guiStyleBack.normal.background = imageTexture;
             guiStyleBack1.normal.background = imageTexture;
             //where to place the label
-            var x = 0;
-            var y = 50;
+
+
+            var x = Screen.width/2 -400;
+
+            var y = Screen.height/2 -200;
+
             GUI.Label(new Rect(x, y + 2, 300, 400), currentToolTipText, guiStyleBack1);
             GUI.Label(new Rect(x, y - 2, 300, 400), currentToolTipText, guiStyleBack2);
-            GUI.Label(new Rect(x + 2, y, 300, 400), currentToolTipText, guiStyleBack3);
-            GUI.Label(new Rect(x - 2, y, 300, 400), currentToolTipText, guiStyleBack4);
+            GUI.Label(new Rect(x + 2, y, 300, 400), currentToolTipText, guiStyleBack2);
+            GUI.Label(new Rect(x - 2, y, 300, 400), currentToolTipText, guiStyleBack2);
             GUI.Label(new Rect(x, y, 300, 400), currentToolTipText, guiStyleFore);
             
             
