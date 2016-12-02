@@ -12,6 +12,7 @@ public class UiUpdate : MonoBehaviour
     private Slider enemyHull;
 
     private GameManagerScript manager;
+    private bool canDestroy = true;
 
     // Use this for initialization
     void Awake ()
@@ -77,17 +78,27 @@ public class UiUpdate : MonoBehaviour
         // If any bar reaches 0 set the bar color to black
         if (playerHealthBar.value == 0)
             EmptyBar(playerHealthBar);
-        if (enemyHealthBar.value == 0)
+        if (enemyHealthBar.value == 0 && canDestroy)
+        {
             EmptyBar(enemyHealthBar);
+            DestroyEnemyShip();
+        }
         if (playerHull.value == 0)
             EmptyBar(playerHull);
         if (enemyHull.value == 0)
             EmptyBar(enemyHull);
-
     }
     void EmptyBar(Slider bar)
     {
         Color ded = Color.black;
         bar.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = ded;
+    }
+    void DestroyEnemyShip()
+    {
+        string enemyShipName = enemy.ShipModel;
+        string enemyShipTag = enemyShipName.Substring(14, enemyShipName.Length-14);
+        print("Enemy Ship Tag: " + enemyShipTag);
+        GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
+        canDestroy = false;
     }
 }

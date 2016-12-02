@@ -18,6 +18,8 @@ public class ScreenLoad : MonoBehaviour {
 
         enemyIsland = manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject;
         enemyShip = Instantiate(Resources.Load(enemyIsland.Ship.ShipModel, typeof(GameObject))) as GameObject;
+        string enemyShipTag = enemyIsland.Ship.ShipModel.Substring(14, enemyIsland.Ship.ShipModel.Length - 14);
+        enemyShip.tag = enemyShipTag;
         SetEnemyTransform();
 
         playerShipObject = manager.GetPlayer().Ship;
@@ -42,13 +44,14 @@ public class ScreenLoad : MonoBehaviour {
     {
         int cannonNumber = 1;
         GameObject canvas = GameObject.FindGameObjectWithTag("CombatUI");
-        foreach (CannonObject cannon in playerShipObject.GetCannons())
+        //foreach (CannonObject cannon in playerShipObject.GetCannons())
+        //{
+        for (int j = 0; j < 8; j++)
         {
-        //for (int j=0;j<8;j++) {
             GameObject cannonUI = Instantiate(Resources.Load(cannonUIPath, typeof(GameObject))) as GameObject;
             CannonUIController cannonController = cannonUI.transform.Find("Click").GetComponent<CannonUIController>();
             cannonController.cannonName = "Cannon " + cannonNumber;
-            cannonController.cooldown = /*3;// */cannon.Fire_Rate;
+            cannonController.cooldown = 3;// cannon.Fire_Rate;
             cannonUI.transform.SetParent(canvas.transform);
             if (cannonNumber <= 4)
                 cannonUI.transform.localPosition = new Vector3(0f, -((cannonNumber - 1) * 20), 0f);
