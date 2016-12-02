@@ -32,9 +32,10 @@ public class CannonUIController : MonoBehaviour
     }
     public void Click()
     {
-        if(cooldownTimer >= cooldown)
+        if (cooldownTimer >= cooldown)
+        {
             cooldownTimer = 0.0f;
-        cooldownBar.value = cooldownTimer;
-        print("Button Clicked");
+            print("Button Clicked");
+        }
     }
 }
