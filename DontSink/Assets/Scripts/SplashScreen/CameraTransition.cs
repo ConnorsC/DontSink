@@ -10,5 +10,6 @@ public class CameraTransition : MonoBehaviour {
         anim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
         int campan = Animator.StringToHash("MenuSelect");
         anim.SetTrigger(campan);
+        Destroy(gameObject);
     }
 }
