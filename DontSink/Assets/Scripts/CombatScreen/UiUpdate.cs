@@ -1,56 +1,117 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class UiUpdate : MonoBehaviour {
-
-    private ShipObject player;
-    private GameObject temp;
+public class UiUpdate : MonoBehaviour
+{
+    private PlayerShipObject player;
+    private EnemyShipObject enemy;
     private Slider playerHealthBar;
     private Slider playerHull;
     private Slider enemyHealthBar;
     private Slider enemyHull;
-    private int playerMaxHealth;
-    private int PlayerMaxHull;
+
     private GameManagerScript manager;
 
     // Use this for initialization
-    void Awake () {
-
-        //get player ship
-        //temp = GameObject.FindGameObjectWithTag("PlayerInstance");
-        // temp = manager.GetPlayer().Ship;
-
+    void Awake ()
+    {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
 
         if (manager.GetPlayer() == null)
         {
             print("null ship");
+            return;
         }
 
         player = manager.GetPlayer().Ship;
-        //get player healthbar and hull bar. I dont think this is safe
-        playerHealthBar = (GameObject.FindGameObjectWithTag("PlayerHealthBar")).GetComponent<Slider>();
-        playerHull = (GameObject.FindGameObjectWithTag("PlayerHullBar")).GetComponent<Slider>();
+        enemy = (manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Ship;
 
-        //get enemy healthbar and hull bar. I dont think this is safe
-        //enemyHealthBar = (GameObject.FindGameObjectWithTag("EnemyHealthBar")).GetComponent<Slider>();
-        //enemyHull = (GameObject.FindGameObjectWithTag("EnemyHullBar")).GetComponent<Slider>();
+        // Get player & enemy healthbar and hull bar. // Possibly unsafe
+        playerHealthBar = this.gameObject.transform.parent.Find("PlayerHealth").Find("HealthBar").gameObject.GetComponent<Slider>();
+        playerHull = this.gameObject.transform.parent.Find("HullUI").Find("HullHP").gameObject.GetComponent<Slider>();
 
-        playerMaxHealth = player.MaxHealth;
+        enemyHealthBar = this.gameObject.transform.parent.Find("EnemyUI").Find("HealthBar").gameObject.GetComponent<Slider>();
+        enemyHull = this.gameObject.transform.parent.Find("EnemyUI").Find("HullHP").gameObject.GetComponent<Slider>();
 
-        //set max values
-        playerHealthBar.maxValue = playerMaxHealth;
-        //PlayerMaxHull = player.maxHull;
+        // Set values for player and enemy hp
+        playerHealthBar.maxValue = player.MaxHealth;
+        playerHealthBar.value = player.CurrentHealth;
+        enemyHealthBar.maxValue = enemy.MaxHealth;
+        enemyHealthBar.value = enemy.CurrentHealth;
 
-        
+        // Set values for player and enemy hull hp if applicable
+        if (player.Hull != null)
+        {
+            playerHull.maxValue = player.Hull.MaxHealth;
+            playerHull.value = player.Hull.CurrentHealth;
+        }
+        else
+        {
+            playerHull.maxValue = 0;
+            playerHull.value = 0;
+        }
+        if(enemy.Hull != null)
+        {
+            enemyHull.maxValue = enemy.Hull.MaxHealth;
+            enemyHull.value = enemy.Hull.CurrentHealth;
+        }
+        else
+        {
+            enemyHull.maxValue = 0;
+            enemyHull.value = 0;
+        }
     }
 
-    void FixedUpdate () {
-
+    void Update ()
+    {
+        // Update health
         playerHealthBar.value = player.CurrentHealth;
-        //playerHealthBar.value = player.hull;
+        enemyHealthBar.value = enemy.CurrentHealth;
+        // Update hull hp if applicable
+        if (player.Hull != null)
+            playerHull.value = player.Hull.CurrentHealth;
+        if (enemy.Hull != null)
+            enemyHull.value = enemy.Hull.CurrentHealth;
 
+        // If any bar reaches 0 set the bar color to black
+        if (playerHealthBar.value == 0)
+            EmptyBar(playerHealthBar);
+        if (enemyHealthBar.value == 0)
+        {
+            EmptyBar(enemyHealthBar);
+            DestroyEnemyShip();
+        }
+        if (playerHull.value == 0)
+            EmptyBar(playerHull);
+        if (enemyHull.value == 0)
+            EmptyBar(enemyHull);
+    }
+    void EmptyBar(Slider bar)
+    {
+        Color ded = Color.black;
+        bar.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = ded;
+    }
+    void DestroyEnemyShip()
+    {
+        string enemyShipName = enemy.ShipModel;
+        string enemyShipTag = enemyShipName.Substring(14, enemyShipName.Length-14);
 
-	}
+        GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
+        enemyHealthBar.gameObject.SetActive(false);
+        enemyHull.gameObject.SetActive(false);
+        GameObject[] enemyCannons = GameObject.FindGameObjectsWithTag("EnemyCannonUI");
+        foreach(GameObject enemyCannonUI in enemyCannons)
+        {
+            enemyCannonUI.SetActive(false);
+        }
+
+        //Will later be called by clicking a button
+        ReturnToMap();
+    }
+    void ReturnToMap()
+    {
+        manager.LoadLevel("MapScreen");
+    }
 }

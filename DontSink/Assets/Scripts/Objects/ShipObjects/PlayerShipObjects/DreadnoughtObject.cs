@@ -9,7 +9,7 @@ public class DreadnoughtObject : PlayerShipObject
     static GameObject shipModel;
     static string prefabPath = "Objects/Ships/BlackPearl";
 
-    public DreadnoughtObject() : base(10, 10, 10, hull,items, crew, shipModel,prefabPath) {
+    public DreadnoughtObject() : base(120, 6, 12, hull,items, crew, shipModel,prefabPath) {
         shipModel = GameObject.FindGameObjectWithTag("Dreadnought");
         
     }

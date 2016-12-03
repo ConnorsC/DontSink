@@ -15,8 +15,7 @@ public class IslandClickScript : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        print("Clicked Island: " + island);
-        print("Current Island: " + manager.GetIsland());
+        manager.LoadLevel("MapScreen");
         switch (island)
         {
             case 1:

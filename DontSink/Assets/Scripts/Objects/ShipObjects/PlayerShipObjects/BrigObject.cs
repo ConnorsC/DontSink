@@ -10,7 +10,7 @@ public class BrigObject : PlayerShipObject
     static GameObject shipModel;
     static string prefabPath = "Objects/Ships/Galleon";
 
-    public BrigObject() : base(10, 10, 10, hull,items, crew, shipModel,prefabPath) {
+    public BrigObject() : base(100, 10, 10, hull,items, crew, shipModel,prefabPath) {
         shipModel = GameObject.FindGameObjectWithTag("Brig");
 
     }

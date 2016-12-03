@@ -50,9 +50,13 @@ public class IslandGenerator : MonoBehaviour
         int difficulty = rnd.Next(lvl/2, lvl+1); // Randomly select the difficulty based on the current level
         EnemyShipObject ship = new EnemyShipObject(boon, difficulty);
         if (rnd.Next(0, 10) >= 5)
+        {
             ship.ShipModel = enemyShipPath1;
+        }
         else
+        {
             ship.ShipModel = enemyShipPath2;
+        }
         return new EnemyIslandObject(ship);
     }
     private DistressIslandObject GenerateDistressShip(int lvl)
