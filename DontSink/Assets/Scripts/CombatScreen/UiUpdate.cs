@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class UiUpdate : MonoBehaviour
@@ -12,7 +13,6 @@ public class UiUpdate : MonoBehaviour
     private Slider enemyHull;
 
     private GameManagerScript manager;
-    private bool canDestroy = true;
 
     // Use this for initialization
     void Awake ()
@@ -78,7 +78,7 @@ public class UiUpdate : MonoBehaviour
         // If any bar reaches 0 set the bar color to black
         if (playerHealthBar.value == 0)
             EmptyBar(playerHealthBar);
-        if (enemyHealthBar.value == 0 && canDestroy)
+        if (enemyHealthBar.value == 0)
         {
             EmptyBar(enemyHealthBar);
             DestroyEnemyShip();
@@ -97,8 +97,21 @@ public class UiUpdate : MonoBehaviour
     {
         string enemyShipName = enemy.ShipModel;
         string enemyShipTag = enemyShipName.Substring(14, enemyShipName.Length-14);
-        print("Enemy Ship Tag: " + enemyShipTag);
+
         GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
-        canDestroy = false;
+        enemyHealthBar.gameObject.SetActive(false);
+        enemyHull.gameObject.SetActive(false);
+        GameObject[] enemyCannons = GameObject.FindGameObjectsWithTag("EnemyCannonUI");
+        foreach(GameObject enemyCannonUI in enemyCannons)
+        {
+            enemyCannonUI.SetActive(false);
+        }
+
+        //Will later be called by clicking a button
+        ReturnToMap();
+    }
+    void ReturnToMap()
+    {
+        manager.LoadLevel("MapScreen");
     }
 }

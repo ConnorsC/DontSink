@@ -8,8 +8,11 @@ public class ScreenLoad : MonoBehaviour {
     private GameManagerScript manager;
     private EnemyIslandObject enemyIsland;
     private GameObject enemyShip;
+    private EnemyShipObject enemyShipObject;
 
     static string cannonUIPath = "Objects/UI/CannonUI";
+    static string enemyCannonUIPath = "Objects/UI/EnemyCannon";
+    static string enemyCannonTag = "EnemyCannonUI";
 
     // Use this for initialization
     void Start ()
@@ -17,7 +20,8 @@ public class ScreenLoad : MonoBehaviour {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
 
         enemyIsland = manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject;
-        enemyShip = Instantiate(Resources.Load(enemyIsland.Ship.ShipModel, typeof(GameObject))) as GameObject;
+        enemyShipObject = enemyIsland.Ship;
+        enemyShip = Instantiate(Resources.Load(enemyShipObject.ShipModel, typeof(GameObject))) as GameObject;
         string enemyShipTag = enemyIsland.Ship.ShipModel.Substring(14, enemyIsland.Ship.ShipModel.Length - 14);
         enemyShip.tag = enemyShipTag;
         SetEnemyTransform();
@@ -27,6 +31,7 @@ public class ScreenLoad : MonoBehaviour {
         SetPlayerTransform();
 
         SetPlayerCannons();
+        SetEnemyCannons();
     }
     private void SetPlayerTransform()
     {
@@ -58,6 +63,25 @@ public class ScreenLoad : MonoBehaviour {
             else if (4 < cannonNumber && cannonNumber <= 8)
                 cannonUI.transform.localPosition = new Vector3(100f, -((cannonNumber - 5) * 20), 0f);
             cannonUI.transform.localScale = new Vector3(1f, 1f, 1f);
+            cannonNumber++;
+        }
+    }
+    private void SetEnemyCannons()
+    {
+        int cannonNumber = 1;
+        GameObject canvas = GameObject.FindGameObjectWithTag("CombatUI");
+        //foreach (CannonObject cannon in enemyShipObject.GetCannons())
+        //{
+        for (int j = 0; j < 2; j++)
+        {
+            GameObject enemyCannonUI = Instantiate(Resources.Load(enemyCannonUIPath, typeof(GameObject))) as GameObject;
+            EnemyCannonUI enemyCannonControllerUI = enemyCannonUI.transform.Find("CannonCooldown").GetComponent<EnemyCannonUI>();
+            enemyCannonControllerUI.cooldown = 2+cannonNumber;// cannon.Fire_Rate;
+            enemyCannonUI.transform.SetParent(canvas.transform);
+            if (cannonNumber <= 4)
+                enemyCannonUI.transform.localPosition = new Vector3(0f, -((cannonNumber - 1) * 15), 0f);
+            enemyCannonUI.transform.localScale = new Vector3(1f, 1f, 1f);
+            enemyCannonUI.tag = enemyCannonTag;
             cannonNumber++;
         }
     }

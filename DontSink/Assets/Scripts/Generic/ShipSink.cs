@@ -16,7 +16,7 @@ public class ShipSink : MonoBehaviour {
 
         if (rotate)
         {
-            transform.Rotate(Vector3.forward * Time.deltaTime);
+            transform.Rotate(Vector3.forward* 3 * Time.deltaTime);
             transform.Translate(Vector3.down * sinkSpeed / 10 * Time.deltaTime);
 
             if(transform.eulerAngles.z >= 80)

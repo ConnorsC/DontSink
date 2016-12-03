@@ -53,7 +53,7 @@ public class ShipObject : MonoBehaviour
     public void TakeDamage(int damage)
     {
         //print("Take Damage");
-        if (rnd.Next(1, 100) > currentSpeed)
+        if (rnd.Next(1, 20) > currentSpeed)
         {
 
             if (hull != null)
