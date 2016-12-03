@@ -25,6 +25,7 @@ TagManager:
   - DistressShip1
   - CannonUI
   - CombatUI
+  - EnemyCannonUI
   layers:
   - Default
   - TransparentFX
