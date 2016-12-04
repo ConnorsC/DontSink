@@ -24,6 +24,27 @@ TagManager:
   - DavyJones
   - DistressShip1
   - CannonUI
+  - CombatUI
+  - EnemyCannonUI
+  - GameOver
+  - UIUpdate
+  - ItemScrollView
+  - ItemPrefab
+  - ItemPanel
+  - ItemScrollViewContent
+  - ItemImage
+  - ItemName
+  - ItemCost
+  - ItemDesc
+  - StoreShipNamePanel
+  - StoreShipImagePanel
+  - StoreShipStatsPanel
+  - StoreShipHullPanel
+  - StoreShipValueCurrent
+  - StoreShipValueWithItem
+  - StoreShipSailPanel
+  - StoreShipAttackPanel
+  - StoreShipFirePanel
   layers:
   - Default
   - TransparentFX

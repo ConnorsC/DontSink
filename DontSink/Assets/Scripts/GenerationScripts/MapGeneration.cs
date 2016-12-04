@@ -26,8 +26,8 @@ public class MapGeneration
         IslandGenerator island_gen = new IslandGenerator();
         const int level = 1;
         const int end_island = 7;
-        //int shop_island = rnd.Next(1, end_island); // Random number: 1<=shop_island<end_island
-        int shop_island = 1; // For the presentation set the shop island to island 2
+        int shop_island = rnd.Next(1, end_island); // Random number: 1<=shop_island<end_island
+        //int shop_island = 1; // For the presentation set the shop island to island 2
         int distress_island = rnd.Next(1, end_island); // Random number: 1<=shop_island<end_island
         while(shop_island == distress_island) // Ensure that we aren't trying to add the shop and distress islands to the same island number
             distress_island = rnd.Next(1, end_island);

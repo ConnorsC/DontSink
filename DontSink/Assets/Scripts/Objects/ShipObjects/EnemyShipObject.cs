@@ -7,6 +7,13 @@ public class EnemyShipObject : ShipObject
     private ItemObject boon;
     private int difficulty;
     private string shipModel;
+    //tmp
+    static System.Collections.Generic.List<ItemObject> items;
+    static System.Collections.Generic.List<CrewObject> crew;
+    static GameObject something;
+    static string prefabPath = "Objects/Ships/Galleon";
+
+    const int baseVal = 7;
 
 
     //Accessors
@@ -15,9 +22,21 @@ public class EnemyShipObject : ShipObject
     new public string ShipModel { get { return shipModel; } set { shipModel = value; } }
 
     public EnemyShipObject() { }
-    public EnemyShipObject(ItemObject boon, int difficulty)
+    public EnemyShipObject(ItemObject boon, int difficulty) : base(InitHealth(difficulty), InitSpeed(difficulty), InitDamage(difficulty), null, items, crew, something, prefabPath)
     {
         this.boon = boon;
         this.difficulty = difficulty;
+    }
+    private static int InitHealth(int difficulty)
+    {
+        return (baseVal + difficulty) * 10;
+    }
+    private static int InitSpeed(int difficulty)
+    {
+        return (baseVal + difficulty);
+    }
+    private static int InitDamage(int difficulty)
+    {
+        return (baseVal + difficulty);
     }
 }

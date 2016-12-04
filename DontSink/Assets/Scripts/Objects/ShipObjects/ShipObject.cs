@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class ShipObject
+public class ShipObject : MonoBehaviour
 {
     //Fields
     private int baseHealth;
@@ -12,12 +12,14 @@ public class ShipObject
     private MaxCurrentPair<int> health;
     private int currentSpeed;
     private int currentDamage;
+    private double reloadMultiplier = 1;
     private HullObject hull;
     private List<ItemObject> items;
     private List<CrewObject> crew;
     private GameObject shipModel;
     private string prefabPath;
 
+    private static System.Random rnd = new System.Random();
     public ShipObject() { }
 
     public ShipObject(int health, int speed, int damage, HullObject hull, List<ItemObject> items, List<CrewObject> crew,GameObject shipModel, string prefabPath)
@@ -25,7 +27,9 @@ public class ShipObject
         this.baseHealth = health;
         this.health = new MaxCurrentPair<int>(health);
         this.baseSpeed = speed;
+        this.currentDamage = speed;
         this.baseDamage = damage;
+        this.currentDamage = damage;
         this.hull = hull;
         this.items = items;
         this.crew = crew;
@@ -41,6 +45,7 @@ public class ShipObject
     public int CurrentHealth { get { return health.Current; } set { health.Current = value; } }
     public int CurrentSpeed { get { return currentSpeed; } set { currentSpeed = value; } }
     public int CurrentDamage { get { return currentDamage; } set { currentDamage = value; } }
+    public double ReloadMultiplier { get { return reloadMultiplier; } set { reloadMultiplier = value; } }
     public HullObject Hull { get { return hull; } set { hull = value; } }
     public List<ItemObject> Items { get { return items; } set { items = value; } }
     public List<CrewObject> Crew { get { return crew; } set { crew = value; } }
@@ -48,19 +53,28 @@ public class ShipObject
     public string getPrefabPath { get { return prefabPath; } set { prefabPath = value; } }
 
     public void TakeDamage(int damage)
-    {       
-        if (hull != null)
+    {
+        //print("Take Damage");
+        if (rnd.Next(1, 20) > currentSpeed)
         {
-            damage -= hull.Damage_Reduction;
-            hull.TakeDamage();
+
+            if (hull != null)
+            {
+                damage -= hull.Damage_Reduction;
+                hull.TakeDamage();
+            }
+            if (damage >= health.Current)
+            {
+                health.Current = 0;
+                //print("rip Ship");
+                DestroyShip();
+            }
+            else
+            {
+                health.Current -= damage;
+                //print("Damage taken: " + damage);
+            }
         }
-        if (currentDamage >= health.Current)
-        {
-            health.Current = 0;
-            DestroyShip();
-        }
-        else
-            health.Current -= currentDamage;
     }
     private void DestroyShip()
     {
@@ -69,20 +83,16 @@ public class ShipObject
     }
     public void AddCrew(CrewObject crewMember)
     {
-        if (crewMember is RacerObject)
-            currentSpeed *= (int)((RacerObject)crewMember).Speed_Buff;
-        else if (crewMember is CannoneerObject)
-            currentDamage *= (int)((CannoneerObject)crewMember).Damage_Buff;
+        currentSpeed *= (int)(crewMember).Speed_Buff;
+        reloadMultiplier *= (int)(crewMember).Reload_Buff;
         crew.Add(crewMember);
     }
     public void RemoveCrew(CrewObject crewMember)
     {
         if (crew.Contains(crewMember))
         {
-            if(crewMember is RacerObject)
-                currentSpeed /= (int)((RacerObject)crewMember).Speed_Buff;
-            else if (crewMember is CannoneerObject)
-                currentDamage /= (int)((CannoneerObject)crewMember).Damage_Buff;
+            currentSpeed /= (int)(crewMember).Speed_Buff;
+            reloadMultiplier /= (int)(crewMember).Reload_Buff;
             crew.Remove(crewMember);
         }
         //else
