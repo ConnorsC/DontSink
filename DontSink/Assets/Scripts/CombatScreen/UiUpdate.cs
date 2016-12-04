@@ -14,10 +14,16 @@ public class UiUpdate : MonoBehaviour
 
     private GameManagerScript manager;
 
+    static string gameOverPath = "Objects/UI/GameOver";
+    private GameObject gameOverObject;
+    public bool gameOver = false;
+
     // Use this for initialization
     void Awake ()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        gameOverObject = GameObject.FindGameObjectWithTag("GameOver");
+        gameOverObject.SetActive(gameOver);
 
         if (manager.GetPlayer() == null)
         {
@@ -66,27 +72,33 @@ public class UiUpdate : MonoBehaviour
 
     void Update ()
     {
-        // Update health
-        playerHealthBar.value = player.CurrentHealth;
-        enemyHealthBar.value = enemy.CurrentHealth;
-        // Update hull hp if applicable
-        if (player.Hull != null)
-            playerHull.value = player.Hull.CurrentHealth;
-        if (enemy.Hull != null)
-            enemyHull.value = enemy.Hull.CurrentHealth;
-
-        // If any bar reaches 0 set the bar color to black
-        if (playerHealthBar.value == 0)
-            EmptyBar(playerHealthBar);
-        if (enemyHealthBar.value == 0)
+        if (!gameOver)
         {
-            EmptyBar(enemyHealthBar);
-            DestroyEnemyShip();
+            // Update health
+            playerHealthBar.value = player.CurrentHealth;
+            enemyHealthBar.value = enemy.CurrentHealth;
+            // Update hull hp if applicable
+            if (player.Hull != null)
+                playerHull.value = player.Hull.CurrentHealth;
+            if (enemy.Hull != null)
+                enemyHull.value = enemy.Hull.CurrentHealth;
+
+            // If any bar reaches 0 set the bar color to black
+            if (playerHealthBar.value == 0)
+            {
+                EmptyBar(playerHealthBar);
+                GameOver();
+            }
+            if (enemyHealthBar.value == 0)
+            {
+                EmptyBar(enemyHealthBar);
+                DestroyEnemyShip();
+            }
+            if (playerHull.value == 0)
+                EmptyBar(playerHull);
+            if (enemyHull.value == 0)
+                EmptyBar(enemyHull);
         }
-        if (playerHull.value == 0)
-            EmptyBar(playerHull);
-        if (enemyHull.value == 0)
-            EmptyBar(enemyHull);
     }
     void EmptyBar(Slider bar)
     {
@@ -113,5 +125,18 @@ public class UiUpdate : MonoBehaviour
     void ReturnToMap()
     {
         manager.LoadLevel("MapScreen");
+    }
+    void GameOver()
+    {
+        gameOver = true;
+        gameOverObject.SetActive(gameOver);
+
+        ShipSink sink = player.ShipModel.AddComponent<ShipSink>();
+        sink.sinkSpeed = 2;
+        
+        //GameObject canvas = GameObject.FindGameObjectWithTag("CombatUI");
+        //GameObject gameOverLay = Instantiate(Resources.Load(gameOverPath, typeof(GameObject))) as GameObject;
+        //gameOverLay.transform.SetParent(canvas.transform);
+        //gameOverLay.transform.localPosition = new Vector3(0f, 0f, 0f);
     }
 }

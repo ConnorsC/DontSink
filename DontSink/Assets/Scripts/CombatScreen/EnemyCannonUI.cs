@@ -27,16 +27,19 @@ public class EnemyCannonUI : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (cooldownTimer < cooldown)
-            cooldownTimer += Time.deltaTime;
-
-        if (cooldownTimer >= cooldown && enemyShip.CurrentHealth > 0)
+        if (!GameObject.FindGameObjectWithTag("UIUpdate").GetComponent<UiUpdate>().gameOver)
         {
-            cooldownTimer = 0.0f;
-            int enemyDamage = 10; //enemyShip.CurrentDamage;
-            playerShip.TakeDamage(enemyDamage);
-        }
+            if (cooldownTimer < cooldown)
+                cooldownTimer += Time.deltaTime;
 
-        cooldownBar.value = cooldownTimer;
+            if (cooldownTimer >= cooldown && enemyShip.CurrentHealth > 0)
+            {
+                cooldownTimer = 0.0f;
+                int enemyDamage = 10; //enemyShip.CurrentDamage;
+                playerShip.TakeDamage(enemyDamage);
+            }
+
+            cooldownBar.value = cooldownTimer;
+        }
     }
 }

@@ -69,11 +69,11 @@ public class store_handler_script : MonoBehaviour {
 
     public void GetItemImage(ItemObject item)
     {
-        if(item is RacerObject)
-        {
+        //if(item is RacerObject)
+        //{
 
 
-        }
+        //}
     }
 
     public string GetItemName(ItemObject item)
@@ -92,29 +92,29 @@ public class store_handler_script : MonoBehaviour {
     public string GetItemDesc(ItemObject item)
     {
         string desc = "";
-        if (item is CannoneerObject)
-        {
-            CannoneerObject temp = item as CannoneerObject;
-            desc = "Changes your damage by " + temp.Damage_Buff;
-        }
-        else if (item is RacerObject)
-        {
-            RacerObject temp = item as RacerObject;
-            desc = "Changes your speed by " + temp.Speed_Buff;
-        }
-        else if (item is RepairmanObject)
-        {
-            RepairmanObject temp = item as RepairmanObject;
-            desc = "Changes your max repair by " + temp.Max_Repair +
-                   "\nChanges your repair rate by " + temp.Repair_Rate;
+        //if (item is CannoneerObject)
+        //{
+        //    CannoneerObject temp = item as CannoneerObject;
+        //    desc = "Changes your damage by " + temp.Damage_Buff;
+        //}
+        //else if (item is RacerObject)
+        //{
+        //    RacerObject temp = item as RacerObject;
+        //    desc = "Changes your speed by " + temp.Speed_Buff;
+        //}
+        //else if (item is RepairmanObject)
+        //{
+        //    RepairmanObject temp = item as RepairmanObject;
+        //    desc = "Changes your max repair by " + temp.Max_Repair +
+        //           "\nChanges your repair rate by " + temp.Repair_Rate;
             
-        }
-        else if (item is ScoutObject)
-        {
-            ScoutObject temp = item as ScoutObject;
-            desc = "Changes vision by " + temp.Vision_Increase;
-        }
-        else if (item is CannonObject)
+        //}
+        //else if (item is ScoutObject)
+        //{
+        //    ScoutObject temp = item as ScoutObject;
+        //    desc = "Changes vision by " + temp.Vision_Increase;
+        //}
+        /*else*/ if (item is CannonObject)
         {
             CannonObject temp = item as CannonObject;
             desc = "Fire rate: " + temp.Fire_Rate + 
@@ -164,10 +164,10 @@ public class store_handler_script : MonoBehaviour {
         temp1.Name = "BIG BOI POW GUN";
         temp1.Value = 900;
 
-        RacerObject temp2 = new RacerObject();
-        temp2.Speed_Buff = 10;
-        temp2.Name = "Racer Dan";
-        temp2.Value = 22;
+        //RacerObject temp2 = new RacerObject();
+        //temp2.Speed_Buff = 10;
+        //temp2.Name = "Racer Dan";
+        //temp2.Value = 22;
 
         RepairmanObject temp3 = new RepairmanObject();
         temp3.Repair_Rate = 20;
@@ -182,15 +182,15 @@ public class store_handler_script : MonoBehaviour {
         temp4.Name = "Bigger Boards";
         temp4.Value = 9999;*/
 
-        ScoutObject temp5 = new ScoutObject();
-        temp5.Vision_Increase = 50;
-        temp5.Name = "Scouter Scoot Man";
-        temp5.Value = 1;
+        //ScoutObject temp5 = new ScoutObject();
+        //temp5.Vision_Increase = 50;
+        //temp5.Name = "Scouter Scoot Man";
+        //temp5.Value = 1;
 
-        CannoneerObject temp6 = new CannoneerObject();
-        temp6.Damage_Buff = 3;
-        temp6.Name = "Shooter McGee";
-        temp6.Value = 44;
+        //CannoneerObject temp6 = new CannoneerObject();
+        //temp6.Damage_Buff = 3;
+        //temp6.Name = "Shooter McGee";
+        //temp6.Value = 44;
 
         SailObject temp7 = new SailObject();
         temp7.Speed = 20;
@@ -198,11 +198,11 @@ public class store_handler_script : MonoBehaviour {
         temp7.Value = 44;
 
         AddItem(temp1);
-        AddItem(temp2);
+        //AddItem(temp2);
         AddItem(temp3);
         //AddItem(temp4);
-        AddItem(temp5);
-        AddItem(temp6);
+        //AddItem(temp5);
+        //AddItem(temp6);
         AddItem(temp7);
 
 
