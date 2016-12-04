@@ -12,12 +12,22 @@ public class store_handler_script : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         itemList = new List<ItemObject>();
+        DemoData();//demo data (remove this)
+        PopulateList();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    void PopulateList()
+    {
+        foreach (ItemObject item in itemList)
+        {
+            InsertItemPrefab(item);
+        }
+    }
 
     public void InsertItemPrefab(ItemObject item)
     {
@@ -66,14 +76,14 @@ public class store_handler_script : MonoBehaviour {
 
     public string GetItemName(ItemObject item)
     {
-        //return item.Name;
-        return "";
+        return item.Name;
+        //return "";
     }
 
     public int GetItemCost(ItemObject item)
     {
-        //return item.Value;
-        return 0; 
+        return item.Value;
+        //return 0; 
         //return "$ " + item.Value;
     }
 
@@ -135,11 +145,55 @@ public class store_handler_script : MonoBehaviour {
     public void DemoData()
     {
         //demo method to populate list and display items in store
-        //InsertItemPrefab();
         CannonObject temp1 = new CannonObject();
         temp1.Damage = 20;
         temp1.Fire_Rate = 10;
-        InsertItemPrefab(temp1);
+        temp1.Name = "BIG BOI POW GUN";
+        temp1.Value = 900;
+
+        RacerObject temp2 = new RacerObject();
+        temp2.Speed_Buff = 10;
+        temp2.Name = "Racer Dan";
+        temp2.Value = 22;
+
+        RepairmanObject temp3 = new RepairmanObject();
+        temp3.Repair_Rate = 20;
+        temp3.Max_Repair = 100;
+        temp3.Name = "Repairman Steve";
+        temp3.Value = 84;
+
+        /*HullObject temp4 = new HullObject();
+        temp4.MaxHealth = 20;
+        temp4.CurrentHealth = 20;
+        temp4.Damage_Reduction = 2;
+        temp4.Name = "Bigger Boards";
+        temp4.Value = 9999;*/
+
+        ScoutObject temp5 = new ScoutObject();
+        temp5.Vision_Increase = 50;
+        temp5.Name = "Scouter Scoot Man";
+        temp5.Value = 1;
+
+        CannoneerObject temp6 = new CannoneerObject();
+        temp6.Damage_Buff = 3;
+        temp6.Name = "Shooter McGee";
+        temp6.Value = 44;
+
+        SailObject temp7 = new SailObject();
+        temp7.Speed = 20;
+        temp7.Name = "Shooter McGee";
+        temp7.Value = 44;
+
+        AddItem(temp1);
+        AddItem(temp2);
+        AddItem(temp3);
+        //AddItem(temp4);
+        AddItem(temp5);
+        AddItem(temp6);
+        AddItem(temp7);
+
+
+
 
     }
 }
