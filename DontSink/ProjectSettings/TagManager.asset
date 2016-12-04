@@ -28,6 +28,14 @@ TagManager:
   - EnemyCannonUI
   - GameOver
   - UIUpdate
+  - ItemScrollView
+  - ItemPrefab
+  - ItemPanel
+  - ItemScrollViewContent
+  - ItemImage
+  - ItemName
+  - ItemCost
+  - ItemDesc
   layers:
   - Default
   - TransparentFX
