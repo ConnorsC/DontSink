@@ -36,15 +36,7 @@ TagManager:
   - ItemName
   - ItemCost
   - ItemDesc
-  - StoreShipNamePanel
-  - StoreShipImagePanel
-  - StoreShipStatsPanel
-  - StoreShipHullPanel
-  - StoreShipValueCurrent
-  - StoreShipValueWithItem
-  - StoreShipSailPanel
-  - StoreShipAttackPanel
-  - StoreShipFirePanel
+  - TutorialUI
   layers:
   - Default
   - TransparentFX
