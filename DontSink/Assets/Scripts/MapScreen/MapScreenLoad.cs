@@ -40,7 +40,6 @@ public class MapScreenLoad : MonoBehaviour {
         {
             TutorialUi.SetActive(true);
             manager.GetPlayer().LoadTurotial = false;
-            print("value: " + manager.GetPlayer().LoadTurotial);
         }
 
     }
