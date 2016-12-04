@@ -3,12 +3,28 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ItemViewHandler : MonoBehaviour {
+    // Use this for initialization
+    private int index;
 
-	// Use this for initialization
-	void Start () {
+    void Start () {
 	
 	}
 	
+    public int GetIndex()
+    {
+        return index;
+    }
+
+    public void PushIndex()
+    {
+
+    }
+
+    public void SetIndex(int index)
+    {
+        this.index = index;
+    }
+
     public void SetImage(Material image)
     {
         foreach (Transform child in gameObject.transform)

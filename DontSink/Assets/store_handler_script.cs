@@ -7,6 +7,7 @@ public class store_handler_script : MonoBehaviour {
 
     int itemCount = 0, columnCount = 1;
     List<ItemObject> itemList;
+    int currentIndex = 0;
 
 
 	// Use this for initialization
@@ -42,13 +43,14 @@ public class store_handler_script : MonoBehaviour {
         itemCount++;
         newItem.name = "itemPrefab " + itemCount;
         print("item:" + newItem.name);
-        
         newItem.transform.SetParent(itemPanel.transform, false);
         newItem.GetComponent<ItemViewHandler>().SetName(GetItemName(item));
         newItem.GetComponent<ItemViewHandler>().SetCost(GetItemCost(item));
         newItem.GetComponent<ItemViewHandler>().SetDesc(GetItemDesc(item));
+        newItem.GetComponent<ItemViewHandler>().SetIndex(itemCount - 1);
         //newItem.GetComponent<ItemViewHandler>().SetImage(GetItemImage(item));
-
+        newItem.GetComponent<Button>().onClick.AddListener(() => 
+            UpdateShipStats(newItem.GetComponent<ItemViewHandler>().GetIndex()));
         if (itemCount * 60 > itemPanelSize.rect.height) {
             itemPanelSize.sizeDelta = new Vector2(0, panelHeight+60);
         }
@@ -141,6 +143,17 @@ public class store_handler_script : MonoBehaviour {
         return desc;
     }
 
+    public void PopulateShipStats()
+    {
+
+    }
+
+    public void UpdateShipStats(int index)
+    {
+        ItemObject item = itemList[index];
+        print(item.Name);
+        
+    }
 
     public void DemoData()
     {
@@ -181,7 +194,7 @@ public class store_handler_script : MonoBehaviour {
 
         SailObject temp7 = new SailObject();
         temp7.Speed = 20;
-        temp7.Name = "Shooter McGee";
+        temp7.Name = "Sailor Regi";
         temp7.Value = 44;
 
         AddItem(temp1);
