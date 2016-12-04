@@ -12,6 +12,7 @@ public class ShipObject : MonoBehaviour
     private MaxCurrentPair<int> health;
     private int currentSpeed;
     private int currentDamage;
+    private double reloadMultiplier = 1;
     private HullObject hull;
     private List<ItemObject> items;
     private List<CrewObject> crew;
@@ -44,6 +45,7 @@ public class ShipObject : MonoBehaviour
     public int CurrentHealth { get { return health.Current; } set { health.Current = value; } }
     public int CurrentSpeed { get { return currentSpeed; } set { currentSpeed = value; } }
     public int CurrentDamage { get { return currentDamage; } set { currentDamage = value; } }
+    public double ReloadMultiplier { get { return reloadMultiplier; } set { reloadMultiplier = value; } }
     public HullObject Hull { get { return hull; } set { hull = value; } }
     public List<ItemObject> Items { get { return items; } set { items = value; } }
     public List<CrewObject> Crew { get { return crew; } set { crew = value; } }
@@ -81,20 +83,16 @@ public class ShipObject : MonoBehaviour
     }
     public void AddCrew(CrewObject crewMember)
     {
-        if (crewMember is RacerObject)
-            currentSpeed *= (int)((RacerObject)crewMember).Speed_Buff;
-        else if (crewMember is CannoneerObject)
-            currentDamage *= (int)((CannoneerObject)crewMember).Damage_Buff;
+        currentSpeed *= (int)(crewMember).Speed_Buff;
+        reloadMultiplier *= (int)(crewMember).Reload_Buff;
         crew.Add(crewMember);
     }
     public void RemoveCrew(CrewObject crewMember)
     {
         if (crew.Contains(crewMember))
         {
-            if(crewMember is RacerObject)
-                currentSpeed /= (int)((RacerObject)crewMember).Speed_Buff;
-            else if (crewMember is CannoneerObject)
-                currentDamage /= (int)((CannoneerObject)crewMember).Damage_Buff;
+            currentSpeed /= (int)(crewMember).Speed_Buff;
+            reloadMultiplier /= (int)(crewMember).Reload_Buff;
             crew.Remove(crewMember);
         }
         //else
