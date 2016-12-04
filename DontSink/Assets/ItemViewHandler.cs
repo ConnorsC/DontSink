@@ -25,15 +25,15 @@ public class ItemViewHandler : MonoBehaviour {
         this.index = index;
     }
 
-    public void SetImage(Material image)
+    public void SetImage(Sprite imageSprite)
     {
         foreach (Transform child in gameObject.transform)
         {
             if (child.CompareTag("ItemImage"))
             {
-                
-                child.GetComponent<Image>().material = image;
-
+                //Sprite newImage = Resources.Load("Images/cannon") as Sprite;
+                //child.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/cannon") as Sprite;
+                child.GetComponent<Image>().sprite = imageSprite;
             }
         }
     }

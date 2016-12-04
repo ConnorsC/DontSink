@@ -9,10 +9,28 @@ public class store_handler_script : MonoBehaviour {
     List<ItemObject> itemList;
     int currentIndex = 0;
 
+    //create vars for shipstats panel
+    GameObject shipNamePanel ;
+    GameObject shipImagePanel;
+    GameObject shipStatsPanel;
+    GameObject shipHullPanel ;
+    GameObject shipSailPanel ;
+    GameObject shipAttackPanel ;
+    GameObject shipFirePanel ;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         itemList = new List<ItemObject>();
+
+        //set vars for shipstatspanel
+        shipNamePanel = GameObject.FindGameObjectWithTag("StoreShipNamePanel");
+        shipImagePanel = GameObject.FindGameObjectWithTag("StoreShipImagePanel");
+        shipStatsPanel = GameObject.FindGameObjectWithTag("StoreShipStatsPanel");
+        shipHullPanel = GameObject.FindGameObjectWithTag("StoreShipHullPanel");
+        shipSailPanel = GameObject.FindGameObjectWithTag("StoreShipSailPanel");
+        shipAttackPanel = GameObject.FindGameObjectWithTag("StoreShipAttackPanel");
+        shipFirePanel = GameObject.FindGameObjectWithTag("StoreShipFirePanel");
+
         DemoData();//demo data (remove this)
         PopulateList();
 	}
@@ -48,7 +66,7 @@ public class store_handler_script : MonoBehaviour {
         newItem.GetComponent<ItemViewHandler>().SetCost(GetItemCost(item));
         newItem.GetComponent<ItemViewHandler>().SetDesc(GetItemDesc(item));
         newItem.GetComponent<ItemViewHandler>().SetIndex(itemCount - 1);
-        //newItem.GetComponent<ItemViewHandler>().SetImage(GetItemImage(item));
+        newItem.GetComponent<ItemViewHandler>().SetImage(GetItemImage(item));//STATIC VALUES UNTIL ITEMS ARE IMPORTED
         newItem.GetComponent<Button>().onClick.AddListener(() => 
             UpdateShipStats(newItem.GetComponent<ItemViewHandler>().GetIndex()));
         if (itemCount * 60 > itemPanelSize.rect.height) {
@@ -67,13 +85,9 @@ public class store_handler_script : MonoBehaviour {
         itemList.Remove(item);
     }
 
-    public void GetItemImage(ItemObject item)
+    public Sprite GetItemImage(ItemObject item)
     {
-        //if(item is RacerObject)
-        //{
-
-
-        //}
+        return item.Icon; //"Images/cannon";//NOT FINAL==================
     }
 
     public string GetItemName(ItemObject item)
@@ -92,29 +106,7 @@ public class store_handler_script : MonoBehaviour {
     public string GetItemDesc(ItemObject item)
     {
         string desc = "";
-        //if (item is CannoneerObject)
-        //{
-        //    CannoneerObject temp = item as CannoneerObject;
-        //    desc = "Changes your damage by " + temp.Damage_Buff;
-        //}
-        //else if (item is RacerObject)
-        //{
-        //    RacerObject temp = item as RacerObject;
-        //    desc = "Changes your speed by " + temp.Speed_Buff;
-        //}
-        //else if (item is RepairmanObject)
-        //{
-        //    RepairmanObject temp = item as RepairmanObject;
-        //    desc = "Changes your max repair by " + temp.Max_Repair +
-        //           "\nChanges your repair rate by " + temp.Repair_Rate;
-            
-        //}
-        //else if (item is ScoutObject)
-        //{
-        //    ScoutObject temp = item as ScoutObject;
-        //    desc = "Changes vision by " + temp.Vision_Increase;
-        //}
-        /*else*/ if (item is CannonObject)
+        if (item is CannonObject)
         {
             CannonObject temp = item as CannonObject;
             desc = "Fire rate: " + temp.Fire_Rate + 
@@ -123,8 +115,16 @@ public class store_handler_script : MonoBehaviour {
         else if (item is HullObject)
         {
             HullObject temp = item as HullObject;
-            desc = "Damage reduction: " + temp.Damage_Reduction +
-                   "\nShield health: " + temp.MaxHealth;
+            try
+            {
+                desc = "Damage reduction: " + temp.Damage_Reduction +
+                       "\nShield health: " + temp.MaxHealth;
+            }
+            catch //TEMPORARY UNTIL FIXED
+            {
+                desc = "Damage reduction: 0" + 
+                       "\nShield health: 0 " ;
+            }
         }
         else if (item is MiscObject)
         {
@@ -135,6 +135,19 @@ public class store_handler_script : MonoBehaviour {
         {
             SailObject temp = item as SailObject;
             desc = "Speed: " + temp.Speed;
+        }
+        else if (item is RepairmanObject)
+        {
+            RepairmanObject temp = item as RepairmanObject;
+            desc = "Reload Buff: " + temp.Reload_Buff +
+                   "\nSpeed Buff: " + temp.Speed_Buff + 
+                   "\nRepair Rate: " + temp.Repair_Rate;
+        }
+        else if(item is CrewObject)
+        {
+            CrewObject temp = item as CrewObject;
+            desc = "Reload Buff: " + temp.Reload_Buff + 
+                   "\nSpeed Buff: " + temp.Speed_Buff;
         }
         else
         {
@@ -151,8 +164,18 @@ public class store_handler_script : MonoBehaviour {
     public void UpdateShipStats(int index)
     {
         ItemObject item = itemList[index];
+        //GameObject shipPanel = GameObject.FindGameObjectWithTag("ItemScrollViewContent");
         print(item.Name);
-        
+
+
+        foreach (Transform child in gameObject.transform)
+        {
+            if (child.CompareTag("ItemCost"))
+            {
+                //child.GetComponent<Text>().text = "$ " + cost.ToString();
+
+            }
+        }
     }
 
     public void DemoData()
@@ -161,49 +184,71 @@ public class store_handler_script : MonoBehaviour {
         CannonObject temp1 = new CannonObject();
         temp1.Damage = 20;
         temp1.Fire_Rate = 10;
-        temp1.Name = "BIG BOI POW GUN";
-        temp1.Value = 900;
+        temp1.Name = "Basic Cannon";
+        temp1.Icon = Resources.Load<Sprite>("Images/cannon");
+        temp1.Value = 50;
 
-        //RacerObject temp2 = new RacerObject();
-        //temp2.Speed_Buff = 10;
-        //temp2.Name = "Racer Dan";
-        //temp2.Value = 22;
+        CrewObject temp2 = new CrewObject();
+        temp2.Reload_Buff = 2;
+        temp2.Speed_Buff = 1;
+        temp2.Name = "Sailor Joe";
+        temp2.Icon = Resources.Load<Sprite>("Images/sailoricon");
+        temp2.Value = 50;
 
         RepairmanObject temp3 = new RepairmanObject();
         temp3.Repair_Rate = 20;
         temp3.Max_Repair = 100;
         temp3.Name = "Repairman Steve";
+        temp3.Icon = Resources.Load<Sprite>("Images/sailoricon2");
         temp3.Value = 84;
 
-        /*HullObject temp4 = new HullObject();
-        temp4.MaxHealth = 20;
-        temp4.CurrentHealth = 20;
+        HullObject temp4 = new HullObject();
+        //temp4.MaxHealth = 20;
+        //temp4.CurrentHealth = 20;
         temp4.Damage_Reduction = 2;
         temp4.Name = "Bigger Boards";
-        temp4.Value = 9999;*/
+        temp4.Icon = Resources.Load<Sprite>("Images/hullicon");
+        temp4.Value = 10;
 
-        //ScoutObject temp5 = new ScoutObject();
-        //temp5.Vision_Increase = 50;
-        //temp5.Name = "Scouter Scoot Man";
-        //temp5.Value = 1;
+        CrewObject temp5 = new CrewObject();
+        temp5.Reload_Buff = 10;
+        temp5.Speed_Buff = 2;
+        temp5.Name = "Scouter Scoot Man";
+        temp5.Icon = Resources.Load<Sprite>("Images/pirateicon");
+        temp5.Value = 1;
 
-        //CannoneerObject temp6 = new CannoneerObject();
-        //temp6.Damage_Buff = 3;
-        //temp6.Name = "Shooter McGee";
-        //temp6.Value = 44;
+        HullObject temp6 = new HullObject();
+        //temp4.MaxHealth = 20;
+        //temp4.CurrentHealth = 20;
+        temp6.Damage_Reduction = 2;
+        temp6.Name = "Biggerer Boards";
+        temp6.Icon = Resources.Load<Sprite>("Images/reinforcedhullicon");
+        temp6.Value = 30;
 
         SailObject temp7 = new SailObject();
         temp7.Speed = 20;
         temp7.Name = "Sailor Regi";
+        temp7.Icon = Resources.Load<Sprite>("Images/pirateicon2");
         temp7.Value = 44;
 
+        HullObject temp8 = new HullObject();
+        //temp4.MaxHealth = 20;
+        //temp4.CurrentHealth = 20;
+        temp8.Damage_Reduction = 2;
+        temp8.Name = "Super Heavy Boards";
+        temp8.Icon = Resources.Load<Sprite>("Images/superreinforcedhullicon");
+        temp8.Value = 100;
+
+
+
         AddItem(temp1);
-        //AddItem(temp2);
+        AddItem(temp2);
         AddItem(temp3);
-        //AddItem(temp4);
-        //AddItem(temp5);
-        //AddItem(temp6);
+        AddItem(temp4);
+        AddItem(temp5);
+        AddItem(temp6);
         AddItem(temp7);
+        AddItem(temp8);
 
 
 
