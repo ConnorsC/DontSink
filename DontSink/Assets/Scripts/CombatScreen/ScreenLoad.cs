@@ -18,6 +18,7 @@ public class ScreenLoad : MonoBehaviour {
     void Start ()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        
 
         enemyIsland = manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject;
         enemyShipObject = enemyIsland.Ship;
@@ -31,7 +32,7 @@ public class ScreenLoad : MonoBehaviour {
         SetPlayerTransform();
 
         SetPlayerCannons();
-        SetEnemyCannons();
+        SetEnemyCannons(); 
     }
     private void SetPlayerTransform()
     {

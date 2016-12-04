@@ -26,6 +26,8 @@ TagManager:
   - CannonUI
   - CombatUI
   - EnemyCannonUI
+  - GameOver
+  - UIUpdate
   layers:
   - Default
   - TransparentFX
