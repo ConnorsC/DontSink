@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-public class GameManagerScript : GameDriver{
+public class GameManagerScript : GameDriver {
 
     // Use this for initialization
 
     public static PlayerInformation playerInfo;
 
-    private int currentIsland =1;
+    private int currentIsland = 1;
     private int currentLevel = 1;
     private string lastScene;
     private static bool spawned = false;
@@ -20,6 +20,17 @@ public class GameManagerScript : GameDriver{
     public GameManagerScript()
     {
         canSelectShip = true;
+    }
+
+    public void Reset()
+    {
+        spawned = false;
+        DestroyPlayerShip();
+        DestroyImmediate(gameObject);
+    }
+    private void DestroyPlayerShip()
+    {
+        Destroy(playerInfo.Ship.ShipModel);
     }
 
     void Awake()
