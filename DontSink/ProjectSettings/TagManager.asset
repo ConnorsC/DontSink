@@ -36,6 +36,7 @@ TagManager:
   - ItemName
   - ItemCost
   - ItemDesc
+  - TutorialUI
   layers:
   - Default
   - TransparentFX
