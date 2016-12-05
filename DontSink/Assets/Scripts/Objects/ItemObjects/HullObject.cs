@@ -16,8 +16,7 @@ public class HullObject : ItemObject
     public HullObject(int dr, int hp)
     {
         this.damage_reduction = dr;
-        this.health.Max = hp;
-        this.health.Current = hp;
+        this.health = new MaxCurrentPair<int>(hp);
     }
 
     public void TakeDamage()
