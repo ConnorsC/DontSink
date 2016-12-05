@@ -45,6 +45,9 @@ TagManager:
   - StoreShipSailPanel
   - StoreShipAttackPanel
   - StoreShipFirePanel
+  - DistressText
+  - DistressUI
+  - LeaveUI
   layers:
   - Default
   - TransparentFX
