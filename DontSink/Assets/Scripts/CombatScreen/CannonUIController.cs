@@ -5,6 +5,7 @@ using System.Collections;
 public class CannonUIController : MonoBehaviour
 {
     private GameObject button;
+    private GameObject cooldownBarObject;
     private Slider cooldownBar;
     private Text text;
 
@@ -32,7 +33,8 @@ public class CannonUIController : MonoBehaviour
 
         playerShip = manager.GetPlayer().Ship;
         button = this.gameObject.transform.parent.Find("CannonSelect").gameObject;
-        cooldownBar = this.gameObject.transform.parent.Find("CannonCooldown").GetComponent<Slider>();
+        cooldownBarObject = this.gameObject.transform.parent.Find("CannonCooldown").gameObject;
+        cooldownBar = cooldownBarObject.GetComponent<Slider>();
         text = button.transform.Find("CannonName").GetComponent<Text>();
 
         text.text = cannonName;
@@ -53,6 +55,12 @@ public class CannonUIController : MonoBehaviour
         {
             if (cooldownTimer < cooldown)
                 cooldownTimer += Time.deltaTime;
+            else 
+            {
+                cooldownBarObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = Color.red;
+
+                text.color = Color.red;
+            }
             cooldownBar.value = cooldownTimer;
         }
     }
@@ -64,6 +72,10 @@ public class CannonUIController : MonoBehaviour
             int playerDamage = playerShip.CurrentDamage;
             //int playerDamage = 10;
             enemyShip.TakeDamage(playerDamage);
+
+            cooldownBarObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = Color.green;
+
+            text.color = Color.white;
         }
     }
 }
