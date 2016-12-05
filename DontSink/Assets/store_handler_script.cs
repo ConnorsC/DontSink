@@ -166,17 +166,50 @@ public class store_handler_script : MonoBehaviour {
         ItemObject item = itemList[index];
         //GameObject shipPanel = GameObject.FindGameObjectWithTag("ItemScrollViewContent");
         print(item.Name);
+        shipNamePanel.GetComponentInChildren<Text>().text = "Your Ship";
+
+        SetPanelStats(shipHullPanel, 100, 105 );
+        SetPanelStats(shipSailPanel, 100, 110);
+        SetPanelStats(shipAttackPanel, 100, 100);
+        SetPanelStats(shipFirePanel, 100, 90);
 
 
-        foreach (Transform child in gameObject.transform)
+    }
+
+    public void SetPanelStats(GameObject target, int current, int withItem)
+    {
+        int valueChange = withItem - current;
+        print(valueChange);
+        foreach (Transform child in target.transform)
         {
-            if (child.CompareTag("ItemCost"))
+            if (child.CompareTag("StoreShipValueCurrent"))
             {
-                //child.GetComponent<Text>().text = "$ " + cost.ToString();
-
+                child.GetComponent<Text>().text = ""+ withItem;
+            }
+            else if (child.CompareTag("StoreShipValueWithItem"))
+            {
+                string sign = "";
+                Color32 clr;
+                if (valueChange < 0)
+                {
+                    print("aaa:"+valueChange);
+                    clr = new Color32(210,51,5,255);//red
+                }
+                else if (valueChange > 0)
+                {
+                    clr = new Color32(0, 255, 55,255); //green
+                    sign = "+";
+                }
+                else
+                {
+                    clr = new Color32(208, 202, 0,255);//yellowish
+                }
+                child.GetComponent<Text>().color = clr;
+                child.GetComponent<Text>().text = "( "+ sign + valueChange +" )";
             }
         }
     }
+
 
     public void DemoData()
     {
