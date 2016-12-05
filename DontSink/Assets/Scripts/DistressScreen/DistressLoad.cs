@@ -11,16 +11,20 @@ public class DistressLoad : MonoBehaviour
     private GameManagerScript manager;
 
     private Text distressText;
+    private Text clarificationText;
     // Use this for initialization
     void Start ()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
 
         GameObject tmp = GameObject.FindGameObjectWithTag("DistressText");
+        GameObject txt = GameObject.FindGameObjectWithTag("ClarificationText");
         if (tmp != null)
         {
             distressText = tmp.GetComponent<Text>();
             distressText.text = DistressText();
+            clarificationText = txt.GetComponent<Text>();
+            clarificationText.text = ClarificationText();
         }
 
         playerShipObject = manager.GetPlayer().Ship;
@@ -36,18 +40,30 @@ public class DistressLoad : MonoBehaviour
     }
     private string DistressText()
     {
+        string ret;
         switch (rnd.Next(0,4))
         {
             case 0:
-                return "Me ship be briken";
+                ret = "'Me ship be briken!'";
+                break;
             case 1:
-                return "Me hull be breach";
+                ret = "'Me hull be breach!'";
+                break;
             case 2:
-                return "Har, me ship be sink";
+                ret = "'Har, me ship be sink!'";
+                break;
             case 3:
-                return "Th’ ship's goin’ below, a hand";
+                ret = "'Th’ ship's goin’ below, a hand!'";
+                break;
             default:
-                return "";
+                ret = "";
+                break;
         }
+        return ret;
     }
+    private string ClarificationText()
+    {
+        return "They're sinking, what do you do?";
+    }
+
 }

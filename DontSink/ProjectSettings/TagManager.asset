@@ -49,6 +49,9 @@ TagManager:
   - DistressUI
   - LeaveUI
   - TutorialUI
+  - PayoutPopup
+  - ClarificationText
+  - FinalIslandFlag
   layers:
   - Default
   - TransparentFX

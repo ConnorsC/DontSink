@@ -6,6 +6,7 @@ public class IslandGenerator : MonoBehaviour
 {
     static string enemyShipPath1 = "Objects/Ships/EnemyShip1";
     static string enemyShipPath2 = "Objects/Ships/EnemyShip2";
+    static string davyJonesPath = "Objects/Ships/DavyJones";
     private static System.Random rnd = new System.Random();
 
     public List<IslandObject> GenerateIslands(List<int> islands, int level)
@@ -46,7 +47,7 @@ public class IslandGenerator : MonoBehaviour
     }
     private EnemyIslandObject GenerateEnemyShip(int lvl)
     {
-        ItemObject boon = new ItemObject(); // Adding no boon as we have no items atm
+        ItemObject boon = null; // Adding no boon as we have no items atm
         int difficulty = rnd.Next(lvl/2, lvl+1); // Randomly select the difficulty based on the current level
         EnemyShipObject ship = new EnemyShipObject(boon, difficulty);
         if (rnd.Next(0, 10) >= 5)
@@ -61,9 +62,9 @@ public class IslandGenerator : MonoBehaviour
     }
     private DistressIslandObject GenerateDistressShip(int lvl)
     {
-        ItemObject boon = new ItemObject(); // Adding no boon as we have no items atm
+        ItemObject boon = null; // Adding no boon as we have no items atm
         NeutralShipObject ship = new NeutralShipObject(boon);
-        return new DistressIslandObject();
+        return new DistressIslandObject(ship);
     }
     private StartIslandObject GenerateStartIsland(int lvl) // I don't know how we are going to be generating the text/story for this island yet so there is nothing here
     {
@@ -71,6 +72,10 @@ public class IslandGenerator : MonoBehaviour
     }
     private EndIslandObject GenerateEndIsland(int lvl) // not sure what we are doing for the final island yet, mini boss fight? Or just chill to move on to the next level?
     {
-        return new EndIslandObject();
+        ItemObject boon = null; // Adding no boon as we have no items atm
+        int difficulty = rnd.Next(2 * (lvl), 2 * (lvl + 1)); // Randomly select the difficulty based on the current level
+        EnemyShipObject ship = new EnemyShipObject(boon, difficulty);
+        ship.ShipModel = davyJonesPath;
+        return new EndIslandObject(ship);
     }
 }
