@@ -9,11 +9,12 @@ public class MapScreenLoad : MonoBehaviour {
     private MapGeneration mapGenerator;
     static string islandPrefabPath = "Objects/Islands/Island";
     private GameManagerScript manager;
+    public GameObject TutorialUi;
 
     // Use this for initialization
     void Start () {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
-
+        TutorialUi.SetActive(false);
         mapGenerator = new MapGeneration();
 
         playerShip = manager.GetPlayer().Ship.ShipModel;
@@ -34,6 +35,13 @@ public class MapScreenLoad : MonoBehaviour {
             manager.LastGeneratedMap = manager.GetLevel();
         }
         SetIslands(manager.Islands);
+
+        if (manager.GetPlayer().LoadTurotial)
+        {
+            TutorialUi.SetActive(true);
+            manager.GetPlayer().LoadTurotial = false;
+        }
+
     }
 
     private void SetIslands(List<IslandObject> islands)
