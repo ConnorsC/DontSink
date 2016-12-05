@@ -18,12 +18,17 @@ public class UiUpdate : MonoBehaviour
     private GameObject gameOverObject;
     public bool gameOver = false;
 
+    private GameObject leaveButton;
+
     // Use this for initialization
-    void Awake ()
+    void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         gameOverObject = GameObject.FindGameObjectWithTag("GameOver");
         gameOverObject.SetActive(gameOver);
+
+        leaveButton = GameObject.FindGameObjectWithTag("LeaveUI");
+        leaveButton.SetActive(false);
 
         if (manager.GetPlayer() == null)
         {
@@ -68,11 +73,20 @@ public class UiUpdate : MonoBehaviour
             enemyHull.maxValue = 0;
             enemyHull.value = 0;
         }
+        
     }
 
     void Update ()
     {
-        if (!gameOver)
+        if ((manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Defeated == true)
+        {
+            string enemyShipName = enemy.ShipModel;
+            string enemyShipTag = enemyShipName.Substring(14, enemyShipName.Length - 14);
+            GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
+            RemoveUI();
+            CreateLeaveButton();
+        }
+        else if (!gameOver)
         {
             // Update health
             playerHealthBar.value = player.CurrentHealth;
@@ -109,22 +123,22 @@ public class UiUpdate : MonoBehaviour
     {
         string enemyShipName = enemy.ShipModel;
         string enemyShipTag = enemyShipName.Substring(14, enemyShipName.Length-14);
-
-        GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
-        enemyHealthBar.gameObject.SetActive(false);
-        enemyHull.gameObject.SetActive(false);
-        GameObject[] enemyCannons = GameObject.FindGameObjectsWithTag("EnemyCannonUI");
-        foreach(GameObject enemyCannonUI in enemyCannons)
-        {
-            enemyCannonUI.SetActive(false);
-        }
-
+        GameObject enemyShip = GameObject.FindGameObjectWithTag(enemyShipTag);
+        ShipSink sink = enemyShip.AddComponent<ShipSink>();
+        sink.sinkSpeed = 4;
+        //GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
+        //enemyHealthBar.gameObject.SetActive(false);
+        //enemyHull.gameObject.SetActive(false);
+        //GameObject[] enemyCannons = GameObject.FindGameObjectsWithTag("EnemyCannonUI");
+        //foreach(GameObject enemyCannonUI in enemyCannons)
+        //{
+        //    enemyCannonUI.SetActive(false);
+        //}
+        RemoveUI();
+        CreateLeaveButton();
         //Will later be called by clicking a button
-        ReturnToMap();
-    }
-    void ReturnToMap()
-    {
-        manager.LoadLevel("MapScreen");
+        //ReturnToMap();
+
     }
     void GameOver()
     {
@@ -132,11 +146,16 @@ public class UiUpdate : MonoBehaviour
         gameOverObject.SetActive(gameOver);
 
         ShipSink sink = player.ShipModel.AddComponent<ShipSink>();
-        sink.sinkSpeed = 2;
-        
-        //GameObject canvas = GameObject.FindGameObjectWithTag("CombatUI");
-        //GameObject gameOverLay = Instantiate(Resources.Load(gameOverPath, typeof(GameObject))) as GameObject;
-        //gameOverLay.transform.SetParent(canvas.transform);
-        //gameOverLay.transform.localPosition = new Vector3(0f, 0f, 0f);
+        sink.sinkSpeed = 3;
     }
+    void RemoveUI()
+    {
+        GameObject combatUI = GameObject.FindGameObjectWithTag("CombatUI");
+        combatUI.SetActive(false);
+    }
+    void CreateLeaveButton()
+    {
+        leaveButton.SetActive(true);
+    }
+
 }
