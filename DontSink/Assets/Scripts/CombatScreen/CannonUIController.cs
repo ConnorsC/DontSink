@@ -15,11 +15,21 @@ public class CannonUIController : MonoBehaviour
     private EnemyShipObject enemyShip;
     private PlayerShipObject playerShip;
 
+    private GameObject update;
+    private bool isBoss = false;
+
     // Use this for initialization
     void Start()
     {
-        GameManagerScript manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>(); 
-        enemyShip = (manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Ship;
+        GameManagerScript manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        if (manager.Islands[manager.GetIsland() - 1] is EndIslandObject)
+            isBoss = true;
+
+        if(isBoss)
+            enemyShip = (manager.Islands[manager.GetIsland() - 1] as EndIslandObject).Ship;
+        else
+            enemyShip = (manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Ship;
+
         playerShip = manager.GetPlayer().Ship;
         button = this.gameObject.transform.parent.Find("CannonSelect").gameObject;
         cooldownBar = this.gameObject.transform.parent.Find("CannonCooldown").GetComponent<Slider>();
@@ -29,10 +39,17 @@ public class CannonUIController : MonoBehaviour
         cooldownBar.maxValue = cooldown;
         cooldownBar.value = cooldown;
         cooldownTimer = 0.0f;
+
+        update = GameObject.FindGameObjectWithTag("UIUpdate");
     }
     void Update()
     {
-        if (!GameObject.FindGameObjectWithTag("UIUpdate").GetComponent<UiUpdate>().gameOver && !GameObject.FindGameObjectWithTag("UIUpdate").GetComponent<UiUpdate>().pause)
+        bool conditional;
+        if (isBoss)
+            conditional = !update.GetComponent<BossScreenUpdate>().gameOver && !update.GetComponent<BossScreenUpdate>().pause;
+        else
+            conditional = !update.GetComponent<UiUpdate>().gameOver && !update.GetComponent<UiUpdate>().pause;
+        if (conditional)
         {
             if (cooldownTimer < cooldown)
                 cooldownTimer += Time.deltaTime;

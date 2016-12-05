@@ -6,6 +6,7 @@ public class IslandGenerator : MonoBehaviour
 {
     static string enemyShipPath1 = "Objects/Ships/EnemyShip1";
     static string enemyShipPath2 = "Objects/Ships/EnemyShip2";
+    static string davyJonesPath = "Objects/Ships/DavyJones";
     private static System.Random rnd = new System.Random();
 
     public List<IslandObject> GenerateIslands(List<int> islands, int level)
@@ -71,6 +72,10 @@ public class IslandGenerator : MonoBehaviour
     }
     private EndIslandObject GenerateEndIsland(int lvl) // not sure what we are doing for the final island yet, mini boss fight? Or just chill to move on to the next level?
     {
-        return new EndIslandObject();
+        ItemObject boon = null; // Adding no boon as we have no items atm
+        int difficulty = rnd.Next(2 * (lvl), 2 * (lvl + 1)); // Randomly select the difficulty based on the current level
+        EnemyShipObject ship = new EnemyShipObject(boon, difficulty);
+        ship.ShipModel = davyJonesPath;
+        return new EndIslandObject(ship);
     }
 }
