@@ -32,9 +32,12 @@ public class CannonUIController : MonoBehaviour
     }
     void Update()
     {
-        if (cooldownTimer < cooldown)
-            cooldownTimer += Time.deltaTime;
-        cooldownBar.value = cooldownTimer;
+        if (!GameObject.FindGameObjectWithTag("UIUpdate").GetComponent<UiUpdate>().gameOver && !GameObject.FindGameObjectWithTag("UIUpdate").GetComponent<UiUpdate>().pause)
+        {
+            if (cooldownTimer < cooldown)
+                cooldownTimer += Time.deltaTime;
+            cooldownBar.value = cooldownTimer;
+        }
     }
     public void Click()
     {

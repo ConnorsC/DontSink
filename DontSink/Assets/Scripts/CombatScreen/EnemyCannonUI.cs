@@ -27,7 +27,7 @@ public class EnemyCannonUI : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (!GameObject.FindGameObjectWithTag("UIUpdate").GetComponent<UiUpdate>().gameOver)
+        if (!GameObject.FindGameObjectWithTag("UIUpdate").GetComponent<UiUpdate>().gameOver && !GameObject.FindGameObjectWithTag("UIUpdate").GetComponent<UiUpdate>().pause)
         {
             if (cooldownTimer < cooldown)
                 cooldownTimer += Time.deltaTime;

@@ -46,7 +46,7 @@ public class IslandGenerator : MonoBehaviour
     }
     private EnemyIslandObject GenerateEnemyShip(int lvl)
     {
-        ItemObject boon = new ItemObject(); // Adding no boon as we have no items atm
+        ItemObject boon = null; // Adding no boon as we have no items atm
         int difficulty = rnd.Next(lvl/2, lvl+1); // Randomly select the difficulty based on the current level
         EnemyShipObject ship = new EnemyShipObject(boon, difficulty);
         if (rnd.Next(0, 10) >= 5)
