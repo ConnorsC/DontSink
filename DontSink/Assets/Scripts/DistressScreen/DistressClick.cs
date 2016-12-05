@@ -87,7 +87,7 @@ public class DistressClick : MonoBehaviour
         {
             if (distressIsland.Ship.Boon == null)
             {
-                int gold = rnd.Next(3, 5 + 2*manager.GetLevel());
+                int gold = rnd.Next(2+manager.GetLevel(), 5 + 2*manager.GetLevel());
                 manager.GetPlayer().Gold += gold;
                 return "'Hearty thanks fer ye help. Take 'tis as payment.' \n\nThe captain hands you " + gold + " gold";
             }
