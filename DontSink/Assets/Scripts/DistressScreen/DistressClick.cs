@@ -76,9 +76,9 @@ public class DistressClick : MonoBehaviour
 
     private string RewardPlayer()
     {
-        int reward = rnd.Next(0, 10);
+        int reward = rnd.Next(0, 5);
 
-        if (reward >= 9 && manager.GetPlayer().Ship.CurrentHealth > 10)
+        if (reward >= 4 && manager.GetPlayer().Ship.CurrentHealth > 10)
         {
             manager.GetPlayer().Ship.CurrentHealth -= 10;
             return "Your ship was damaged attempting to aid the distressed ship";
