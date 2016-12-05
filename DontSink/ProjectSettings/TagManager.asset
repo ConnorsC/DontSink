@@ -51,6 +51,7 @@ TagManager:
   - TutorialUI
   - PayoutPopup
   - ClarificationText
+  - FinalIslandFlag
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class MapScreenLoad : MonoBehaviour {
     GameObject playerShip;
     private MapGeneration mapGenerator;
     static string islandPrefabPath = "Objects/Islands/Island";
+    static string islandFlagPrefabPath = "Objects/Islands/FinalIslandFlag";
     private GameManagerScript manager;
     public GameObject TutorialUi;
 
@@ -134,6 +135,9 @@ public class MapScreenLoad : MonoBehaviour {
             }
             i++;
         }
+        // Denote teh last island
+        GameObject flag = Instantiate(Resources.Load(islandFlagPrefabPath, typeof(GameObject))) as GameObject;
+        flag.transform.position = new Vector3(18f, -.9f, -11f);
     }
 
     private void SetLevel2Map(List<IslandObject> islands)
