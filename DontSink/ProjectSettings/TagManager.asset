@@ -50,6 +50,7 @@ TagManager:
   - LeaveUI
   - TutorialUI
   - PayoutPopup
+  - ClarificationText
   layers:
   - Default
   - TransparentFX
