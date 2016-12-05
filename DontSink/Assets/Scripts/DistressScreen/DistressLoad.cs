@@ -16,8 +16,12 @@ public class DistressLoad : MonoBehaviour
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
 
-        distressText = GameObject.FindGameObjectWithTag("DistressText").GetComponent<Text>();
-        distressText.text = DistressText();
+        GameObject tmp = GameObject.FindGameObjectWithTag("DistressText");
+        if (tmp != null)
+        {
+            distressText = tmp.GetComponent<Text>();
+            distressText.text = DistressText();
+        }
 
         playerShipObject = manager.GetPlayer().Ship;
         playerShip = playerShipObject.ShipModel;

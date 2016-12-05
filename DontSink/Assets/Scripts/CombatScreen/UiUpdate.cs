@@ -73,11 +73,20 @@ public class UiUpdate : MonoBehaviour
             enemyHull.maxValue = 0;
             enemyHull.value = 0;
         }
+        
     }
 
     void Update ()
     {
-        if (!gameOver)
+        if ((manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Defeated == true)
+        {
+            string enemyShipName = enemy.ShipModel;
+            string enemyShipTag = enemyShipName.Substring(14, enemyShipName.Length - 14);
+            GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
+            RemoveUI();
+            CreateLeaveButton();
+        }
+        else if (!gameOver)
         {
             // Update health
             playerHealthBar.value = player.CurrentHealth;
