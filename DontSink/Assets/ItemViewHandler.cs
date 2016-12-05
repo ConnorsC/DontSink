@@ -40,18 +40,18 @@ public class ItemViewHandler : MonoBehaviour {
 
     public void SetName(string name)
     {
-        print("setname start");
+        
         foreach (Transform child in gameObject.transform)
         {
             if (child.CompareTag("ItemName"))
             {
                 child.GetComponent<Text>().text = name;
-                print("setname working");
+                
             }
-            print("setname working");
+            
         }
         //gameObject.transform.FindChild("item_info_panel/item_name").GetComponent<Text>().text = name;
-        print("setname end");
+        
     }
 
     public void SetDesc(string desc)
