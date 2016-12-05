@@ -1666,7 +1666,7 @@ GameObject:
   - 114: {fileID: 592564978}
   m_Layer: 5
   m_Name: shipstats_current
-  m_TagString: Untagged
+  m_TagString: StoreShipValueCurrent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3657,7 +3657,7 @@ GameObject:
   - 114: {fileID: 1643379266}
   m_Layer: 5
   m_Name: shipstats_withItem
-  m_TagString: Untagged
+  m_TagString: StoreShipValueWithItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
