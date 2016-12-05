@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class UiUpdate : MonoBehaviour
 {
+    private static System.Random rnd = new System.Random();
+
+    public bool gameOver = false;
+    public bool pause = true;
+
     private PlayerShipObject player;
     private EnemyShipObject enemy;
     private Slider playerHealthBar;
@@ -16,14 +21,30 @@ public class UiUpdate : MonoBehaviour
 
     static string gameOverPath = "Objects/UI/GameOver";
     private GameObject gameOverObject;
-    public bool gameOver = false;
 
+    private GameObject leaveButton;
+    private GameObject payoutPopup;
+
+    public void Pause(bool pse)
+    {
+        pause = pse;
+        payoutPopup.SetActive(pse);
+    }
     // Use this for initialization
-    void Awake ()
+    void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         gameOverObject = GameObject.FindGameObjectWithTag("GameOver");
         gameOverObject.SetActive(gameOver);
+
+        leaveButton = GameObject.FindGameObjectWithTag("LeaveUI");
+        leaveButton.SetActive(false);
+
+        payoutPopup = GameObject.FindGameObjectWithTag("PayoutPopup");
+        if ((manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Defeated == false)
+            payoutPopup.transform.Find("Text").GetComponent<Text>().text = PirateThreat();
+        else
+            payoutPopup.SetActive(false);
 
         if (manager.GetPlayer() == null)
         {
@@ -68,11 +89,20 @@ public class UiUpdate : MonoBehaviour
             enemyHull.maxValue = 0;
             enemyHull.value = 0;
         }
+        
     }
 
     void Update ()
     {
-        if (!gameOver)
+        if ((manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Defeated == true)
+        {
+            string enemyShipName = enemy.ShipModel;
+            string enemyShipTag = enemyShipName.Substring(14, enemyShipName.Length - 14);
+            GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
+            RemoveUI();
+            CreateLeaveButton();
+        }
+        else if (!gameOver && !pause)
         {
             // Update health
             playerHealthBar.value = player.CurrentHealth;
@@ -109,22 +139,23 @@ public class UiUpdate : MonoBehaviour
     {
         string enemyShipName = enemy.ShipModel;
         string enemyShipTag = enemyShipName.Substring(14, enemyShipName.Length-14);
-
-        GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
-        enemyHealthBar.gameObject.SetActive(false);
-        enemyHull.gameObject.SetActive(false);
-        GameObject[] enemyCannons = GameObject.FindGameObjectsWithTag("EnemyCannonUI");
-        foreach(GameObject enemyCannonUI in enemyCannons)
-        {
-            enemyCannonUI.SetActive(false);
-        }
-
+        GameObject enemyShip = GameObject.FindGameObjectWithTag(enemyShipTag);
+        ShipSink sink = enemyShip.AddComponent<ShipSink>();
+        sink.sinkSpeed = 4;
+        //GameObject.FindGameObjectWithTag(enemyShipTag).SetActive(false);
+        //enemyHealthBar.gameObject.SetActive(false);
+        //enemyHull.gameObject.SetActive(false);
+        //GameObject[] enemyCannons = GameObject.FindGameObjectsWithTag("EnemyCannonUI");
+        //foreach(GameObject enemyCannonUI in enemyCannons)
+        //{
+        //    enemyCannonUI.SetActive(false);
+        //}
+        RemoveUI();
+        CreateLeaveButton();
+        CollectPayout();
         //Will later be called by clicking a button
-        ReturnToMap();
-    }
-    void ReturnToMap()
-    {
-        manager.LoadLevel("MapScreen");
+        //ReturnToMap();
+
     }
     void GameOver()
     {
@@ -132,11 +163,65 @@ public class UiUpdate : MonoBehaviour
         gameOverObject.SetActive(gameOver);
 
         ShipSink sink = player.ShipModel.AddComponent<ShipSink>();
-        sink.sinkSpeed = 2;
+        sink.sinkSpeed = 3;
+    }
+    void RemoveUI()
+    {
+        GameObject combatUI = GameObject.FindGameObjectWithTag("CombatUI");
+        combatUI.SetActive(false);
+    }
+    void CreateLeaveButton()
+    {
+        leaveButton.SetActive(true);
+    }
+    void CollectPayout()
+    {
+        payoutPopup.SetActive(true);
+        payoutPopup.transform.Find("Text").GetComponent<Text>().text = RewardPlayer();
+    }
+    string RewardPlayer()
+    {
         
-        //GameObject canvas = GameObject.FindGameObjectWithTag("CombatUI");
-        //GameObject gameOverLay = Instantiate(Resources.Load(gameOverPath, typeof(GameObject))) as GameObject;
-        //gameOverLay.transform.SetParent(canvas.transform);
-        //gameOverLay.transform.localPosition = new Vector3(0f, 0f, 0f);
+        if (enemy.Boon == null)
+        {
+            int gold = rnd.Next(2 + manager.GetLevel(), 5 + 2 * manager.GetLevel());
+            manager.GetPlayer().Gold += gold;
+            return "You collect " + gold + " gold from the ship in the looting.";
+        }
+        else
+        {
+            manager.GetPlayer().Ship.AddItem(enemy.Boon);
+            return "You are able to salvage " + enemy.Boon.Name + "from the wreckage.";
+        }
+    }
+    string PirateThreat()
+    {
+        switch (rnd.Next(0, 4))
+        {
+            case 0:
+                return "We'll be havin’ yer gold!";
+            case 1:
+                return "Men, it's plunderin’ time!";
+            case 2:
+                return "I'll plunder yer coffer ye barnacle bottomed sluggard!";
+            case 3:
+                return "Dead men tell no tales!";
+            case 4:
+                return "Hoist ‘em over th’ yardom!";
+            case 5:
+                return "Surrender or die ye lice infested salt hog!";
+            case 6:
+                return "I'll cut out yer tongue an’ feed ta th’ sharks!";
+            case 7:
+                return "We’ll dance th’ hornpipe oer’ yer grave!";
+            case 8:
+                return "Give us th’ gold ye slovenly milk maid!";
+            case 9:
+                return "Prepare fer yer doom!";
+            case 10:
+                return "Feed ‘em to th’ sharks!";
+            default:
+                return "";
+        }
     }
 }

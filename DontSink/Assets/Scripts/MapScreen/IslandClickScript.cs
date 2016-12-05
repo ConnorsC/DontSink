@@ -107,9 +107,9 @@ public class IslandClickScript : MonoBehaviour {
         else if (manager.Islands[island-1] is StartIslandObject)
             print("Start Island Type");
         else if (manager.Islands[island-1] is EndIslandObject)
-            print("End Island Type");
+            manager.LoadLevel("BossScene");
         else if (manager.Islands[island-1] is DistressIslandObject)
-            print("Distress Island Type");
+            manager.LoadLevel("DistressScreen");
         else
             print("Incorrect Island Type");
     }

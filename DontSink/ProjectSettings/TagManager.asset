@@ -36,7 +36,22 @@ TagManager:
   - ItemName
   - ItemCost
   - ItemDesc
+  - StoreShipNamePanel
+  - StoreShipImagePanel
+  - StoreShipStatsPanel
+  - StoreShipHullPanel
+  - StoreShipValueCurrent
+  - StoreShipValueWithItem
+  - StoreShipSailPanel
+  - StoreShipAttackPanel
+  - StoreShipFirePanel
+  - DistressText
+  - DistressUI
+  - LeaveUI
   - TutorialUI
+  - PayoutPopup
+  - ClarificationText
+  - FinalIslandFlag
   layers:
   - Default
   - TransparentFX

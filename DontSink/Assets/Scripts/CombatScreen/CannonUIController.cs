@@ -5,6 +5,7 @@ using System.Collections;
 public class CannonUIController : MonoBehaviour
 {
     private GameObject button;
+    private GameObject cooldownBarObject;
     private Slider cooldownBar;
     private Text text;
 
@@ -15,26 +16,53 @@ public class CannonUIController : MonoBehaviour
     private EnemyShipObject enemyShip;
     private PlayerShipObject playerShip;
 
+    private GameObject update;
+    private bool isBoss = false;
+
     // Use this for initialization
     void Start()
     {
-        GameManagerScript manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>(); 
-        enemyShip = (manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Ship;
+        GameManagerScript manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        if (manager.Islands[manager.GetIsland() - 1] is EndIslandObject)
+            isBoss = true;
+
+        if(isBoss)
+            enemyShip = (manager.Islands[manager.GetIsland() - 1] as EndIslandObject).Ship;
+        else
+            enemyShip = (manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Ship;
+
         playerShip = manager.GetPlayer().Ship;
         button = this.gameObject.transform.parent.Find("CannonSelect").gameObject;
-        cooldownBar = this.gameObject.transform.parent.Find("CannonCooldown").GetComponent<Slider>();
+        cooldownBarObject = this.gameObject.transform.parent.Find("CannonCooldown").gameObject;
+        cooldownBar = cooldownBarObject.GetComponent<Slider>();
         text = button.transform.Find("CannonName").GetComponent<Text>();
 
         text.text = cannonName;
         cooldownBar.maxValue = cooldown;
         cooldownBar.value = cooldown;
         cooldownTimer = 0.0f;
+
+        update = GameObject.FindGameObjectWithTag("UIUpdate");
     }
     void Update()
     {
-        if (cooldownTimer < cooldown)
-            cooldownTimer += Time.deltaTime;
-        cooldownBar.value = cooldownTimer;
+        bool conditional;
+        if (isBoss)
+            conditional = !update.GetComponent<BossScreenUpdate>().gameOver && !update.GetComponent<BossScreenUpdate>().pause;
+        else
+            conditional = !update.GetComponent<UiUpdate>().gameOver && !update.GetComponent<UiUpdate>().pause;
+        if (conditional)
+        {
+            if (cooldownTimer < cooldown)
+                cooldownTimer += Time.deltaTime;
+            else 
+            {
+                cooldownBarObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = Color.red;
+
+                text.color = Color.red;
+            }
+            cooldownBar.value = cooldownTimer;
+        }
     }
     public void Click()
     {
@@ -44,6 +72,10 @@ public class CannonUIController : MonoBehaviour
             int playerDamage = playerShip.CurrentDamage;
             //int playerDamage = 10;
             enemyShip.TakeDamage(playerDamage);
+
+            cooldownBarObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = Color.green;
+
+            text.color = Color.white;
         }
     }
 }
