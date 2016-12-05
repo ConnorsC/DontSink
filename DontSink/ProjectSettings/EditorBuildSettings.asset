@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/DialogueScreen.unity
   - enabled: 1
     path: Assets/Scenes/DistressScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/BossScene.unity
