@@ -61,9 +61,9 @@ public class IslandGenerator : MonoBehaviour
     }
     private DistressIslandObject GenerateDistressShip(int lvl)
     {
-        ItemObject boon = new ItemObject(); // Adding no boon as we have no items atm
+        ItemObject boon = null; // Adding no boon as we have no items atm
         NeutralShipObject ship = new NeutralShipObject(boon);
-        return new DistressIslandObject();
+        return new DistressIslandObject(ship);
     }
     private StartIslandObject GenerateStartIsland(int lvl) // I don't know how we are going to be generating the text/story for this island yet so there is nothing here
     {
