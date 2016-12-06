@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class store_handler_script : MonoBehaviour {
 
-    int itemCount = 0, columnCount = 1;
+    int itemCount = 0;
     List<ItemObject> itemList;
     List<GameObject> itemPrefabList;
     int currentIndex = -1;
@@ -30,7 +30,7 @@ public class store_handler_script : MonoBehaviour {
         //set vars for shipstatspanel
         shipNamePanel = GameObject.FindGameObjectWithTag("StoreShipNamePanel");
         shipImagePanel = GameObject.FindGameObjectWithTag("StoreShipImagePanel");
-        shipStatsPanel = GameObject.FindGameObjectWithTag("StoreShipStatsPanel");
+        //shipStatsPanel = GameObject.FindGameObjectWithTag("StoreShipStatsPanel");//not referenced so commented out for now
         shipHullHealthPanel = GameObject.FindGameObjectWithTag("StoreShipHullHealthPanel");
         shipHullResistPanel = GameObject.FindGameObjectWithTag("StoreShipHullResistPanel");
         shipSailPanel = GameObject.FindGameObjectWithTag("StoreShipSailPanel");
@@ -91,7 +91,6 @@ public class store_handler_script : MonoBehaviour {
         GameObject itemPanel = GameObject.FindGameObjectWithTag("ItemScrollViewContent");
         RectTransform itemPanelSize = itemPanel.GetComponent<RectTransform>();
         float panelHeight = itemPanelSize.rect.height;
-        float panelWidth = itemPanelSize.rect.width;
         
         GameObject newItem = Instantiate(itemPrefab, new Vector3(0,itemCount*-60,0) , Quaternion.identity) as GameObject;
         itemCount++;
@@ -158,7 +157,7 @@ public class store_handler_script : MonoBehaviour {
         }
         else if (item is MiscObject)
         {
-            MiscObject temp = item as MiscObject;
+            //MiscObject temp = item as MiscObject;
             desc = "Misc Object";
         }
         else if (item is SailObject)
@@ -258,7 +257,7 @@ public class store_handler_script : MonoBehaviour {
         }
         else if (item is MiscObject)
         {
-            MiscObject temp = item as MiscObject;
+            return;
             //do nothing
         }
         else if (item is SailObject)

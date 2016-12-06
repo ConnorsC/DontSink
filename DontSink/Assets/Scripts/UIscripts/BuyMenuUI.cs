@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BuyMenuUI : MonoBehaviour {
-    private bool showMenu = false;
+    private bool showMenu;
 
 	// Update is called once per frame
 	void Update () {

@@ -10,7 +10,7 @@ public class IslandClickScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        manager = manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
     }
 
     public void OnMouseDown()
