@@ -27,6 +27,7 @@ public class ShipObject : MonoBehaviour
         this.baseHealth = health;
         this.health = new MaxCurrentPair<int>(health);
         this.baseSpeed = speed;
+        this.currentSpeed = speed;
         this.currentDamage = speed;
         this.baseDamage = damage;
         this.currentDamage = damage;
@@ -85,6 +86,8 @@ public class ShipObject : MonoBehaviour
     {
         currentSpeed *= (int)(crewMember).Speed_Buff;
         reloadMultiplier *= (int)(crewMember).Reload_Buff;
+        if (crew == null)
+            crew = new List<CrewObject>();
         crew.Add(crewMember);
     }
     public void RemoveCrew(CrewObject crewMember)
@@ -107,10 +110,14 @@ public class ShipObject : MonoBehaviour
             hull = (HullObject)item;
             return;
         }
+        if(items == null)
+            items = new List<ItemObject>();
         items.Add(item);
     }
     public void RemoveItem(ItemObject item)
     {
+        if (items == null)
+            items = new List<ItemObject>();
         if (items.Contains(item))
         {
             if (item is SailObject)
