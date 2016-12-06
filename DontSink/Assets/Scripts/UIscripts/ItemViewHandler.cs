@@ -78,5 +78,10 @@ public class ItemViewHandler : MonoBehaviour {
         }
     }
 
+    public void DeleteObject()
+    {
+        Destroy(this.gameObject);
+    }
+
 
 }

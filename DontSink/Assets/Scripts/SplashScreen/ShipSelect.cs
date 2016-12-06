@@ -68,7 +68,6 @@ public class ShipSelect : MonoBehaviour{
             manager.DontDestroy(dreadnought);
             Destroy(this);
         }
-
         manager.SetIsland(1);
         manager.SetLevel(1);
         manager.LoadLevel("MapScreen");

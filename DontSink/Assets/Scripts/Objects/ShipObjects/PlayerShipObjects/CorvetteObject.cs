@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CorvetteObject : PlayerShipObject
 {
@@ -13,7 +14,7 @@ public class CorvetteObject : PlayerShipObject
 
     public CorvetteObject() : base(80, 14, 8, hull,items, crew, shipModel,preFabPath) {
         shipModel = GameObject.FindGameObjectWithTag("Corvette");
-
+        items = new List<ItemObject>();
     }
 
 
