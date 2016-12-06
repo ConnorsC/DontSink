@@ -56,6 +56,8 @@ TagManager:
   - StoreShipHullPanel
   - StoreShipStatsHullResistPanel
   - PlayerGoldText
+  - GameAudio
+  - Cannonball
   layers:
   - Default
   - TransparentFX

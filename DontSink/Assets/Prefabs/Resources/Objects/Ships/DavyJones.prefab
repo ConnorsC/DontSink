@@ -3142,6 +3142,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011047801594}
+  - 114: {fileID: 114000013759397590}
+  - 54: {fileID: 54000011270708734}
   m_Layer: 0
   m_Name: DavyJones
   m_TagString: DavyJones
@@ -11450,3 +11452,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010628855922}
   m_Mesh: {fileID: 4300054, guid: 3ae2864f9bd49a447aee9717de109b15, type: 3}
+--- !u!54 &54000011270708734
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013999918242}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114000013759397590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013999918242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5785e8ca3ba0e4ab029dadd06dfde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannonBall: {fileID: 1000014146042332, guid: 3d85ecc9af9a1a34695d507b7fb479eb, type: 2}

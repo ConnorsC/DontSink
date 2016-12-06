@@ -51,6 +51,7 @@ public class ShipSelect : MonoBehaviour{
         {
             manager.GetPlayer().Ship = (new BrigObject());
             manager.GetPlayer().Ship.ShipModel = brig;
+            manager.GetPlayer().PlayerShipTag = "Brig";
             manager.DontDestroy(brig);
             Destroy(this);
         }
@@ -58,6 +59,7 @@ public class ShipSelect : MonoBehaviour{
         {
             manager.GetPlayer().Ship = (new CorvetteObject());
             manager.GetPlayer().Ship.ShipModel = corvette;
+            manager.GetPlayer().PlayerShipTag = "Corvette";
             manager.DontDestroy(corvette);
             Destroy(this);
         }
@@ -65,6 +67,7 @@ public class ShipSelect : MonoBehaviour{
         {
             manager.GetPlayer().Ship = (new DreadnoughtObject());
             manager.GetPlayer().Ship.ShipModel = dreadnought;
+            manager.GetPlayer().PlayerShipTag = "Dreadnought";
             manager.DontDestroy(dreadnought);
             Destroy(this);
         }
