@@ -44,8 +44,10 @@ public class EnemyCannonUI : MonoBehaviour
         cooldownBar.value = cooldownTimer;
 
         update = GameObject.FindGameObjectWithTag("UIUpdate");
-        if (GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 10))!=null)
+        if (!isBoss && GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 10))!=null)
             enemyShipGameObject = GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 10));
+        else if (isBoss && GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 9)) != null)
+            enemyShipGameObject = GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 9));
     }
 
     // Update is called once per frame
