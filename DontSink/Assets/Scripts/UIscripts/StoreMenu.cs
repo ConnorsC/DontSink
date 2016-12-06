@@ -3,7 +3,7 @@ using System.Collections;
 
 public class StoreMenu : MonoBehaviour {
     private bool showMenu;
-    private int menuType = 0;
+    private int menuType;
     private GameObject storeMenu;
     // Use this for initialization
     void Start () {
