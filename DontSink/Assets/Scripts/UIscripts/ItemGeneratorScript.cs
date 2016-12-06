@@ -43,7 +43,7 @@ public class ItemGeneratorScript : MonoBehaviour {
                 case 0://crew object
                     {
                         int p = rnd.Next(0, 4);
-                        double spd = 1 + (rnd.NextDouble() * level);
+                        double spd = 1 + (rnd.NextDouble()/2 * level);
                         double rl = 1 + (rnd.NextDouble() * level);
                         string name = firstNames[rnd.Next(0, (firstNames.Length - 1))] + " " + lastNames[rnd.Next(0, (lastNames.Length - 1))];
                         int val = rnd.Next(5, 13);
@@ -63,7 +63,7 @@ public class ItemGeneratorScript : MonoBehaviour {
                 case 1://repairman object
                     {
                         int p = rnd.Next(0, 4);
-                        double spd = 1 + (rnd.NextDouble() * level);
+                        double spd = 1 + ((rnd.NextDouble()/2) * level);
                         double rl = 1 + (rnd.NextDouble() * level);
                         int rr = rnd.Next(1, 5*level);
                         double maxrep = rnd.NextDouble() * 100;
@@ -117,7 +117,7 @@ public class ItemGeneratorScript : MonoBehaviour {
                     break;
                 case 4://sail
                     {
-                        int speed = rnd.Next(1, 5*level);
+                        int speed = rnd.Next(1, 2*level);
 
                         string name = prePhrase[rnd.Next(0, (prePhrase.Length - 1))] + " " + postPhrase[2];
                         int val = rnd.Next(5, 5 + (5*level));

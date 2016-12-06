@@ -107,10 +107,14 @@ public class ShipObject : MonoBehaviour
     }
     public void AddCrew(CrewObject crewMember)
     {
-        currentSpeed *= (int)(crewMember).Speed_Buff;
-        reloadMultiplier *= (int)(crewMember).Reload_Buff;
         if (crew == null)
             crew = new List<CrewObject>();
+        if (crew.Count > 0)
+            currentSpeed /= (int)crew[0].Speed_Buff;
+        crew.Clear();
+        currentSpeed *= (int)(crewMember).Speed_Buff;
+        reloadMultiplier *= (int)(crewMember).Reload_Buff;
+        
         crew.Add(crewMember);
     }
     public void RemoveCrew(CrewObject crewMember)
