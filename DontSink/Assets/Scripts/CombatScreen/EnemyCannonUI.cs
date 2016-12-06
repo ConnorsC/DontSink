@@ -30,7 +30,9 @@ public class EnemyCannonUI : MonoBehaviour
         if (isBoss)
             enemyShip = (manager.Islands[manager.GetIsland() - 1] as EndIslandObject).Ship;
         else
+        {
             enemyShip = (manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Ship;
+        }
         playerShip = manager.GetPlayer().Ship;
 
         cooldownBar = this.gameObject.GetComponent<Slider>();
@@ -57,6 +59,8 @@ public class EnemyCannonUI : MonoBehaviour
             if (cooldownTimer >= cooldown && enemyShip.CurrentHealth > 0)
             {
                 audioSource.PlayOneShot(audioClip);
+                //this should work if i can get the prefab on screen
+                //enemyShip.CannonBallShooter.Shoot(1, enemyShipModel, false);
                 cooldownTimer = 0.0f;
                 int enemyDamage = 10; //enemyShip.CurrentDamage;
                 playerShip.TakeDamage(enemyDamage);
