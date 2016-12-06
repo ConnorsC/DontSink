@@ -85,7 +85,7 @@ public class MapGeneration
         distress_island2 = ints[index];
         ints.RemoveAt(index);
 
-        for (int i = 0; i < totalIslands + 1; i++)
+        for (int i = 0; i <= totalIslands-1; i++)
         {
             if (i == 0)
                 islands.Add(0); // Start Island
@@ -138,7 +138,7 @@ public class MapGeneration
         distress_island2 = ints[index];
         ints.RemoveAt(index);
 
-        for (int i = 0; i < totalIslands + 1; i++)
+        for (int i = 0; i <= totalIslands - 1; i++)
         {
             if (i == 0)
                 islands.Add(0); // Start Island
