@@ -364,7 +364,7 @@ public class MapScreenLoad : MonoBehaviour {
                     island.IslandModel.transform.position = new Vector3(-3.2f,0.1f, -9.5f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 4;
                     island.IslandModel.GetComponent<IslandMouseOverScript>().island = 4;
-                    island.ConnectedIsland = new List<int> { 2, 2, 10, 10 };
+                    island.ConnectedIsland = new List<int> { 2,2 ,5,7 };
                     island.IslandNumber = 4;
                     break;
                 case 4:
@@ -382,17 +382,17 @@ public class MapScreenLoad : MonoBehaviour {
                     island.IslandNumber = 6;
                     break;
                 case 6:
-                    island.IslandModel.transform.position = new Vector3(147f,0.1f, -3f);
+                    island.IslandModel.transform.position = new Vector3(1.27f,0.1f, -6);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 7;
                     island.IslandModel.GetComponent<IslandMouseOverScript>().island = 7;
-                    island.ConnectedIsland = new List<int> { 2, 2, 10, 10 };
+                    island.ConnectedIsland = new List<int> { 4,4,5,5 };
                     island.IslandNumber = 7;
                     break;
                 case 7:
                     island.IslandModel.transform.position = new Vector3(20.63f,0.1f, -2.3f);
                     island.IslandModel.GetComponent<IslandClickScript>().island = 8;
                     island.IslandModel.GetComponent<IslandMouseOverScript>().island = 8;
-                    island.ConnectedIsland = new List<int> { 2, 2, 10, 10 };
+                    island.ConnectedIsland = new List<int> { 16, 16, 16, 16 };
                     island.IslandNumber = 8;
                     break;
                 case 8: //end island

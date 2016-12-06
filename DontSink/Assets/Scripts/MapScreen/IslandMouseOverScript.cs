@@ -29,8 +29,8 @@ public class IslandMouseOverScript : MonoBehaviour
         islandLine.material = lineMaterial;
         
     }
-	
-	void OnMouseOver ()
+
+    void OnMouseOver()
     {
 
         islands = manager.Islands;
@@ -40,27 +40,17 @@ public class IslandMouseOverScript : MonoBehaviour
         int target2 = connectedIslands[1];
         int target3 = connectedIslands[2];
         int target4 = connectedIslands[3];
-    
-        islandLine.enabled=true;
 
-        if (target1 != 0) {
-            islandLine.SetPosition(0, transform.position);
-            islandLine.SetPosition(1, FindIsland(target1).IslandModel.transform.position);
-            islandLine.SetPosition(2, transform.position);
-        }
-        if (target2  != 0) {       
-            islandLine.SetPosition(3, FindIsland(target2).IslandModel.transform.position);
-            islandLine.SetPosition(4, transform.position);
-        }
-        if (target3 != 0)
-        {
-            islandLine.SetPosition(5, FindIsland(target3).IslandModel.transform.position);
-            islandLine.SetPosition(6, transform.position);
-        }
-        if (target4 != 0)
-        {
-            islandLine.SetPosition(7, FindIsland(target4).IslandModel.transform.position);
-        }
+        islandLine.enabled = true;
+
+        islandLine.SetPosition(0, transform.position);
+        islandLine.SetPosition(1, FindIsland(target1).IslandModel.transform.position);
+        islandLine.SetPosition(2, transform.position);
+        islandLine.SetPosition(3, FindIsland(target2).IslandModel.transform.position);
+        islandLine.SetPosition(4, transform.position);
+        islandLine.SetPosition(5, FindIsland(target3).IslandModel.transform.position);
+        islandLine.SetPosition(6, transform.position);
+        islandLine.SetPosition(7, FindIsland(target4).IslandModel.transform.position);
     }
 
     public IslandObject FindIsland(int islandToFind)
