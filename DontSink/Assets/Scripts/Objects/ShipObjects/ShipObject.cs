@@ -20,6 +20,11 @@ public class ShipObject : MonoBehaviour
     private string prefabPath;
 
     private static System.Random rnd = new System.Random();
+    private int health1;
+    private int speed;
+    private int damage;
+    private CannonBallShooter cannonBallShooter;
+
     public ShipObject() { }
 
     public ShipObject(int health, int speed, int damage, HullObject hull, List<ItemObject> items, List<CrewObject> crew,GameObject shipModel, string prefabPath)
@@ -38,6 +43,23 @@ public class ShipObject : MonoBehaviour
         this.prefabPath = prefabPath;
     }
 
+    public ShipObject(int health, int speed, int damage, HullObject hull, List<ItemObject> items, List<CrewObject> crew, GameObject shipModel, CannonBallShooter cannonBallShooter, string prefabPath)
+    {
+        this.baseHealth = health;
+        this.health = new MaxCurrentPair<int>(health);
+        this.baseSpeed = speed;
+        this.currentSpeed = speed;
+        this.currentDamage = speed;
+        this.baseDamage = damage;
+        this.currentDamage = damage;
+        this.hull = hull;
+        this.items = items;
+        this.crew = crew;
+        this.shipModel = shipModel;
+        this.prefabPath = prefabPath;
+        this.cannonBallShooter = cannonBallShooter;
+    }
+
     //Accessors
     public int BaseHealth { get { return baseHealth; } set { baseHealth = value; } }
     public int BaseSpeed { get { return baseSpeed; } set { baseSpeed = value; } }
@@ -51,6 +73,7 @@ public class ShipObject : MonoBehaviour
     public List<ItemObject> Items { get { return items; } set { items = value; } }
     public List<CrewObject> Crew { get { return crew; } set { crew = value; } }
     public GameObject ShipModel { get { return shipModel; } set { shipModel = value; } }
+    public CannonBallShooter CannonBallShooter { get { return cannonBallShooter; } set { cannonBallShooter = value; } }
     public string getPrefabPath { get { return prefabPath; } set { prefabPath = value; } }
 
     public void TakeDamage(int damage)

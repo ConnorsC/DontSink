@@ -12,9 +12,14 @@ public class CannonUIController : MonoBehaviour
     public float cooldown = 10;
     public string cannonName = "Cannon";
     private float cooldownTimer;
+    public int cannonNumber;
 
     private EnemyShipObject enemyShip;
     private PlayerShipObject playerShip;
+    private AudioSource audioSource;
+    private AudioClip audioClip;
+    private CannonBallShooter cannoBallShooter;
+    private GameManagerScript manager;
 
     private GameObject update;
     private bool isBoss = false;
@@ -22,11 +27,16 @@ public class CannonUIController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameManagerScript manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+
+        cannoBallShooter = manager.GetPlayer().Ship.CannonBallShooter;
         if (manager.Islands[manager.GetIsland() - 1] is EndIslandObject)
             isBoss = true;
 
-        if(isBoss)
+        audioClip = Resources.Load<AudioClip>("Audio/CannonSound");
+        audioSource = GameObject.FindGameObjectWithTag("GameAudio").GetComponent<AudioSource>();
+
+        if (isBoss)
             enemyShip = (manager.Islands[manager.GetIsland() - 1] as EndIslandObject).Ship;
         else
             enemyShip = (manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Ship;
@@ -74,7 +84,10 @@ public class CannonUIController : MonoBehaviour
             enemyShip.TakeDamage(playerDamage);
 
             cooldownBarObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = Color.green;
-
+            audioSource.PlayOneShot(audioClip);
+            GameObject player = manager.GetPlayer().Ship.ShipModel;
+            cannoBallShooter = GameObject.FindGameObjectWithTag(manager.GetPlayer().PlayerShipTag).GetComponent<CannonBallShooter>();
+            cannoBallShooter.Shoot(cannonNumber, player, true);
             text.color = Color.white;
         }
     }

@@ -10,7 +10,7 @@ public class IslandClickScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        manager = manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
     }
 
     public void OnMouseDown()
@@ -19,12 +19,23 @@ public class IslandClickScript : MonoBehaviour {
         {
             manager.LoadLevel("MapScreen");
             List<int> connectedIslands = FindIsland(island).ConnectedIsland;
-            for(int x = 0; x <= connectedIslands.Capacity-1; x++)
+
+            //we didnt move and are on the same island
+            if (island == manager.GetIsland())
             {
-                if(connectedIslands[x] == manager.GetIsland())
+                manager.SetIsland(island);
+                LoadLevel();
+            }
+            else
+            {
+                //check if we can reach the clicked on island
+                for (int x = 0; x <= connectedIslands.Capacity - 1; x++)
                 {
-                    manager.SetIsland(island);
-                    LoadLevel();
+                    if (connectedIslands[x] == manager.GetIsland())
+                    {
+                        manager.SetIsland(island);
+                        LoadLevel();
+                    }
                 }
             }
 

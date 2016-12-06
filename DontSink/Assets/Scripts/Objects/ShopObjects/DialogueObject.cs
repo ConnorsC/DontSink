@@ -3,12 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class DialogueObject : MonoBehaviour {
-    private int dialogueType = 1;
-    private bool isWaiting = false;
+
     private bool firstLevel = true;
-    private bool button1Enabled = true;
-    private bool button2Enabled = true;
-    private bool button3Enabled = true;
+
 
 
     private enum dType
@@ -50,13 +47,13 @@ public class DialogueObject : MonoBehaviour {
 
             case 2:
 
-                print("Start Talking");
-                HandleButton(2, "lovely day");
+                print("Dialogue option disabled");
+                HandleButton(2, "No time for talking.");
                 break;
 
             case 3:
                 print("Leave");
-                HandleButton(3, "L8r");
+                HandleButton(3, "As you were.");
                 break;
         }
     }

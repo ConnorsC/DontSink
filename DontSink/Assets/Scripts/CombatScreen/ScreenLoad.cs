@@ -57,6 +57,7 @@ public class ScreenLoad : MonoBehaviour {
             GameObject cannonUI = Instantiate(Resources.Load(cannonUIPath, typeof(GameObject))) as GameObject;
             CannonUIController cannonController = cannonUI.transform.Find("Click").GetComponent<CannonUIController>();
             cannonController.cannonName = "Cannon " + cannonNumber;
+            cannonController.cannonNumber = cannonNumber;
             cannonController.cooldown = 5-j;// cannon.Fire_Rate;
             cannonUI.transform.SetParent(canvas.transform);
             if (cannonNumber <= 4)
