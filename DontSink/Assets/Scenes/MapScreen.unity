@@ -324,6 +324,7 @@ GameObject:
   - 222: {fileID: 155993788}
   - 114: {fileID: 155993787}
   - 114: {fileID: 155993786}
+  - 114: {fileID: 155993789}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -388,7 +389,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 155993787}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 155993789}
+        m_MethodName: OnMouseDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &155993787
@@ -424,6 +436,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 155993784}
+--- !u!114 &155993789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155993784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9fd391bbefd3d48b6cc8527627c78b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259782740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1436,7 @@ GameObject:
   - 82: {fileID: 1822250278}
   m_Layer: 0
   m_Name: Game Theme
-  m_TagString: Untagged
+  m_TagString: GameAudio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
