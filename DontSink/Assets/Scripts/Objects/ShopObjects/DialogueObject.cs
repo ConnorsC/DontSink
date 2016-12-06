@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class DialogueObject : MonoBehaviour {
-    private int dialogueType = 1;
-    private bool isWaiting = false;
+
     private bool firstLevel = true;
 
 
