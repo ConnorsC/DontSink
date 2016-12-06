@@ -264,7 +264,7 @@ public class store_handler_script : MonoBehaviour {
         else if (item is SailObject)
         {
             SailObject temp = item as SailObject;
-            SetPanelStats(shipSailPanel, manager.GetPlayer().Ship.CurrentSpeed, temp.Speed);
+            SetPanelStats(shipSailPanel, manager.GetPlayer().Ship.CurrentSpeed, manager.GetPlayer().Ship.CurrentSpeed + temp.Speed);
         }
         else if (item is RepairmanObject)
         {
