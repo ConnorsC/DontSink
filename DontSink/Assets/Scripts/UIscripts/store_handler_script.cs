@@ -26,6 +26,7 @@ public class store_handler_script : MonoBehaviour {
     // Use this for initialization
     void Start () {
         itemList = new List<ItemObject>();
+        
         itemPrefabList = new List<GameObject>();
         //set vars for shipstatspanel
         shipNamePanel = GameObject.FindGameObjectWithTag("StoreShipNamePanel");
@@ -39,9 +40,9 @@ public class store_handler_script : MonoBehaviour {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         itemListPanel = GameObject.FindGameObjectWithTag("ItemScrollViewContent");
         goldText = GameObject.FindGameObjectWithTag("PlayerGoldText");
-
+        CallItemList();
         UpdateGoldText();
-        DemoData();//demo data (comment this)
+        //DemoData();//demo data (comment this)
         PopulateList();
         PopulateShipStats();
 	}
@@ -168,15 +169,15 @@ public class store_handler_script : MonoBehaviour {
         else if (item is RepairmanObject)
         {
             RepairmanObject temp = item as RepairmanObject;
-            desc = "Reload Buff: " + temp.Reload_Buff +
-                   "\nSpeed Buff: " + temp.Speed_Buff + 
+            desc = "Reload Buff: " + System.Math.Round(temp.Reload_Buff,2) +
+                   "\nSpeed Buff: " + System.Math.Round(temp.Speed_Buff,2) + 
                    "\nRepair Rate: " + temp.Repair_Rate;
         }
         else if(item is CrewObject)
         {
             CrewObject temp = item as CrewObject;
-            desc = "Reload Buff: " + temp.Reload_Buff + 
-                   "\nSpeed Buff: " + temp.Speed_Buff;
+            desc = "Reload Buff: " + System.Math.Round(temp.Reload_Buff, 2) + 
+                   "\nSpeed Buff: " + System.Math.Round(temp.Speed_Buff, 2);
         }
         else
         {
@@ -390,6 +391,7 @@ public class store_handler_script : MonoBehaviour {
                 manager.GetPlayer().Ship.AddCrew(itemList[currentIndex] as RepairmanObject);
                 itemList.Remove(itemList[currentIndex]);
                 itemCount--;
+                UpdateItemList();
             }
             else if (itemList[currentIndex] is CrewObject)
             {
@@ -397,6 +399,7 @@ public class store_handler_script : MonoBehaviour {
                 manager.GetPlayer().Ship.AddCrew(itemList[currentIndex] as CrewObject);
                 itemList.Remove(itemList[currentIndex]);
                 itemCount--;
+                UpdateItemList();
             }
             else if (itemList[currentIndex] is SailObject)
             {
@@ -405,6 +408,7 @@ public class store_handler_script : MonoBehaviour {
                 manager.GetPlayer().Ship.AddItem(temp);
                 itemList.Remove(itemList[currentIndex]);
                 itemCount--;
+                UpdateItemList();
             }
             else if (itemList[currentIndex] is CannonObject)
             {
@@ -413,12 +417,14 @@ public class store_handler_script : MonoBehaviour {
                 manager.GetPlayer().Ship.AddItem(itemList[currentIndex]);
                 itemList.Remove(itemList[currentIndex]);
                 itemCount--;
+                UpdateItemList();
             }
             else if(itemList[currentIndex] is HullObject)
             {
                 manager.GetPlayer().Ship.AddItem(itemList[currentIndex]);
                 itemList.Remove(itemList[currentIndex]);
                 itemCount--;
+                UpdateItemList();
             }
             else if (itemList[currentIndex] is ItemObject)
             {
@@ -426,6 +432,7 @@ public class store_handler_script : MonoBehaviour {
                 manager.GetPlayer().Ship.AddItem(itemList[currentIndex]);
                 itemList.Remove(itemList[currentIndex]);
                 itemCount--;
+                UpdateItemList();
             }
             else
             {
@@ -436,11 +443,21 @@ public class store_handler_script : MonoBehaviour {
             UpdateGoldText();//update UI
             ResetIndex();
             PopulateList();
-            
-            
-            
+         
         }
     }
+
+    public void CallItemList()
+    {
+        itemList = manager.GetItemList();
+    }
+
+    public void UpdateItemList()
+    {
+        manager.SetItemList(itemList);
+    }
+
+   
 
     public void DemoData()
     {
@@ -450,21 +467,21 @@ public class store_handler_script : MonoBehaviour {
         temp1.Fire_Rate = 10;
         temp1.Name = "Basic Cannon";
         temp1.Icon = Resources.Load<Sprite>("Images/cannon");
-        temp1.Value = 50;
+        temp1.Value = 1;
 
         CrewObject temp2 = new CrewObject();
         temp2.Reload_Buff = 2;
         temp2.Speed_Buff = 1;
         temp2.Name = "Sailor Joe";
         temp2.Icon = Resources.Load<Sprite>("Images/sailoricon");
-        temp2.Value = 50;
+        temp2.Value = 1;
 
         RepairmanObject temp3 = new RepairmanObject();
         temp3.Repair_Rate = 20;
         temp3.Max_Repair = 100;
         temp3.Name = "Repairman Steve";
         temp3.Icon = Resources.Load<Sprite>("Images/sailoricon2");
-        temp3.Value = 84;
+        temp3.Value = 1;
 
         HullObject temp4 = new HullObject(2,20);
         //temp4.MaxHealth = 20;
@@ -472,7 +489,7 @@ public class store_handler_script : MonoBehaviour {
         //temp4.Damage_Reduction = 2;
         temp4.Name = "Bigger Boards";
         temp4.Icon = Resources.Load<Sprite>("Images/hullicon");
-        temp4.Value = 10;
+        temp4.Value = 1;
 
         CrewObject temp5 = new CrewObject();
         temp5.Reload_Buff = 10;
@@ -487,9 +504,9 @@ public class store_handler_script : MonoBehaviour {
         //temp6.Damage_Reduction = 2;
         temp6.Name = "Biggerer Boards";
         temp6.Icon = Resources.Load<Sprite>("Images/reinforcedhullicon");
-        temp6.Value = 30;
+        temp6.Value = 1;
 
-        SailObject temp7 = new SailObject(Resources.Load<Sprite>("Images/sailboaticon100"), "Sails", 44, 20);
+        SailObject temp7 = new SailObject(Resources.Load<Sprite>("Images/sailboaticon100"), "Sails", 1, 20);
         /*temp7.Speed = 20;
         temp7.Name = "Sails";
         temp7.Icon = Resources.Load<Sprite>("Images/sailboaticon100");
@@ -501,7 +518,7 @@ public class store_handler_script : MonoBehaviour {
         //temp8.Damage_Reduction = 2;
         temp8.Name = "Super Heavy Boards";
         temp8.Icon = Resources.Load<Sprite>("Images/superreinforcedhullicon");
-        temp8.Value = 100;
+        temp8.Value = 1;
 
 
 
