@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BrigObject : PlayerShipObject
 {
@@ -12,6 +13,6 @@ public class BrigObject : PlayerShipObject
 
     public BrigObject() : base(100, 10, 10, hull,items, crew, shipModel,prefabPath) {
         shipModel = GameObject.FindGameObjectWithTag("Brig");
-
+        items = new List<ItemObject>();
     }
 }

@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class DreadnoughtObject : PlayerShipObject
 {
@@ -11,6 +13,6 @@ public class DreadnoughtObject : PlayerShipObject
 
     public DreadnoughtObject() : base(120, 6, 12, hull,items, crew, shipModel,prefabPath) {
         shipModel = GameObject.FindGameObjectWithTag("Dreadnought");
-        
+        items = new List<ItemObject>();
     }
 }
