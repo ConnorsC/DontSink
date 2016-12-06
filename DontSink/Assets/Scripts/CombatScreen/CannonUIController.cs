@@ -87,7 +87,7 @@ public class CannonUIController : MonoBehaviour
             audioSource.PlayOneShot(audioClip);
             GameObject player = manager.GetPlayer().Ship.ShipModel;
             cannoBallShooter = GameObject.FindGameObjectWithTag(manager.GetPlayer().PlayerShipTag).GetComponent<CannonBallShooter>();
-            cannoBallShooter.Shoot(cannonNumber, player);
+            cannoBallShooter.Shoot(cannonNumber, player, true);
             text.color = Color.white;
         }
     }

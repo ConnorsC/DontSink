@@ -12,12 +12,26 @@ public class CannonBallShooter : MonoBehaviour {
 	
 	}
 
-    public void Shoot(int cannon,GameObject playership)
+    public void Shoot(int cannon,GameObject ship,bool isPlayer)
     {
-        float cannonPosition = (cannon *1.0f);
-        var cannonball= (GameObject)Instantiate(cannonBall, playership.transform.position + new Vector3(0f,1f, cannonPosition), 
-                                                                    cannonBall.transform.rotation);// * new Quaternion(0f,0f,0f,-180f));
-        cannonball.GetComponent<Rigidbody>().AddForce(transform.forward * -force);
-        Destroy(cannonball, 1f);
+
+        if (isPlayer)
+        {
+
+            float cannonPosition = (cannon * 1.0f);
+            var cannonball = (GameObject)Instantiate(cannonBall, ship.transform.position + new Vector3(0f, 1f, cannonPosition),
+                                                                        cannonBall.transform.rotation);
+            cannonball.GetComponent<Rigidbody>().AddForce(transform.forward * -force);
+            Destroy(cannonball, 1f);
+
+        }
+        else
+        {
+            float cannonPosition = (cannon * 1.0f);
+            var cannonball = (GameObject)Instantiate(cannonBall, ship.transform.position + new Vector3(0f, 1f, cannonPosition),
+                                                                        cannonBall.transform.rotation);
+            cannonball.GetComponent<Rigidbody>().AddForce(transform.forward * -force);
+            Destroy(cannonball, 1f);
+        }
     }
 }
