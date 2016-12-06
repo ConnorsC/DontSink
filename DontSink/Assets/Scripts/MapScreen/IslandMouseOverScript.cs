@@ -43,20 +43,32 @@ public class IslandMouseOverScript : MonoBehaviour
 
         islandLine.enabled = true;
 
-        islandLine.SetPosition(0, transform.position);
-        islandLine.SetPosition(1, FindIsland(target1).IslandModel.transform.position);
-        islandLine.SetPosition(2, transform.position);
-        islandLine.SetPosition(3, FindIsland(target2).IslandModel.transform.position);
-        islandLine.SetPosition(4, transform.position);
-        islandLine.SetPosition(5, FindIsland(target3).IslandModel.transform.position);
-        islandLine.SetPosition(6, transform.position);
-        islandLine.SetPosition(7, FindIsland(target4).IslandModel.transform.position);
+        if (FindIsland(target1) != null)
+        {
+            islandLine.SetPosition(0, transform.position);
+            islandLine.SetPosition(1, FindIsland(target1).IslandModel.transform.position);
+        }
+        if (FindIsland(target2) != null)
+        {
+            islandLine.SetPosition(2, transform.position);
+            islandLine.SetPosition(3, FindIsland(target2).IslandModel.transform.position);
+        }
+        if (FindIsland(target3) != null)
+        { 
+            islandLine.SetPosition(4, transform.position);
+            islandLine.SetPosition(5, FindIsland(target3).IslandModel.transform.position);
+        }
+        if (FindIsland(target4) != null)
+        {
+            islandLine.SetPosition(6, transform.position);
+            islandLine.SetPosition(7, FindIsland(target4).IslandModel.transform.position);
+        }
     }
 
     public IslandObject FindIsland(int islandToFind)
     {
 
-        for(int x =0; x<= islands.Count; x++)
+        for(int x =0; x< islands.Count; x++)
         {
 
             if(islands[x].IslandNumber == islandToFind)
@@ -65,7 +77,7 @@ public class IslandMouseOverScript : MonoBehaviour
             }
         }
 
-        print("couldent find island: " + islandToFind);
+        //print("couldent find island: " + islandToFind);
         return null;
     }
 
