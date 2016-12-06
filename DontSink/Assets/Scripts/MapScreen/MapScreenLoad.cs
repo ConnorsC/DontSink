@@ -146,6 +146,8 @@ public class MapScreenLoad : MonoBehaviour {
                     island.IslandModel.GetComponent<IslandMouseOverScript>().island = 8;
                     island.ConnectedIsland = new List<int> { 5,5,5,5 };
                     island.IslandNumber = 8;
+                    GameObject flag = Instantiate(Resources.Load(islandFlagPrefabPath, typeof(GameObject))) as GameObject;
+                    flag.transform.position = new Vector3(18f, -.9f, -11f);
                     break;
                 default:
                     break;
@@ -153,8 +155,7 @@ public class MapScreenLoad : MonoBehaviour {
             i++;
         }
         // Denote teh last island
-        GameObject flag = Instantiate(Resources.Load(islandFlagPrefabPath, typeof(GameObject))) as GameObject;
-        flag.transform.position = new Vector3(18f, -.9f, -11f);
+        
     }
 
     private void SetLevel2Map(List<IslandObject> islands)
@@ -278,6 +279,8 @@ public class MapScreenLoad : MonoBehaviour {
                     island.IslandModel.GetComponent<IslandMouseOverScript>().island = 13;
                     island.ConnectedIsland = new List<int> { 14, 14, 6, 6 };
                     island.IslandNumber = 13;
+                    GameObject flag = Instantiate(Resources.Load(islandFlagPrefabPath, typeof(GameObject))) as GameObject;
+                    flag.transform.position = new Vector3(4.82f, -.9f, -14.9f);
                     break;
                 case 13:
                     island.IslandModel.transform.position = new Vector3(6.7f,0.1f, -20.5f);
@@ -300,7 +303,6 @@ public class MapScreenLoad : MonoBehaviour {
                     island.ConnectedIsland = new List<int> { 9, 9, 15, 15 };
                     island.IslandNumber = 16;
                     break;
-
                 default:
                     break;
             }
@@ -429,6 +431,8 @@ public class MapScreenLoad : MonoBehaviour {
                     island.IslandModel.GetComponent<IslandMouseOverScript>().island = 13;
                     island.ConnectedIsland = new List<int> { 11, 12, 14, 14 };
                     island.IslandNumber = 13;
+                    GameObject flag = Instantiate(Resources.Load(islandFlagPrefabPath, typeof(GameObject))) as GameObject;
+                    flag.transform.position = new Vector3(0.5f, -.9f, -17.89f);
                     break;
                 case 13:
                     island.IslandModel.transform.position = new Vector3(6.13f,0.1f, -16.2f);
@@ -461,7 +465,7 @@ public class MapScreenLoad : MonoBehaviour {
 
     private void SetShipPos(int island)
     {
-        print("The current island is: " + island);
+        //print("The current island is: " + island);
 
         List<IslandObject> islands = manager.Islands;
         playerShip.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);

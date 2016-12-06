@@ -72,7 +72,7 @@ public class ShipSelect : MonoBehaviour{
             Destroy(this);
         }
         manager.SetIsland(1);
-        manager.SetLevel(2);
+        manager.SetLevel(3);
         manager.LoadLevel("MapScreen");
     }
 
