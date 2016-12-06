@@ -467,7 +467,7 @@ public class MapScreenLoad : MonoBehaviour {
         playerShip.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         playerShip.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
         
-        playerShip.transform.position = (islands[island-1].IslandModel.transform.position + new Vector3(-1f,0f,2f));
+        playerShip.transform.position = (islands[island-1].IslandModel.transform.position + new Vector3(-1f,0f,1f));
 
     }
 }

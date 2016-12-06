@@ -8,6 +8,7 @@ public class IslandMouseOverScript : MonoBehaviour
     private GameManagerScript manager;
     private LineRenderer islandLine;
     public Material lineMaterial;
+    private List<IslandObject> islands;
     static string island1 = "Objects/Lines/OverlayIsland1";
     static string island2 = "Objects/Lines/OverlayIsland2";
     static string island3 = "Objects/Lines/OverlayIsland3";
@@ -26,18 +27,19 @@ public class IslandMouseOverScript : MonoBehaviour
         islandLine.SetVertexCount(8);
         islandLine.SetWidth(.2f, .2f);
         islandLine.material = lineMaterial;
+        
     }
 	
 	void OnMouseOver ()
     {
 
+        islands = manager.Islands;
         List<int> connectedIslands = FindIsland(island).ConnectedIsland;
 
         int target1 = connectedIslands[0];
         int target2 = connectedIslands[1];
         int target3 = connectedIslands[2];
         int target4 = connectedIslands[3];
-        print("my Island: " + island + " connections :\n " + connectedIslands[0] +"   "+ connectedIslands[1] + "   " + connectedIslands[2] + "   " + connectedIslands[3]);
     
         islandLine.enabled=true;
 
@@ -63,7 +65,6 @@ public class IslandMouseOverScript : MonoBehaviour
 
     public IslandObject FindIsland(int islandToFind)
     {
-        List<IslandObject> islands = manager.Islands;
 
         for(int x =0; x<= islands.Count; x++)
         {
