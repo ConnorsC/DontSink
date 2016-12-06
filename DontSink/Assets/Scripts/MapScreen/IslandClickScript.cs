@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class IslandClickScript : MonoBehaviour {
@@ -17,86 +18,36 @@ public class IslandClickScript : MonoBehaviour {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             manager.LoadLevel("MapScreen");
-            switch (island)
+            List<int> connectedIslands = FindIsland(island).ConnectedIsland;
+            for(int x = 0; x <= connectedIslands.Capacity-1; x++)
             {
-                case 1:
-                    if (manager.GetIsland() == 1 || manager.GetIsland() == 2 || manager.GetIsland() == 3)
-                    {
-                        manager.SetIsland(island);
-                        LoadLevel();
-                    }
-                    else
-                        print("Island cannot be selected from this island!");
-                    break;
-                case 2:
-                    if (manager.GetIsland() == 1 || manager.GetIsland() == 2 || manager.GetIsland() == 4)
-                    {
-                        manager.SetIsland(island);
-                        LoadLevel();
-                    }
-                    else
-                        print("Island cannot be selected from this island!");
-                    break;
-                case 3:
-                    if (manager.GetIsland() == 1 || manager.GetIsland() == 3 || manager.GetIsland() == 4 || manager.GetIsland() == 7)
-                    {
-                        manager.SetIsland(island);
-                        LoadLevel();
-                    }
-                    else
-                        print("Island cannot be selected from this island!");
-                    break;
-                case 4:
-                    if (manager.GetIsland() == 2 || manager.GetIsland() == 3 || manager.GetIsland() == 4 || manager.GetIsland() == 6 || manager.GetIsland() == 7)
-                    {
-                        manager.SetIsland(island);
-                        LoadLevel();
-                    }
-                    else
-                        print("Island cannot be selected from this island!");
-                    break;
-                case 5:
-                    if (manager.GetIsland() == 5 || manager.GetIsland() == 6 || manager.GetIsland() == 7 || manager.GetIsland() == 8)
-                    {
-                        manager.SetIsland(island);
-                        LoadLevel();
-                    }
-                    else
-                        print("Island cannot be selected from this island!");
-                    break;
-                case 6:
-                    if (manager.GetIsland() == 4 || manager.GetIsland() == 5 || manager.GetIsland() == 6 || manager.GetIsland() == 7)
-                    {
-                        manager.SetIsland(island);
-                        LoadLevel();
-                    }
-                    else
-                        print("Island cannot be selected from this island!");
-                    break;
-                case 7:
-                    if (manager.GetIsland() == 3 || manager.GetIsland() == 4 || manager.GetIsland() == 5 || manager.GetIsland() == 6 || manager.GetIsland() == 7)
-                    {
-                        manager.SetIsland(island);
-                        LoadLevel();
-                    }
-                    else
-                        print("Island cannot be selected from this island!");
-                    break;
-                case 8:
-                    if (manager.GetIsland() == 5 || manager.GetIsland() == 8)
-                    {
-                        manager.SetIsland(island);
-                        LoadLevel();
-                    }
-                    else
-                        print("Island cannot be selected from this island!");
-                    break;
-                default:
-                    print("Island cannot be selected!");
-                    break;
+                if(connectedIslands[x] == manager.GetIsland())
+                {
+                    manager.SetIsland(island);
+                    LoadLevel();
+                }
             }
+
         }
     }
+
+    public IslandObject FindIsland(int islandToFind)
+    {
+        List<IslandObject> islands = manager.Islands;
+
+        for (int x = 0; x <= islands.Count; x++)
+        {
+
+            if (islands[x].IslandNumber == islandToFind)
+            {
+                return islands[x];
+            }
+        }
+
+        print("couldent find island: " + islandToFind);
+        return null;
+    }
+
     private void LoadLevel()
     {
         // Will have more options soon

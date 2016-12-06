@@ -39,7 +39,7 @@ TagManager:
   - StoreShipNamePanel
   - StoreShipImagePanel
   - StoreShipStatsPanel
-  - StoreShipHullPanel
+  - StoreShipHullHealthPanel
   - StoreShipValueCurrent
   - StoreShipValueWithItem
   - StoreShipSailPanel
@@ -52,6 +52,10 @@ TagManager:
   - PayoutPopup
   - ClarificationText
   - FinalIslandFlag
+  - StoreShipHullResistPanel
+  - StoreShipHullPanel
+  - StoreShipStatsHullResistPanel
+  - PlayerGoldText
   layers:
   - Default
   - TransparentFX
