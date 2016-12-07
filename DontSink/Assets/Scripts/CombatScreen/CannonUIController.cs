@@ -10,6 +10,7 @@ public class CannonUIController : MonoBehaviour
     private Text text;
 
     public float cooldown = 10;
+    public int damage = 0;
     public string cannonName = "Cannon";
     private float cooldownTimer;
     public int cannonNumber;
@@ -81,7 +82,7 @@ public class CannonUIController : MonoBehaviour
             cooldownTimer = 0.0f;
             int playerDamage = playerShip.CurrentDamage;
             //int playerDamage = 10;
-            enemyShip.TakeDamage(playerDamage);
+            enemyShip.TakeDamage(playerDamage+damage);
 
             cooldownBarObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = Color.green;
             audioSource.PlayOneShot(audioClip);

@@ -5,6 +5,7 @@ using System.Collections;
 public class EnemyCannonUI : MonoBehaviour
 {
     public float cooldown = 10;
+    public int damage = 0;
 
     private Slider cooldownBar;
     private float cooldownTimer = 0;

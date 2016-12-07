@@ -54,14 +54,16 @@ public class BossScreenLoad : MonoBehaviour
     {
         int cannonNumber = 1;
         GameObject canvas = GameObject.FindGameObjectWithTag("CombatUI");
-        //foreach (CannonObject cannon in playerShipObject.GetCannons())
-        //{
-        for (int j = 0; j < 4; j++)
+        foreach (CannonObject cannon in playerShipObject.GetCannons())
         {
+            //for (int j = 0; j < 4; j++)
+            //{
             GameObject cannonUI = Instantiate(Resources.Load(cannonUIPath, typeof(GameObject))) as GameObject;
             CannonUIController cannonController = cannonUI.transform.Find("Click").GetComponent<CannonUIController>();
-            cannonController.cannonName = "Cannon " + cannonNumber;
-            cannonController.cooldown = 5 - j;// cannon.Fire_Rate;
+            cannonController.cannonName = cannon.Name;
+            cannonController.cannonNumber = cannonNumber;
+            cannonController.cooldown = /*5-j;//*/ cannon.Fire_Rate;
+            cannonController.damage = /*5-j;//*/ cannon.Damage;
             cannonUI.transform.SetParent(canvas.transform);
             if (cannonNumber <= 4)
                 cannonUI.transform.localPosition = new Vector3(0f, -((cannonNumber - 1) * 20), 0f);
@@ -75,13 +77,14 @@ public class BossScreenLoad : MonoBehaviour
     {
         int cannonNumber = 1;
         GameObject canvas = GameObject.FindGameObjectWithTag("CombatUI");
-        //foreach (CannonObject cannon in enemyShipObject.GetCannons())
-        //{
-        for (int j = 0; j < 2; j++)
+        foreach (CannonObject cannon in enemyShipObject.GetCannons())
         {
+            //for (int j = 0; j < 2; j++)
+            //{
             GameObject enemyCannonUI = Instantiate(Resources.Load(enemyCannonUIPath, typeof(GameObject))) as GameObject;
             EnemyCannonUI enemyCannonControllerUI = enemyCannonUI.transform.Find("CannonCooldown").GetComponent<EnemyCannonUI>();
-            enemyCannonControllerUI.cooldown = 3 + cannonNumber;// cannon.Fire_Rate;
+            enemyCannonControllerUI.cooldown = /*3+cannonNumber;//*/ cannon.Fire_Rate;
+            enemyCannonControllerUI.damage = /*3+cannonNumber;//*/ cannon.Damage;
             enemyCannonUI.transform.SetParent(canvas.transform);
             if (cannonNumber <= 4)
                 enemyCannonUI.transform.localPosition = new Vector3(0f, -((cannonNumber - 1) * 15), 0f);
