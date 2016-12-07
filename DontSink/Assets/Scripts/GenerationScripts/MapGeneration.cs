@@ -63,7 +63,7 @@ public class MapGeneration
         int distress_island2;
 
         //9 is the end island 
-        var ints = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16 };
+        var ints = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, /*12,*/ 13, 14, 15, 16 };
 
         int index = rnd.Next(ints.Count);
         shop_island1 = ints[index];
@@ -95,7 +95,7 @@ public class MapGeneration
             else if (i == distress_island1 || i == distress_island2)
                 islands.Add(3); // Distress Island
 
-            else if (i == 9)
+            else if (i == 12)
                 islands.Add(4); // End Island
             else
                 islands.Add(2);// Enemy Island
@@ -116,7 +116,7 @@ public class MapGeneration
         int distress_island2;
 
         //9 is the end island 
-        var ints = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16 };
+        var ints = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, /*12,*/ 13, 14, 15, 16 };
 
         int index = rnd.Next(ints.Count);
         shop_island1 = ints[index];
@@ -148,7 +148,7 @@ public class MapGeneration
             else if (i == distress_island1 || i == distress_island2)
                 islands.Add(3); // Distress Island
 
-            else if (i == 9)
+            else if (i == 12)
                 islands.Add(4); // End Island
             else
                 islands.Add(2);// Enemy Island

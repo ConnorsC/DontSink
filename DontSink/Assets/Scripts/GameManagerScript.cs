@@ -16,6 +16,9 @@ public class GameManagerScript : GameDriver {
     private bool canSelectShip = true;
     private int lastGeneratedMap = -1;
     private List<IslandObject> islands;
+    private List<ItemObject> itemList1;
+    private List<ItemObject> itemList2;
+    private List<ItemObject> itemList3;
 
     public GameManagerScript()
     {
@@ -49,7 +52,7 @@ public class GameManagerScript : GameDriver {
     }
 
     void Start () {
-        
+        GenerateItemLists();
     }
 	
 	// Update is called once per frame
@@ -100,6 +103,65 @@ public class GameManagerScript : GameDriver {
     public void StartAudio()
     {
         gameObject.GetComponent<AudioSource>().Play();
+    }
+    public List<ItemObject> GetItemList()
+    {
+        //based on level, return the item set
+        if (GetLevel() == 1)
+            return itemList1;
+        else if (GetLevel() == 2)
+            return itemList2;
+        else if (GetLevel() == 3)
+            return itemList3;
+        else
+            return new List<ItemObject>();//else return an empty list to prevent null pointers
+    }
+    public List<ItemObject> GetItemList(int level)
+    {
+        //based on level, return the item set
+        if (level == 1)
+            return itemList1;
+        else if (level == 2)
+            return itemList2;
+        else if (level == 3)
+            return itemList3;
+        else
+            return new List<ItemObject>();//else return an empty list to prevent null pointers
+    }
+
+    public void SetItemList(List<ItemObject> desiredList)
+    {
+        //based on level, set item lists
+        if (GetLevel() == 1)
+            itemList1 = desiredList;
+        else if (GetLevel() == 2)
+            itemList2 = desiredList;
+        else if (GetLevel() == 3)
+            itemList3 = desiredList;
+        else
+            return;
+    }
+
+    public void SetItemList(List<ItemObject> desiredList, int level)
+    {
+        //based on level, set the item lists
+        if (level == 1)
+            itemList1 = desiredList;
+        else if (level == 2)
+            itemList2 = desiredList;
+        else if (level == 3)
+            itemList3 = desiredList;
+        else
+            return;
+    }
+
+    public void GenerateItemLists()
+    {
+        System.Random rnd = new System.Random();
+        ItemGeneratorScript gen = new ItemGeneratorScript();
+        itemList1 = gen.GenerateItems(1, rnd);
+        itemList2 = gen.GenerateItems(2, rnd);
+        itemList3 = gen.GenerateItems(3, rnd);
     }
 
     public List<IslandObject> Islands { get { return islands;} set { islands = value; } }

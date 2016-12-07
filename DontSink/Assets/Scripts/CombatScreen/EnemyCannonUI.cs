@@ -10,6 +10,7 @@ public class EnemyCannonUI : MonoBehaviour
     private float cooldownTimer = 0;
     private GameManagerScript manager;
     private EnemyShipObject enemyShip;
+    private GameObject enemyShipGameObject;
     private PlayerShipObject playerShip;
     private AudioSource audioSource;
     private AudioClip audioClip;
@@ -24,6 +25,8 @@ public class EnemyCannonUI : MonoBehaviour
         audioClip = Resources.Load<AudioClip>("Audio/CannonSound2");
         audioSource = GameObject.FindGameObjectWithTag("GameAudio").GetComponent<AudioSource>();
 
+        
+
         if (manager.Islands[manager.GetIsland() - 1] is EndIslandObject)
             isBoss = true;
 
@@ -34,16 +37,21 @@ public class EnemyCannonUI : MonoBehaviour
             enemyShip = (manager.Islands[manager.GetIsland() - 1] as EnemyIslandObject).Ship;
         }
         playerShip = manager.GetPlayer().Ship;
+        //enemyShipGameObject = GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 14));
 
         cooldownBar = this.gameObject.GetComponent<Slider>();
         cooldownBar.maxValue = cooldown;
         cooldownBar.value = cooldownTimer;
 
         update = GameObject.FindGameObjectWithTag("UIUpdate");
+        if (!isBoss && GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 10))!=null)
+            enemyShipGameObject = GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 10));
+        else if (isBoss && GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 9)) != null)
+            enemyShipGameObject = GameObject.FindGameObjectWithTag(enemyShip.ShipModel.Substring(enemyShip.ShipModel.Length - 9));
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
         bool conditional;
         if (isBoss)
